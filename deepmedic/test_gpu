@@ -1,0 +1,11 @@
+#!/bin/bash
+
+rm -rf examples/output
+
+./deepMedicRun -dev cuda -newModel ./examples/configFiles/tinyCnn/model/modelConfig.cfg
+
+./deepMedicRun -dev cuda -train examples/configFiles/tinyCnn/train/trainConfigWithValidation.cfg \
+                       -model examples/output/cnnModels/tinyCnn.initial.*.save
+
+./deepMedicRun -dev cuda -test examples/configFiles/tinyCnn/test/testConfig.cfg \
+                       -model examples/output/cnnModels/trainSessionWithValidTinyCnn/tinyCnn.trainSessionWithValidTinyCnn.final.*.save
