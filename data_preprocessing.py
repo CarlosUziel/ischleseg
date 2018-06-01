@@ -20,7 +20,7 @@ from nilearn.masking import compute_background_mask
 os.chdir('/home/uziel/DISS/ischleseg')
 
 #%% List all sequences per subject
-root = '/home/uziel/DISS/data/Training'
+root = 'C:\Users\Carlos Uziel\Documents\DISS WORKSPACE\data\Training'
 subjects_paths = sorted(os.listdir(root))
 channels_per_subject = dict() # groups relevant sequences per subject
 for i in range(len(subjects_paths)):
@@ -68,3 +68,34 @@ for subject in sorted(os.listdir(root)):
     nib.save(mask, subject_root + 'mask.nii.gz')
 
 #%% Normalize to zero-mean and unit variance inside mask
+    
+#%% FULL - Resample images to same shape and voxel size
+root = '../data_processed/'
+# remove and create dir for processed data
+if os.path.exists(root): shutil.rmtree(root)
+os.mkdir(root)
+
+# load template image
+template = nib.load(channels_per_subject[0][0])
+
+for subject in channels_per_subject.keys():
+    # create subdirectory per subject
+    subject_root = root + str(subject) + '/'
+    os.mkdir(root + str(subject))
+    subject_imgs = []
+    for channel_file in channels_per_subject[subject]:
+        img = nib.load(channel_file)
+        # Resample img to match template
+        resampled_img = resample_to_img(img,template)
+        subject_imgs.append([resampled_img, channel_file])
+        
+    # compute subject brain mask given all channels
+    mask = compute_background_mask([x for x,y in subject_imgs])
+    # normalize each image and save
+    for img, channel_file in subject_imgs:
+        # normalize image within mask
+        norm_img = img
+        # save image
+        file_name = channel_file.split('/')[-1]
+        nib.save(norm_img, subject_root + file_name + '.gz' )
+		
