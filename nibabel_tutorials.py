@@ -89,7 +89,7 @@ anat_vox_center
 import os
 import numpy as np
 import nibabel as nib
-from nibabel.testing import data_path
+from nibabel.testing import data_ath
 example_file = os.path.join(data_path, 'example4d.nii.gz')
 img = nib.load(example_file)
 np.set_printoptions(precision=2, suppress=True)
