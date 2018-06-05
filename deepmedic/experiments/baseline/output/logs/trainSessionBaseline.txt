@@ -908,3 +908,1010 @@
 2018-06-04 14:07:11.143041 >> Finished sampling segments of Category [Background]. Number sampled: 14
 2018-06-04 14:07:11.147281 >> SAMPLING: Going to load the images and extract segments from the subject #29/34
 2018-06-04 14:07:11.147318 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.MR_ADC.128021.nii.gz
+2018-06-04 17:28:49.075042 >> =============================== logger created =======================================
+2018-06-04 17:28:49.075520 >> CONFIG: Given THEANO_FLAGS: ,on_unused_input=warn,mode=FAST_RUN,device=cuda,floatX=float32,force_device=True,dnn.enabled=auto,openmp=True
+2018-06-04 17:28:49.075585 >> CONFIG: The configuration file for the session was loaded from: /home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/configFiles/train/trainConfig.cfg
+2018-06-04 17:28:49.075616 >> ====== CNN-Instance already loaded (from Create-New-Model procedure) =======
+2018-06-04 17:28:49.075638 >> WARN: Any paths to cnn-models specified in the train-config file will be ommitted! Working with the pre-loaded model!
+2018-06-04 17:28:49.079691 >> 
+===========       NEW TRAINING SESSION         ===============
+2018-06-04 17:28:49.079727 >> =============================================================
+2018-06-04 17:28:49.079754 >> =============== PARAMETERS FOR THIS SESSION =================
+2018-06-04 17:28:49.079775 >> =============================================================
+2018-06-04 17:28:49.079797 >> Session's name = trainSessionBaseline
+2018-06-04 17:28:49.079817 >> CNN model's name = baseline
+2018-06-04 17:28:49.079839 >> CNN model was loaded from = /home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/cnnModels/baseline.initial.2018-06-04.17.28.48.284317.save
+2018-06-04 17:28:49.079886 >> ~~Output~~
+2018-06-04 17:28:49.079931 >> Main output folder = /home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output
+2018-06-04 17:28:49.079951 >> Path and filename to save trained models = /home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/cnnModels//trainSessionBaseline//baseline.trainSessionBaseline
+2018-06-04 17:28:49.079976 >> ~~~~~~~~~~~~~~~~~~Generic Information~~~~~~~~~~~~~~~~
+2018-06-04 17:28:49.079998 >> Number of Classes (incl. background) (from cnnModel) = 2
+2018-06-04 17:28:49.080019 >> Number of Channels (Normal Pathway) (from cnnModel) = 6
+2018-06-04 17:28:49.080039 >> Number of Cases for Training = 34
+2018-06-04 17:28:49.080060 >> Number of Cases for Validation = 9
+2018-06-04 17:28:49.080080 >> ~~~~~~~~~~~~~~~~~~Training parameters~~~~~~~~~~~~~~~~
+2018-06-04 17:28:49.080294 >> Filepaths to Channels of the Training Cases = [['/home/uziel/DISS/data_processed/ISLES2017/training/26/SMIR.Brain.XX.O.MR_ADC.188880.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/26/SMIR.Brain.XX.O.MR_MTT.188881.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/26/SMIR.Brain.XX.O.MR_rCBF.188883.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/26/SMIR.Brain.XX.O.MR_rCBV.188884.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/26/SMIR.Brain.XX.O.MR_Tmax.188885.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/26/SMIR.Brain.XX.O.MR_TTP.188886.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.MR_ADC.128021.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.MR_MTT.127022.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.MR_rCBF.127024.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.MR_rCBV.127025.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.MR_Tmax.127026.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.MR_TTP.127027.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_ADC.128030.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_MTT.127094.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_rCBF.127096.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_rCBV.127097.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_Tmax.127098.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_TTP.127099.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/5/VSD.Brain.XX.O.MR_ADC.128025.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/5/VSD.Brain.XX.O.MR_MTT.127054.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/5/VSD.Brain.XX.O.MR_rCBF.127056.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/5/VSD.Brain.XX.O.MR_rCBV.127057.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/5/VSD.Brain.XX.O.MR_Tmax.127058.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/5/VSD.Brain.XX.O.MR_TTP.127059.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/41/VSD.Brain.XX.O.MR_ADC.128048.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/41/VSD.Brain.XX.O.MR_MTT.127238.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/41/VSD.Brain.XX.O.MR_rCBF.127240.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/41/VSD.Brain.XX.O.MR_rCBV.127241.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/41/VSD.Brain.XX.O.MR_Tmax.127242.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/41/VSD.Brain.XX.O.MR_TTP.127243.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/12/VSD.Brain.XX.O.MR_ADC.128032.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/12/VSD.Brain.XX.O.MR_MTT.127110.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/12/VSD.Brain.XX.O.MR_rCBF.127112.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/12/VSD.Brain.XX.O.MR_rCBV.127113.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/12/VSD.Brain.XX.O.MR_Tmax.127114.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/12/VSD.Brain.XX.O.MR_TTP.127115.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/32/SMIR.Brain.XX.O.MR_ADC.188920.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/32/SMIR.Brain.XX.O.MR_MTT.188921.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/32/SMIR.Brain.XX.O.MR_rCBF.188923.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/32/SMIR.Brain.XX.O.MR_rCBV.188924.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/32/SMIR.Brain.XX.O.MR_Tmax.188925.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/32/SMIR.Brain.XX.O.MR_TTP.188926.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/20/VSD.Brain.XX.O.MR_ADC.128040.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/20/VSD.Brain.XX.O.MR_MTT.127174.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/20/VSD.Brain.XX.O.MR_rCBF.127176.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/20/VSD.Brain.XX.O.MR_rCBV.127177.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/20/VSD.Brain.XX.O.MR_Tmax.127178.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/20/VSD.Brain.XX.O.MR_TTP.127179.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/19/VSD.Brain.XX.O.MR_ADC.128039.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/19/VSD.Brain.XX.O.MR_MTT.127166.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/19/VSD.Brain.XX.O.MR_rCBF.127168.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/19/VSD.Brain.XX.O.MR_rCBV.127169.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/19/VSD.Brain.XX.O.MR_Tmax.127170.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/19/VSD.Brain.XX.O.MR_TTP.127171.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/24/SMIR.Brain.XX.O.MR_ADC.188864.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/24/SMIR.Brain.XX.O.MR_MTT.188865.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/24/SMIR.Brain.XX.O.MR_rCBF.188867.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/24/SMIR.Brain.XX.O.MR_rCBV.188868.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/24/SMIR.Brain.XX.O.MR_Tmax.188869.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/24/SMIR.Brain.XX.O.MR_TTP.188870.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/29/SMIR.Brain.XX.O.MR_ADC.188896.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/29/SMIR.Brain.XX.O.MR_MTT.188897.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/29/SMIR.Brain.XX.O.MR_rCBF.188899.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/29/SMIR.Brain.XX.O.MR_rCBV.188900.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/29/SMIR.Brain.XX.O.MR_Tmax.188901.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/29/SMIR.Brain.XX.O.MR_TTP.188902.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/7/VSD.Brain.XX.O.MR_ADC.128027.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/7/VSD.Brain.XX.O.MR_MTT.127070.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/7/VSD.Brain.XX.O.MR_rCBF.127072.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/7/VSD.Brain.XX.O.MR_rCBV.127073.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/7/VSD.Brain.XX.O.MR_Tmax.127074.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/7/VSD.Brain.XX.O.MR_TTP.127075.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/27/SMIR.Brain.XX.O.MR_ADC.188888.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/27/SMIR.Brain.XX.O.MR_MTT.188889.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/27/SMIR.Brain.XX.O.MR_rCBF.188891.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/27/SMIR.Brain.XX.O.MR_rCBV.188892.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/27/SMIR.Brain.XX.O.MR_Tmax.188893.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/27/SMIR.Brain.XX.O.MR_TTP.188894.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/35/SMIR.Brain.XX.O.MR_ADC.188985.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/35/SMIR.Brain.XX.O.MR_MTT.188986.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/35/SMIR.Brain.XX.O.MR_rCBF.188988.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/35/SMIR.Brain.XX.O.MR_rCBV.188989.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/35/SMIR.Brain.XX.O.MR_Tmax.188990.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/35/SMIR.Brain.XX.O.MR_TTP.188991.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/9/VSD.Brain.XX.O.MR_ADC.128029.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/9/VSD.Brain.XX.O.MR_MTT.127086.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/9/VSD.Brain.XX.O.MR_rCBF.127088.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/9/VSD.Brain.XX.O.MR_rCBV.127089.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/9/VSD.Brain.XX.O.MR_Tmax.127090.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/9/VSD.Brain.XX.O.MR_TTP.127091.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/3/VSD.Brain.XX.O.MR_ADC.128023.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/3/VSD.Brain.XX.O.MR_MTT.127038.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/3/VSD.Brain.XX.O.MR_rCBF.127040.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/3/VSD.Brain.XX.O.MR_rCBV.127041.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/3/VSD.Brain.XX.O.MR_Tmax.127042.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/3/VSD.Brain.XX.O.MR_TTP.127043.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/25/SMIR.Brain.XX.O.MR_ADC.188872.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/25/SMIR.Brain.XX.O.MR_MTT.188873.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/25/SMIR.Brain.XX.O.MR_rCBF.188875.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/25/SMIR.Brain.XX.O.MR_rCBV.188876.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/25/SMIR.Brain.XX.O.MR_Tmax.188877.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/25/SMIR.Brain.XX.O.MR_TTP.188878.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/38/VSD.Brain.XX.O.MR_ADC.128045.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/38/VSD.Brain.XX.O.MR_MTT.127214.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/38/VSD.Brain.XX.O.MR_rCBF.127216.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/38/VSD.Brain.XX.O.MR_rCBV.127217.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/38/VSD.Brain.XX.O.MR_Tmax.127218.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/38/VSD.Brain.XX.O.MR_TTP.127219.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/42/VSD.Brain.XX.O.MR_ADC.128049.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/42/VSD.Brain.XX.O.MR_MTT.127246.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/42/VSD.Brain.XX.O.MR_rCBF.127248.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/42/VSD.Brain.XX.O.MR_rCBV.127249.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/42/VSD.Brain.XX.O.MR_Tmax.127250.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/42/VSD.Brain.XX.O.MR_TTP.127251.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/40/VSD.Brain.XX.O.MR_ADC.128047.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/40/VSD.Brain.XX.O.MR_MTT.127230.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/40/VSD.Brain.XX.O.MR_rCBF.127232.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/40/VSD.Brain.XX.O.MR_rCBV.127233.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/40/VSD.Brain.XX.O.MR_Tmax.127234.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/40/VSD.Brain.XX.O.MR_TTP.127235.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/8/VSD.Brain.XX.O.MR_ADC.128028.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/8/VSD.Brain.XX.O.MR_MTT.127078.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/8/VSD.Brain.XX.O.MR_rCBF.127080.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/8/VSD.Brain.XX.O.MR_rCBV.127081.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/8/VSD.Brain.XX.O.MR_Tmax.127082.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/8/VSD.Brain.XX.O.MR_TTP.127083.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/15/VSD.Brain.XX.O.MR_ADC.128035.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/15/VSD.Brain.XX.O.MR_MTT.127134.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/15/VSD.Brain.XX.O.MR_rCBF.127136.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/15/VSD.Brain.XX.O.MR_rCBV.127137.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/15/VSD.Brain.XX.O.MR_Tmax.127138.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/15/VSD.Brain.XX.O.MR_TTP.127139.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/6/VSD.Brain.XX.O.MR_ADC.128026.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/6/VSD.Brain.XX.O.MR_MTT.127062.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/6/VSD.Brain.XX.O.MR_rCBF.127064.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/6/VSD.Brain.XX.O.MR_rCBV.127065.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/6/VSD.Brain.XX.O.MR_Tmax.127066.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/6/VSD.Brain.XX.O.MR_TTP.127067.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/31/SMIR.Brain.XX.O.MR_ADC.188912.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/31/SMIR.Brain.XX.O.MR_MTT.188913.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/31/SMIR.Brain.XX.O.MR_rCBF.188915.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/31/SMIR.Brain.XX.O.MR_rCBV.188916.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/31/SMIR.Brain.XX.O.MR_Tmax.188917.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/31/SMIR.Brain.XX.O.MR_TTP.188918.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/36/SMIR.Brain.XX.O.MR_ADC.188993.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/36/SMIR.Brain.XX.O.MR_MTT.188994.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/36/SMIR.Brain.XX.O.MR_rCBF.188996.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/36/SMIR.Brain.XX.O.MR_rCBV.188997.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/36/SMIR.Brain.XX.O.MR_Tmax.188998.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/36/SMIR.Brain.XX.O.MR_TTP.188999.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/16/VSD.Brain.XX.O.MR_ADC.128036.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/16/VSD.Brain.XX.O.MR_MTT.127142.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/16/VSD.Brain.XX.O.MR_rCBF.127144.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/16/VSD.Brain.XX.O.MR_rCBV.127145.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/16/VSD.Brain.XX.O.MR_Tmax.127146.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/16/VSD.Brain.XX.O.MR_TTP.127147.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/13/VSD.Brain.XX.O.MR_ADC.128033.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/13/VSD.Brain.XX.O.MR_MTT.127118.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/13/VSD.Brain.XX.O.MR_rCBF.127120.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/13/VSD.Brain.XX.O.MR_rCBV.127121.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/13/VSD.Brain.XX.O.MR_Tmax.127122.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/13/VSD.Brain.XX.O.MR_TTP.127123.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_ADC.128043.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_MTT.127198.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_rCBF.127200.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_rCBV.127201.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_Tmax.127202.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_TTP.127203.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/2/VSD.Brain.XX.O.MR_ADC.128022.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/2/VSD.Brain.XX.O.MR_MTT.127030.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/2/VSD.Brain.XX.O.MR_rCBF.127032.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/2/VSD.Brain.XX.O.MR_rCBV.127033.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/2/VSD.Brain.XX.O.MR_Tmax.127034.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/2/VSD.Brain.XX.O.MR_TTP.127035.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/22/VSD.Brain.XX.O.MR_ADC.128042.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/22/VSD.Brain.XX.O.MR_MTT.127190.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/22/VSD.Brain.XX.O.MR_rCBF.127192.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/22/VSD.Brain.XX.O.MR_rCBV.127193.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/22/VSD.Brain.XX.O.MR_Tmax.127194.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/22/VSD.Brain.XX.O.MR_TTP.127195.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/17/VSD.Brain.XX.O.MR_ADC.128037.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/17/VSD.Brain.XX.O.MR_MTT.127150.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/17/VSD.Brain.XX.O.MR_rCBF.127152.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/17/VSD.Brain.XX.O.MR_rCBV.127153.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/17/VSD.Brain.XX.O.MR_Tmax.127154.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/17/VSD.Brain.XX.O.MR_TTP.127155.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/37/SMIR.Brain.XX.O.MR_ADC.189001.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/37/SMIR.Brain.XX.O.MR_MTT.189002.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/37/SMIR.Brain.XX.O.MR_rCBF.189004.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/37/SMIR.Brain.XX.O.MR_rCBV.189005.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/37/SMIR.Brain.XX.O.MR_Tmax.189006.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/37/SMIR.Brain.XX.O.MR_TTP.189007.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/0/VSD.Brain.XX.O.MR_ADC.128020.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/0/VSD.Brain.XX.O.MR_MTT.127014.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/0/VSD.Brain.XX.O.MR_rCBF.127016.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/0/VSD.Brain.XX.O.MR_rCBV.127017.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/0/VSD.Brain.XX.O.MR_Tmax.127018.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/0/VSD.Brain.XX.O.MR_TTP.127019.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/28/VSD.Brain.XX.O.MR_ADC.128044.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/28/VSD.Brain.XX.O.MR_MTT.127206.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/28/VSD.Brain.XX.O.MR_rCBF.127208.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/28/VSD.Brain.XX.O.MR_rCBV.127209.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/28/VSD.Brain.XX.O.MR_Tmax.127210.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/28/VSD.Brain.XX.O.MR_TTP.127211.nii.gz']]
+2018-06-04 17:28:49.080388 >> Filepaths to Ground-Truth labels of the Training Cases = ['/home/uziel/DISS/data_processed/ISLES2017/training/26/SMIR.Brain.XX.O.OT.188882.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.OT.128051.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.OT.128060.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/5/VSD.Brain.XX.O.OT.128055.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/41/VSD.Brain.XX.O.OT.128078.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/12/VSD.Brain.XX.O.OT.128062.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/32/SMIR.Brain.XX.O.OT.188922.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/20/VSD.Brain.XX.O.OT.128070.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/19/VSD.Brain.XX.O.OT.128069.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/24/SMIR.Brain.XX.O.OT.188866.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/29/SMIR.Brain.XX.O.OT.188898.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/7/VSD.Brain.XX.O.OT.128057.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/27/SMIR.Brain.XX.O.OT.188890.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/35/SMIR.Brain.XX.O.OT.188987.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/9/VSD.Brain.XX.O.OT.128059.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/3/VSD.Brain.XX.O.OT.128053.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/25/SMIR.Brain.XX.O.OT.188874.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/38/VSD.Brain.XX.O.OT.128075.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/42/VSD.Brain.XX.O.OT.128079.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/40/VSD.Brain.XX.O.OT.128077.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/8/VSD.Brain.XX.O.OT.128058.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/15/VSD.Brain.XX.O.OT.128065.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/6/VSD.Brain.XX.O.OT.128056.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/31/SMIR.Brain.XX.O.OT.188914.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/36/SMIR.Brain.XX.O.OT.188995.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/16/VSD.Brain.XX.O.OT.128066.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/13/VSD.Brain.XX.O.OT.128063.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.OT.128073.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/2/VSD.Brain.XX.O.OT.128052.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/22/VSD.Brain.XX.O.OT.128072.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/17/VSD.Brain.XX.O.OT.128067.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/37/SMIR.Brain.XX.O.OT.189003.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/0/VSD.Brain.XX.O.OT.128050.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/28/VSD.Brain.XX.O.OT.128074.nii.gz']
+2018-06-04 17:28:49.080427 >> ~~Sampling~~
+2018-06-04 17:28:49.080464 >> Region-Of-Interest Masks provided = True
+2018-06-04 17:28:49.080505 >> Filepaths to ROI Masks of the Training Cases = ['/home/uziel/DISS/data_processed/ISLES2017/training/26/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/1/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/10/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/5/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/41/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/12/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/32/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/20/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/19/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/24/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/29/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/7/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/27/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/35/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/9/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/3/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/25/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/38/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/42/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/40/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/8/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/15/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/6/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/31/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/36/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/16/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/13/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/23/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/2/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/22/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/17/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/37/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/0/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/28/mask.nii.gz']
+2018-06-04 17:28:49.080522 >> ~~Advanced Sampling~~
+2018-06-04 17:28:49.080540 >> Using default sampling = True. NOTE: Adv.Sampl.Params are auto-set to perform default sampling if True.
+2018-06-04 17:28:49.080562 >> Type of Sampling = Fore/Background (0)
+2018-06-04 17:28:49.080591 >> Sampling Categories = ['Foreground', 'Background']
+2018-06-04 17:28:49.080812 >> Percent of Samples to extract per Sampling Category = [0.5 0.5]
+2018-06-04 17:28:49.080834 >> Provided Weight-Maps, pointing where to focus sampling for each category (if False, samples will be extracted based on GT and ROI) = False
+2018-06-04 17:28:49.080849 >> Paths to weight-maps for sampling of each category = None
+2018-06-04 17:28:49.080863 >> ~~Training Cycle~~
+2018-06-04 17:28:49.080881 >> Number of Epochs = 35
+2018-06-04 17:28:49.080896 >> Number of Subepochs per epoch = 20
+2018-06-04 17:28:49.080911 >> Number of cases to load per Subepoch (for extracting the samples for this subepoch) = 50
+2018-06-04 17:28:49.080948 >> Number of Segments loaded on GPU per subepoch for Training = 1000. NOTE: This number of segments divided by the batch-size defines the number of optimization-iterations that will be performed every subepoch!
+2018-06-04 17:28:49.080967 >> ~~Learning Rate Schedule~~
+2018-06-04 17:28:49.080982 >> Schedule Type: Stable (0), Auto (1), Predefined (2), Exponential (3) = 2
+2018-06-04 17:28:49.080999 >> [Stable/Auto/Predefined] When decreasing Learning Rate, divide LR by = 2.0
+2018-06-04 17:28:49.081020 >> [Stable/Auto] Wait that many epochs before lowering LR = 3
+2018-06-04 17:28:49.081038 >> [Auto] Minimum increase in validation accuracy (0. to 1.) that resets the waiting counter = 0.0005
+2018-06-04 17:28:49.081056 >> [Predefined] Predefined Schedule of Epochs when the LR will be lowered = [12, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46]
+2018-06-04 17:28:49.081083 >> [Exponential] [Number of initial epochs to not change LR and Mom, final value of LR, final value of Momentum] = [12, 0.0078125, 0.9]
+2018-06-04 17:28:49.081099 >> ~~Data Augmentation During Training~~
+2018-06-04 17:28:49.081114 >> Reflect images per axis = [True, False, False]
+2018-06-04 17:28:49.081128 >> Perform intensity-augmentation [I'= (I+shift)*mult] = False
+2018-06-04 17:28:49.081143 >> [Int. Augm.] Sample Shift from N(mu,std) = []
+2018-06-04 17:28:49.081157 >> [Int. Augm.] Sample Multi from N(mu,std) = []
+2018-06-04 17:28:49.081175 >> [Int. Augm.] (DEBUGGING:) full parameters [no(0)/images(1)/segms(2), nonNorm(0)/norm(1), shift, mult] = [0, 'plcholder', [], []]
+2018-06-04 17:28:49.081206 >> ~~~~~~~~~~~~~~~~~~Validation parameters~~~~~~~~~~~~~~~~
+2018-06-04 17:28:49.081223 >> Perform Validation on Samples throughout training? = True
+2018-06-04 17:28:49.081243 >> Perform Full Inference on validation cases every few epochs? = True
+2018-06-04 17:28:49.081306 >> Filepaths to Channels of the Validation Cases (Req for either of the above) = [['/home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.MR_ADC.128031.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.MR_MTT.127102.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.MR_rCBF.127104.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.MR_rCBV.127105.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.MR_Tmax.127106.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.MR_TTP.127107.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.MR_ADC.128024.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.MR_MTT.127046.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.MR_rCBF.127048.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.MR_rCBV.127049.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.MR_Tmax.127050.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.MR_TTP.127051.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.MR_ADC.188904.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.MR_MTT.188905.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.MR_rCBF.188907.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.MR_rCBV.188908.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.MR_Tmax.188909.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.MR_TTP.188910.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.MR_ADC.128046.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.MR_MTT.127222.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.MR_rCBF.127224.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.MR_rCBV.127225.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.MR_Tmax.127226.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.MR_TTP.127227.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.MR_ADC.128038.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.MR_MTT.127158.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.MR_rCBF.127160.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.MR_rCBV.127161.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.MR_Tmax.127162.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.MR_TTP.127163.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.MR_ADC.188928.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.MR_MTT.188929.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.MR_rCBF.188931.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.MR_rCBV.188932.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.MR_Tmax.188933.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.MR_TTP.188934.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.MR_ADC.128034.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.MR_MTT.127126.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.MR_rCBF.127128.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.MR_rCBV.127129.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.MR_Tmax.127130.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.MR_TTP.127131.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.MR_ADC.188957.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.MR_MTT.188971.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.MR_rCBF.188973.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.MR_rCBV.188974.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.MR_Tmax.188975.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.MR_TTP.188976.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.MR_ADC.128041.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.MR_MTT.127182.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.MR_rCBF.127184.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.MR_rCBV.127185.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.MR_Tmax.127186.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.MR_TTP.127187.nii.gz']]
+2018-06-04 17:28:49.081331 >> Provided Ground-Truth for Validation = True. NOTE: Required for Val on samples. Not Req for Full-Inference, but DSC will be reported if provided.
+2018-06-04 17:28:49.081357 >> Filepaths to Ground-Truth labels of the Validation Cases = ['/home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.OT.128061.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.OT.128054.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.OT.188906.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.OT.128076.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.OT.128068.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.OT.188930.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.OT.128064.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.OT.188972.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.OT.128071.nii.gz']
+2018-06-04 17:28:49.081379 >> Provided ROI masks for Validation = True. NOTE: Validation-sampling and Full-Inference will be limited within this mask if provided. If not provided, Negative Validation samples will be extracted from whole volume, except if advanced-sampling is enabled, and the user provided separate weight-maps for sampling.
+2018-06-04 17:28:49.081418 >> Filepaths to ROI masks for Validation Cases = ['/home/uziel/DISS/data_processed/ISLES2017/training/11/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/4/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/30/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/39/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/18/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/33/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/14/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/34/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/21/mask.nii.gz']
+2018-06-04 17:28:49.081436 >> ~~~~~~~Validation on Samples throughout Training~~~~~~~
+2018-06-04 17:28:49.081450 >> Number of Segments loaded on GPU per subepoch for Validation = 3000
+2018-06-04 17:28:49.081464 >> ~~Advanced Sampling~~
+2018-06-04 17:28:49.081478 >> Using default uniform sampling for validation = True. NOTE: Adv.Sampl.Params are auto-set to perform uniform-sampling if True.
+2018-06-04 17:28:49.081495 >> Type of Sampling = Uniform (1)
+2018-06-04 17:28:49.081517 >> Sampling Categories = ['Uniform']
+2018-06-04 17:28:49.081536 >> Percent of Samples to extract per Sampling Category = [1.0]
+2018-06-04 17:28:49.081554 >> Provided Weight-Maps, pointing where to focus sampling for each category (if False, samples will be extracted based on GT and ROI) = False
+2018-06-04 17:28:49.081573 >> Paths to weight-maps for sampling of each category = None
+2018-06-04 17:28:49.081590 >> ~~~~~Validation with Full Inference on Validation Cases~~~~~
+2018-06-04 17:28:49.081608 >> Perform Full-Inference on Val. cases every that many epochs = 5
+2018-06-04 17:28:49.081626 >> ~~Predictions (segmentations and prob maps on val. cases)~~
+2018-06-04 17:28:49.081643 >> Save Segmentations = True
+2018-06-04 17:28:49.081660 >> Save Probability Maps for each class = [True, True, True, True, True]
+2018-06-04 17:28:49.081717 >> Filepaths to save results per case = ['/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_26_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_1_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_10_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_5_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_41_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_12_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_32_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_20_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_19_nii.gz']
+2018-06-04 17:28:49.081756 >> ~~Feature Maps~~
+2018-06-04 17:28:49.081793 >> Save Feature Maps = False
+2018-06-04 17:28:49.081824 >> Save FMs in a 4D-image = False
+2018-06-04 17:28:49.081865 >> Min/Max Indices of FMs to visualise per pathway-type and per layer = [[], [], []]
+2018-06-04 17:28:49.081926 >> Filepaths to save FMs per case = ['/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_26_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_1_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_10_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_5_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_41_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_12_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_32_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_20_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_19_nii.gz']
+2018-06-04 17:28:49.081968 >> ~~Optimization~~
+2018-06-04 17:28:49.081987 >> Initial Learning rate = 0.001
+2018-06-04 17:28:49.082002 >> Optimizer to use: SGD(0), Adam(1), RmsProp(2) = 2
+2018-06-04 17:28:49.082018 >> Parameters for Adam: b1= placeholder, b2=placeholder, e= placeholder
+2018-06-04 17:28:49.082033 >> Parameters for RmsProp: rho= 0.9, e= 0.0001
+2018-06-04 17:28:49.082048 >> Momentum Type: Classic (0) or Nesterov (1) = 1
+2018-06-04 17:28:49.082062 >> Momentum Non-Normalized (0) or Normalized (1) = 1
+2018-06-04 17:28:49.082076 >> Momentum Value = 0.6
+2018-06-04 17:28:49.082090 >> ~~L1/L2 Regularization~~
+2018-06-04 17:28:49.082106 >> L1 Regularization term = 1e-06
+2018-06-04 17:28:49.082120 >> L2 Regularization term = 0.0001
+2018-06-04 17:28:49.082134 >> ~~Freeze Weights of Certain Layers~~
+2018-06-04 17:28:49.082147 >> Indices of layers from each type of pathway that will be kept fixed (first layer is 0):
+2018-06-04 17:28:49.082162 >> Normal pathway's layers to freeze = []
+2018-06-04 17:28:49.082176 >> Subsampled pathway's layers to freeze = []
+2018-06-04 17:28:49.082191 >> FC pathway's layers to freeze = []
+2018-06-04 17:28:49.082204 >> ~~~~~~~~~~~~~~~~~~Other Generic Parameters~~~~~~~~~~~~~~~~
+2018-06-04 17:28:49.082218 >> ~~Pre Processing~~
+2018-06-04 17:28:49.082232 >> Pad Input Images = True
+2018-06-04 17:28:49.082245 >> ========== Done with printing session's parameters ==========
+2018-06-04 17:28:49.082259 >> =============================================================
+2018-06-04 17:28:49.082275 >> 
+=======================================================
+2018-06-04 17:28:49.082289 >> =========== Compiling the Training Function ===========
+2018-06-04 17:28:49.082303 >> =======================================================
+2018-06-04 17:28:49.082325 >> (Re)Initializing parameters for the optimization. Reason: Uninitialized: [True], Reset requested: [False]
+2018-06-04 17:28:49.082344 >> ...Initializing attributes for the optimization...
+2018-06-04 17:28:49.082370 >> UPDATE: (epoch-cnn-trained#0) Changing the Cnn's Learning Rate to: 0.001
+2018-06-04 17:28:49.082471 >> UPDATE: (epoch-cnn-trained#0) Changing the Cnn's Momentum to: 0.6
+2018-06-04 17:28:49.082515 >> UPDATE: (epoch-cnn-trained#0) Changing the Cnn's Rho parameter for RMSProp optimization to: Rho = 0.9
+2018-06-04 17:28:49.131312 >> ...Building the training function...
+2018-06-04 17:28:49.162037 >> Optimizer used: [RMSProp]. Momentum used: Classic0 or Nesterov1 : 1
+2018-06-04 17:28:50.713589 >> ...Compiling the function for training... (This may take a few minutes...)
+2018-06-04 17:29:31.779132 >> The training function was compiled.
+2018-06-04 17:29:31.779263 >> 
+=========== Compiling the Validation Function =========
+2018-06-04 17:29:31.779294 >> ...Building the validation function...
+2018-06-04 17:29:31.782741 >> ...Compiling the function for validation... (This may take a few minutes...)
+2018-06-04 17:29:36.941679 >> The validation function was compiled.
+2018-06-04 17:29:36.941735 >> 
+=========== Compiling the Testing Function ============
+2018-06-04 17:29:36.941759 >> ...Building the function for testing and visualisation of FMs...
+2018-06-04 17:29:36.949757 >> ...Compiling the function for testing and visualisation of FMs... (This may take a few minutes...)
+2018-06-04 17:29:42.180272 >> The function for testing and visualisation of FMs was compiled.
+2018-06-04 17:29:42.180358 >> 
+=======================================================
+2018-06-04 17:29:42.180404 >> ============== Training the CNN model =================
+2018-06-04 17:29:42.180429 >> =======================================================
+2018-06-04 17:29:42.233723 >> CONFIG: Theano is using the [GPU].
+2018-06-04 17:29:42.233810 >> CONFIG: Theano found and will use cuDNN [True]
+2018-06-04 17:29:42.279798 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2018-06-04 17:29:42.279848 >> ~~~~~~~~~~~~~~~~~~~~Starting new Epoch! Epoch #0/35 ~~~~~~~~~~~~~~~~~~~~~~~~~
+2018-06-04 17:29:42.279870 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2018-06-04 17:29:42.279893 >> **************************************************************************************************
+2018-06-04 17:29:42.279913 >> ************* Starting new Subepoch: #0/20 *************
+2018-06-04 17:29:42.279929 >> **************************************************************************************************
+2018-06-04 17:29:42.279959 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Validation... :=:=:=:=:=:=:=:=:
+2018-06-04 17:29:42.280006 >> Out of [9] subjects given for [Validation], it was specified to extract Segments from maximum [50] per subepoch.
+2018-06-04 17:29:42.280034 >> Shuffled indices of subjects that were randomly chosen: [8, 4, 3, 7, 2, 6, 5, 0, 1]
+2018-06-04 17:29:42.281170 >> SAMPLING: Starting iterations to extract Segments from each subject for next Validation...
+2018-06-04 17:29:42.281194 >> SAMPLING: Going to load the images and extract segments from the subject #1/9
+2018-06-04 17:29:42.281219 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.MR_ADC.128041.nii.gz
+2018-06-04 17:29:45.982875 >> DEBUG: Index of this case in the original user-defined list of subjects: 8
+2018-06-04 17:29:45.982942 >> Images for subject loaded.
+2018-06-04 17:29:45.998031 >> From subject #0, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:29:46.191897 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:29:46.297883 >> SAMPLING: Going to load the images and extract segments from the subject #2/9
+2018-06-04 17:29:46.297941 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.MR_ADC.128038.nii.gz
+2018-06-04 17:29:50.059285 >> DEBUG: Index of this case in the original user-defined list of subjects: 4
+2018-06-04 17:29:50.059328 >> Images for subject loaded.
+2018-06-04 17:29:50.094963 >> From subject #1, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:29:50.397987 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:29:50.500883 >> SAMPLING: Going to load the images and extract segments from the subject #3/9
+2018-06-04 17:29:50.500932 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.MR_ADC.128046.nii.gz
+2018-06-04 17:29:54.031420 >> DEBUG: Index of this case in the original user-defined list of subjects: 3
+2018-06-04 17:29:54.031487 >> Images for subject loaded.
+2018-06-04 17:29:54.045226 >> From subject #2, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:29:54.225417 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:29:54.329488 >> SAMPLING: Going to load the images and extract segments from the subject #4/9
+2018-06-04 17:29:54.329573 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.MR_ADC.188957.nii.gz
+2018-06-04 17:29:56.855052 >> DEBUG: Index of this case in the original user-defined list of subjects: 7
+2018-06-04 17:29:56.855182 >> Images for subject loaded.
+2018-06-04 17:29:56.870801 >> From subject #3, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:29:57.059037 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:29:57.155565 >> SAMPLING: Going to load the images and extract segments from the subject #5/9
+2018-06-04 17:29:57.155662 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.MR_ADC.188904.nii.gz
+2018-06-04 17:29:59.856362 >> DEBUG: Index of this case in the original user-defined list of subjects: 2
+2018-06-04 17:29:59.856479 >> Images for subject loaded.
+2018-06-04 17:29:59.873499 >> From subject #4, sampling that many segments of Category [Uniform] : 334
+2018-06-04 17:30:00.065272 >> Finished sampling segments of Category [Uniform]. Number sampled: 334
+2018-06-04 17:30:00.168220 >> SAMPLING: Going to load the images and extract segments from the subject #6/9
+2018-06-04 17:30:00.168307 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.MR_ADC.128034.nii.gz
+2018-06-04 17:30:02.614204 >> DEBUG: Index of this case in the original user-defined list of subjects: 6
+2018-06-04 17:30:02.614325 >> Images for subject loaded.
+2018-06-04 17:30:02.628470 >> From subject #5, sampling that many segments of Category [Uniform] : 334
+2018-06-04 17:30:02.808385 >> Finished sampling segments of Category [Uniform]. Number sampled: 334
+2018-06-04 17:30:02.905680 >> SAMPLING: Going to load the images and extract segments from the subject #7/9
+2018-06-04 17:30:02.905777 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.MR_ADC.188928.nii.gz
+2018-06-04 17:30:05.312961 >> DEBUG: Index of this case in the original user-defined list of subjects: 5
+2018-06-04 17:30:05.313078 >> Images for subject loaded.
+2018-06-04 17:30:05.328139 >> From subject #6, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:30:05.512520 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:30:05.609505 >> SAMPLING: Going to load the images and extract segments from the subject #8/9
+2018-06-04 17:30:05.609600 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.MR_ADC.128031.nii.gz
+2018-06-04 17:30:08.130895 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2018-06-04 17:30:08.131011 >> Images for subject loaded.
+2018-06-04 17:30:08.145992 >> From subject #7, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:30:08.321866 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:30:08.418276 >> SAMPLING: Going to load the images and extract segments from the subject #9/9
+2018-06-04 17:30:08.418368 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.MR_ADC.128024.nii.gz
+2018-06-04 17:30:10.697129 >> DEBUG: Index of this case in the original user-defined list of subjects: 1
+2018-06-04 17:30:10.697248 >> Images for subject loaded.
+2018-06-04 17:30:10.712323 >> From subject #8, sampling that many segments of Category [Uniform] : 334
+2018-06-04 17:30:10.894222 >> Finished sampling segments of Category [Uniform]. Number sampled: 334
+2018-06-04 17:30:10.987553 >> TIMING: Extracting all the Segments for next Validation took time: 88.041731(s)
+2018-06-04 17:30:10.987640 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Validation. :=:=:=:=:=:=:=:=:
+2018-06-04 17:30:11.510353 >> Loading Validation data for subepoch #0 on shared variable...
+2018-06-04 17:30:11.510496 >> DEBUG: For Validation, loading to shared variable that many Segments: 3000
+2018-06-04 17:30:11.604494 >> TIMING: Loading sharedVariables for Validation in epoch|subepoch=0|0 took time: 0.108398(s)
+2018-06-04 17:30:11.604549 >> PARALLEL: Before Validation in subepoch #0, the parallel job for extracting Segments for the next Training is submitted.
+2018-06-04 17:30:11.617308 >> -V-V-V-V-V- Now Validating for this subepoch before commencing the training iterations... -V-V-V-V-V-
+2018-06-04 17:30:11.617421 >> Validated on 0/62 of the batches for this subepoch...
+2018-06-04 17:30:11.828020 >> Validated on 12/62 of the batches for this subepoch...
+2018-06-04 17:30:11.862698 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Training... :=:=:=:=:=:=:=:=:
+2018-06-04 17:30:11.862832 >> Out of [34] subjects given for [Training], it was specified to extract Segments from maximum [50] per subepoch.
+2018-06-04 17:30:11.862938 >> Shuffled indices of subjects that were randomly chosen: [13, 28, 17, 32, 3, 5, 20, 26, 16, 11, 7, 14, 30, 25, 22, 9, 6, 10, 31, 33, 15, 27, 24, 19, 1, 18, 21, 4, 8, 2, 29, 0, 23, 12]
+2018-06-04 17:30:11.863416 >> SAMPLING: Starting iterations to extract Segments from each subject for next Training...
+2018-06-04 17:30:11.863457 >> SAMPLING: Going to load the images and extract segments from the subject #1/34
+2018-06-04 17:30:11.863513 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/35/SMIR.Brain.XX.O.MR_ADC.188985.nii.gz
+2018-06-04 17:30:12.023537 >> Validated on 24/62 of the batches for this subepoch...
+2018-06-04 17:30:12.212343 >> Validated on 36/62 of the batches for this subepoch...
+2018-06-04 17:30:12.403893 >> Validated on 48/62 of the batches for this subepoch...
+2018-06-04 17:30:12.593885 >> Validated on 60/62 of the batches for this subepoch...
+2018-06-04 17:30:12.627581 >> +++++++++++++++++++++++ Reporting Accuracy over whole subepoch +++++++++++++++++++++++
+2018-06-04 17:30:12.627718 >> VALIDATION: Epoch #0, Subepoch #0, Overall:	 mean accuracy:   	0.9345	=> Correctly-Classified-Voxels/All-Predicted-Voxels = 2781/2976
+2018-06-04 17:30:12.627763 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-0 ++++++++ [Whole Foreground (Pos) Vs Background (Neg)] ++++++++++++++++
+2018-06-04 17:30:12.627855 >> VALIDATION: Epoch #0, Subepoch #0, Class-0:	 mean accuracy:   	0.9345	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 2781/2976
+2018-06-04 17:30:12.627942 >> VALIDATION: Epoch #0, Subepoch #0, Class-0:	 mean sensitivity:	0.0222	=> TruePos/RealPos = 1/45
+2018-06-04 17:30:12.628028 >> VALIDATION: Epoch #0, Subepoch #0, Class-0:	 mean specificity:	0.9485	=> TrueNeg/RealNeg = 2780/2931
+2018-06-04 17:30:12.628099 >> VALIDATION: Epoch #0, Subepoch #0, Class-0:	 mean Dice:       	0.0102
+2018-06-04 17:30:12.628138 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-1 ++++++++ [This Class (Pos) Vs All Others (Neg)] ++++++++++++++++
+2018-06-04 17:30:12.628230 >> VALIDATION: Epoch #0, Subepoch #0, Class-1:	 mean accuracy:   	0.9345	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 2781/2976
+2018-06-04 17:30:12.628315 >> VALIDATION: Epoch #0, Subepoch #0, Class-1:	 mean sensitivity:	0.0222	=> TruePos/RealPos = 1/45
+2018-06-04 17:30:12.628399 >> VALIDATION: Epoch #0, Subepoch #0, Class-1:	 mean specificity:	0.9485	=> TrueNeg/RealNeg = 2780/2931
+2018-06-04 17:30:12.628469 >> VALIDATION: Epoch #0, Subepoch #0, Class-1:	 mean Dice:       	0.0102
+2018-06-04 17:30:12.628665 >> TIMING: Validating on the batches of this subepoch #0 took time: 0.987983(s)
+2018-06-04 17:30:12.628762 >> UPDATE: In this last epoch (cnnTrained) #0 the CNN achieved a new highest mean validation accuracy of: 0.9344758064516129
+2018-06-04 17:30:14.640042 >> DEBUG: Index of this case in the original user-defined list of subjects: 13
+2018-06-04 17:30:14.640147 >> Images for subject loaded.
+2018-06-04 17:30:14.684105 >> From subject #0, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:30:14.879644 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:30:14.899776 >> From subject #0, sampling that many segments of Category [Background] : 14
+2018-06-04 17:30:15.077140 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:30:15.081336 >> SAMPLING: Going to load the images and extract segments from the subject #2/34
+2018-06-04 17:30:15.081405 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/2/VSD.Brain.XX.O.MR_ADC.128022.nii.gz
+2018-06-04 17:30:17.786982 >> DEBUG: Index of this case in the original user-defined list of subjects: 28
+2018-06-04 17:30:17.787031 >> Images for subject loaded.
+2018-06-04 17:30:17.815030 >> From subject #1, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:30:18.002506 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:30:18.019851 >> From subject #1, sampling that many segments of Category [Background] : 15
+2018-06-04 17:30:18.196187 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:30:18.200632 >> SAMPLING: Going to load the images and extract segments from the subject #3/34
+2018-06-04 17:30:18.200670 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/38/VSD.Brain.XX.O.MR_ADC.128045.nii.gz
+2018-06-04 17:30:20.661856 >> DEBUG: Index of this case in the original user-defined list of subjects: 17
+2018-06-04 17:30:20.661959 >> Images for subject loaded.
+2018-06-04 17:30:20.702163 >> From subject #2, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:30:20.864269 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:30:20.881551 >> From subject #2, sampling that many segments of Category [Background] : 14
+2018-06-04 17:30:21.040460 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:30:21.044689 >> SAMPLING: Going to load the images and extract segments from the subject #4/34
+2018-06-04 17:30:21.044751 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/0/VSD.Brain.XX.O.MR_ADC.128020.nii.gz
+2018-06-04 17:30:23.154282 >> DEBUG: Index of this case in the original user-defined list of subjects: 32
+2018-06-04 17:30:23.154332 >> Images for subject loaded.
+2018-06-04 17:30:23.182458 >> From subject #3, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:30:23.363555 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:30:23.380600 >> From subject #3, sampling that many segments of Category [Background] : 15
+2018-06-04 17:30:23.550704 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:30:23.555233 >> SAMPLING: Going to load the images and extract segments from the subject #5/34
+2018-06-04 17:30:23.555299 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/5/VSD.Brain.XX.O.MR_ADC.128025.nii.gz
+2018-06-04 17:30:25.721949 >> DEBUG: Index of this case in the original user-defined list of subjects: 3
+2018-06-04 17:30:25.723391 >> Images for subject loaded.
+2018-06-04 17:30:25.763625 >> From subject #4, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:30:25.926784 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:30:25.944206 >> From subject #4, sampling that many segments of Category [Background] : 16
+2018-06-04 17:30:26.104087 >> Finished sampling segments of Category [Background]. Number sampled: 16
+2018-06-04 17:30:26.108922 >> SAMPLING: Going to load the images and extract segments from the subject #6/34
+2018-06-04 17:30:26.108992 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/12/VSD.Brain.XX.O.MR_ADC.128032.nii.gz
+2018-06-04 17:30:28.208000 >> DEBUG: Index of this case in the original user-defined list of subjects: 5
+2018-06-04 17:30:28.208108 >> Images for subject loaded.
+2018-06-04 17:30:28.236073 >> From subject #5, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:30:28.418676 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:30:28.436422 >> From subject #5, sampling that many segments of Category [Background] : 15
+2018-06-04 17:30:28.608341 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:30:28.612900 >> SAMPLING: Going to load the images and extract segments from the subject #7/34
+2018-06-04 17:30:28.612970 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/8/VSD.Brain.XX.O.MR_ADC.128028.nii.gz
+2018-06-04 17:30:30.895788 >> DEBUG: Index of this case in the original user-defined list of subjects: 20
+2018-06-04 17:30:30.895835 >> Images for subject loaded.
+2018-06-04 17:30:30.935942 >> From subject #6, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:30:31.100996 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:30:31.118070 >> From subject #6, sampling that many segments of Category [Background] : 14
+2018-06-04 17:30:31.279190 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:30:31.283372 >> SAMPLING: Going to load the images and extract segments from the subject #8/34
+2018-06-04 17:30:31.283413 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/13/VSD.Brain.XX.O.MR_ADC.128033.nii.gz
+2018-06-04 17:30:33.419715 >> DEBUG: Index of this case in the original user-defined list of subjects: 26
+2018-06-04 17:30:33.419806 >> Images for subject loaded.
+2018-06-04 17:30:33.447978 >> From subject #7, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:30:33.637235 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:30:33.693116 >> From subject #7, sampling that many segments of Category [Background] : 15
+2018-06-04 17:30:33.870840 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:30:33.875291 >> SAMPLING: Going to load the images and extract segments from the subject #9/34
+2018-06-04 17:30:33.875333 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/25/SMIR.Brain.XX.O.MR_ADC.188872.nii.gz
+2018-06-04 17:30:36.413608 >> DEBUG: Index of this case in the original user-defined list of subjects: 16
+2018-06-04 17:30:36.413704 >> Images for subject loaded.
+2018-06-04 17:30:36.454219 >> From subject #8, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:30:36.630317 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:30:36.647890 >> From subject #8, sampling that many segments of Category [Background] : 15
+2018-06-04 17:30:36.808569 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:30:36.813004 >> SAMPLING: Going to load the images and extract segments from the subject #10/34
+2018-06-04 17:30:36.813049 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/7/VSD.Brain.XX.O.MR_ADC.128027.nii.gz
+2018-06-04 17:30:38.639903 >> DEBUG: Index of this case in the original user-defined list of subjects: 11
+2018-06-04 17:30:38.639949 >> Images for subject loaded.
+2018-06-04 17:30:38.668126 >> From subject #9, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:30:38.850315 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:30:38.867707 >> From subject #9, sampling that many segments of Category [Background] : 14
+2018-06-04 17:30:39.044235 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:30:39.048392 >> SAMPLING: Going to load the images and extract segments from the subject #11/34
+2018-06-04 17:30:39.048434 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/20/VSD.Brain.XX.O.MR_ADC.128040.nii.gz
+2018-06-04 17:30:41.435358 >> DEBUG: Index of this case in the original user-defined list of subjects: 7
+2018-06-04 17:30:41.435465 >> Images for subject loaded.
+2018-06-04 17:30:41.475575 >> From subject #10, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:30:41.637015 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:30:41.654145 >> From subject #10, sampling that many segments of Category [Background] : 14
+2018-06-04 17:30:41.812768 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:30:41.816991 >> SAMPLING: Going to load the images and extract segments from the subject #12/34
+2018-06-04 17:30:41.817054 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/9/VSD.Brain.XX.O.MR_ADC.128029.nii.gz
+2018-06-04 17:30:43.873731 >> DEBUG: Index of this case in the original user-defined list of subjects: 14
+2018-06-04 17:30:43.873783 >> Images for subject loaded.
+2018-06-04 17:30:43.901671 >> From subject #11, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:30:44.082634 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:30:44.099819 >> From subject #11, sampling that many segments of Category [Background] : 15
+2018-06-04 17:30:44.270450 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:30:44.274890 >> SAMPLING: Going to load the images and extract segments from the subject #13/34
+2018-06-04 17:30:44.274933 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/17/VSD.Brain.XX.O.MR_ADC.128037.nii.gz
+2018-06-04 17:30:46.788913 >> DEBUG: Index of this case in the original user-defined list of subjects: 30
+2018-06-04 17:30:46.789016 >> Images for subject loaded.
+2018-06-04 17:30:46.838095 >> From subject #12, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:30:47.005849 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:30:47.023012 >> From subject #12, sampling that many segments of Category [Background] : 14
+2018-06-04 17:30:47.212826 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:30:47.216958 >> SAMPLING: Going to load the images and extract segments from the subject #14/34
+2018-06-04 17:30:47.217002 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/16/VSD.Brain.XX.O.MR_ADC.128036.nii.gz
+2018-06-04 17:30:49.362517 >> DEBUG: Index of this case in the original user-defined list of subjects: 25
+2018-06-04 17:30:49.364054 >> Images for subject loaded.
+2018-06-04 17:30:49.392232 >> From subject #13, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:30:49.575295 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:30:49.592715 >> From subject #13, sampling that many segments of Category [Background] : 16
+2018-06-04 17:30:49.763135 >> Finished sampling segments of Category [Background]. Number sampled: 16
+2018-06-04 17:30:49.767852 >> SAMPLING: Going to load the images and extract segments from the subject #15/34
+2018-06-04 17:30:49.767893 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/6/VSD.Brain.XX.O.MR_ADC.128026.nii.gz
+2018-06-04 17:30:52.215540 >> DEBUG: Index of this case in the original user-defined list of subjects: 22
+2018-06-04 17:30:52.215587 >> Images for subject loaded.
+2018-06-04 17:30:52.255961 >> From subject #14, sampling that many segments of Category [Foreground] : 16
+2018-06-04 17:30:52.418057 >> Finished sampling segments of Category [Foreground]. Number sampled: 16
+2018-06-04 17:30:52.435672 >> From subject #14, sampling that many segments of Category [Background] : 14
+2018-06-04 17:30:52.594392 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:30:52.598583 >> SAMPLING: Going to load the images and extract segments from the subject #16/34
+2018-06-04 17:30:52.598626 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/24/SMIR.Brain.XX.O.MR_ADC.188864.nii.gz
+2018-06-04 17:30:55.152795 >> DEBUG: Index of this case in the original user-defined list of subjects: 9
+2018-06-04 17:30:55.152895 >> Images for subject loaded.
+2018-06-04 17:30:55.181051 >> From subject #15, sampling that many segments of Category [Foreground] : 16
+2018-06-04 17:30:55.362795 >> Finished sampling segments of Category [Foreground]. Number sampled: 16
+2018-06-04 17:30:55.380653 >> From subject #15, sampling that many segments of Category [Background] : 16
+2018-06-04 17:30:55.552433 >> Finished sampling segments of Category [Background]. Number sampled: 16
+2018-06-04 17:30:55.557216 >> SAMPLING: Going to load the images and extract segments from the subject #17/34
+2018-06-04 17:30:55.557290 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/32/SMIR.Brain.XX.O.MR_ADC.188920.nii.gz
+2018-06-04 17:30:58.015381 >> DEBUG: Index of this case in the original user-defined list of subjects: 6
+2018-06-04 17:30:58.015481 >> Images for subject loaded.
+2018-06-04 17:30:58.059003 >> From subject #16, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:30:58.234679 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:30:58.254753 >> From subject #16, sampling that many segments of Category [Background] : 15
+2018-06-04 17:30:58.433841 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:30:58.438534 >> SAMPLING: Going to load the images and extract segments from the subject #18/34
+2018-06-04 17:30:58.438608 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/29/SMIR.Brain.XX.O.MR_ADC.188896.nii.gz
+2018-06-04 17:31:01.498743 >> DEBUG: Index of this case in the original user-defined list of subjects: 10
+2018-06-04 17:31:01.498837 >> Images for subject loaded.
+2018-06-04 17:31:01.527297 >> From subject #17, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:31:01.719510 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:31:01.737395 >> From subject #17, sampling that many segments of Category [Background] : 16
+2018-06-04 17:31:01.944530 >> Finished sampling segments of Category [Background]. Number sampled: 16
+2018-06-04 17:31:01.949280 >> SAMPLING: Going to load the images and extract segments from the subject #19/34
+2018-06-04 17:31:01.949332 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/37/SMIR.Brain.XX.O.MR_ADC.189001.nii.gz
+2018-06-04 17:31:04.740240 >> DEBUG: Index of this case in the original user-defined list of subjects: 31
+2018-06-04 17:31:04.740485 >> Images for subject loaded.
+2018-06-04 17:31:04.787862 >> From subject #18, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:31:04.974654 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:31:04.991748 >> From subject #18, sampling that many segments of Category [Background] : 15
+2018-06-04 17:31:05.157723 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:31:05.162168 >> SAMPLING: Going to load the images and extract segments from the subject #20/34
+2018-06-04 17:31:05.162212 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/28/VSD.Brain.XX.O.MR_ADC.128044.nii.gz
+2018-06-04 17:31:07.923697 >> DEBUG: Index of this case in the original user-defined list of subjects: 33
+2018-06-04 17:31:07.923760 >> Images for subject loaded.
+2018-06-04 17:31:07.955091 >> From subject #19, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:31:08.177313 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:31:08.212790 >> From subject #19, sampling that many segments of Category [Background] : 14
+2018-06-04 17:31:08.460770 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:31:08.465091 >> SAMPLING: Going to load the images and extract segments from the subject #21/34
+2018-06-04 17:31:08.465142 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/3/VSD.Brain.XX.O.MR_ADC.128023.nii.gz
+2018-06-04 17:31:11.521253 >> DEBUG: Index of this case in the original user-defined list of subjects: 15
+2018-06-04 17:31:11.521355 >> Images for subject loaded.
+2018-06-04 17:31:11.562066 >> From subject #20, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:31:11.763831 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:31:11.781214 >> From subject #20, sampling that many segments of Category [Background] : 14
+2018-06-04 17:31:11.943352 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:31:11.947518 >> SAMPLING: Going to load the images and extract segments from the subject #22/34
+2018-06-04 17:31:11.947563 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_ADC.128043.nii.gz
+2018-06-04 17:31:14.495542 >> DEBUG: Index of this case in the original user-defined list of subjects: 27
+2018-06-04 17:31:14.497237 >> Images for subject loaded.
+2018-06-04 17:31:14.525632 >> From subject #21, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:31:14.715222 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:31:14.732710 >> From subject #21, sampling that many segments of Category [Background] : 15
+2018-06-04 17:31:14.910509 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:31:14.915018 >> SAMPLING: Going to load the images and extract segments from the subject #23/34
+2018-06-04 17:31:14.915085 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/36/SMIR.Brain.XX.O.MR_ADC.188993.nii.gz
+2018-06-04 17:31:17.723119 >> DEBUG: Index of this case in the original user-defined list of subjects: 24
+2018-06-04 17:31:17.726223 >> Images for subject loaded.
+2018-06-04 17:31:17.776179 >> From subject #22, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:31:18.306581 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:31:18.385358 >> From subject #22, sampling that many segments of Category [Background] : 16
+2018-06-04 17:31:18.600451 >> Finished sampling segments of Category [Background]. Number sampled: 16
+2018-06-04 17:31:18.612765 >> SAMPLING: Going to load the images and extract segments from the subject #24/34
+2018-06-04 17:31:18.612822 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/40/VSD.Brain.XX.O.MR_ADC.128047.nii.gz
+2018-06-04 17:31:21.906653 >> DEBUG: Index of this case in the original user-defined list of subjects: 19
+2018-06-04 17:31:21.911586 >> Images for subject loaded.
+2018-06-04 17:31:21.951013 >> From subject #23, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:31:22.154899 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:31:22.173824 >> From subject #23, sampling that many segments of Category [Background] : 14
+2018-06-04 17:31:22.352764 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:31:22.356962 >> SAMPLING: Going to load the images and extract segments from the subject #25/34
+2018-06-04 17:31:22.357028 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.MR_ADC.128021.nii.gz
+2018-06-04 17:31:25.772297 >> DEBUG: Index of this case in the original user-defined list of subjects: 1
+2018-06-04 17:31:25.772431 >> Images for subject loaded.
+2018-06-04 17:31:25.899946 >> From subject #24, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:31:26.135297 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:31:26.188155 >> From subject #24, sampling that many segments of Category [Background] : 14
+2018-06-04 17:31:26.491792 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:31:26.496549 >> SAMPLING: Going to load the images and extract segments from the subject #26/34
+2018-06-04 17:31:26.496595 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/42/VSD.Brain.XX.O.MR_ADC.128049.nii.gz
+2018-06-04 17:31:29.555667 >> DEBUG: Index of this case in the original user-defined list of subjects: 18
+2018-06-04 17:31:29.562473 >> Images for subject loaded.
+2018-06-04 17:31:29.606223 >> From subject #25, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:31:29.834916 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:31:29.856338 >> From subject #25, sampling that many segments of Category [Background] : 14
+2018-06-04 17:31:30.039844 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:31:30.044074 >> SAMPLING: Going to load the images and extract segments from the subject #27/34
+2018-06-04 17:31:30.044141 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/15/VSD.Brain.XX.O.MR_ADC.128035.nii.gz
+2018-06-04 17:31:33.240998 >> DEBUG: Index of this case in the original user-defined list of subjects: 21
+2018-06-04 17:31:33.244526 >> Images for subject loaded.
+2018-06-04 17:31:33.290976 >> From subject #26, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:31:33.808468 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:31:33.869391 >> From subject #26, sampling that many segments of Category [Background] : 14
+2018-06-04 17:31:34.089217 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:31:34.100415 >> SAMPLING: Going to load the images and extract segments from the subject #28/34
+2018-06-04 17:31:34.100520 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/41/VSD.Brain.XX.O.MR_ADC.128048.nii.gz
+2018-06-04 17:34:55.112617 >> =============================== logger created =======================================
+2018-06-04 17:34:55.112662 >> CONFIG: Given THEANO_FLAGS: ,on_unused_input=warn,mode=FAST_RUN,device=cuda,floatX=float32,force_device=True,dnn.enabled=auto,openmp=True
+2018-06-04 17:34:55.112680 >> CONFIG: The configuration file for the session was loaded from: /home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/configFiles/train/trainConfig.cfg
+2018-06-04 17:34:55.112694 >> ====== CNN-Instance already loaded (from Create-New-Model procedure) =======
+2018-06-04 17:34:55.112716 >> WARN: Any paths to cnn-models specified in the train-config file will be ommitted! Working with the pre-loaded model!
+2018-06-04 17:34:55.114404 >> 
+===========       NEW TRAINING SESSION         ===============
+2018-06-04 17:34:55.114429 >> =============================================================
+2018-06-04 17:34:55.114445 >> =============== PARAMETERS FOR THIS SESSION =================
+2018-06-04 17:34:55.114459 >> =============================================================
+2018-06-04 17:34:55.114473 >> Session's name = trainSessionBaseline
+2018-06-04 17:34:55.114487 >> CNN model's name = baseline
+2018-06-04 17:34:55.114500 >> CNN model was loaded from = /home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/cnnModels/baseline.initial.2018-06-04.17.34.54.469634.save
+2018-06-04 17:34:55.114514 >> ~~Output~~
+2018-06-04 17:34:55.114530 >> Main output folder = /home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output
+2018-06-04 17:34:55.114544 >> Path and filename to save trained models = /home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/cnnModels//trainSessionBaseline//baseline.trainSessionBaseline
+2018-06-04 17:34:55.114559 >> ~~~~~~~~~~~~~~~~~~Generic Information~~~~~~~~~~~~~~~~
+2018-06-04 17:34:55.114572 >> Number of Classes (incl. background) (from cnnModel) = 2
+2018-06-04 17:34:55.114587 >> Number of Channels (Normal Pathway) (from cnnModel) = 2
+2018-06-04 17:34:55.114601 >> Number of Cases for Training = 34
+2018-06-04 17:34:55.114622 >> Number of Cases for Validation = 9
+2018-06-04 17:34:55.114635 >> ~~~~~~~~~~~~~~~~~~Training parameters~~~~~~~~~~~~~~~~
+2018-06-04 17:34:55.114699 >> Filepaths to Channels of the Training Cases = [['/home/uziel/DISS/data_processed/ISLES2017/training/26/SMIR.Brain.XX.O.MR_ADC.188880.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/26/SMIR.Brain.XX.O.MR_MTT.188881.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.MR_ADC.128021.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.MR_MTT.127022.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_ADC.128030.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_MTT.127094.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/5/VSD.Brain.XX.O.MR_ADC.128025.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/5/VSD.Brain.XX.O.MR_MTT.127054.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/41/VSD.Brain.XX.O.MR_ADC.128048.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/41/VSD.Brain.XX.O.MR_MTT.127238.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/12/VSD.Brain.XX.O.MR_ADC.128032.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/12/VSD.Brain.XX.O.MR_MTT.127110.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/32/SMIR.Brain.XX.O.MR_ADC.188920.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/32/SMIR.Brain.XX.O.MR_MTT.188921.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/20/VSD.Brain.XX.O.MR_ADC.128040.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/20/VSD.Brain.XX.O.MR_MTT.127174.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/19/VSD.Brain.XX.O.MR_ADC.128039.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/19/VSD.Brain.XX.O.MR_MTT.127166.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/24/SMIR.Brain.XX.O.MR_ADC.188864.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/24/SMIR.Brain.XX.O.MR_MTT.188865.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/29/SMIR.Brain.XX.O.MR_ADC.188896.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/29/SMIR.Brain.XX.O.MR_MTT.188897.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/7/VSD.Brain.XX.O.MR_ADC.128027.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/7/VSD.Brain.XX.O.MR_MTT.127070.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/27/SMIR.Brain.XX.O.MR_ADC.188888.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/27/SMIR.Brain.XX.O.MR_MTT.188889.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/35/SMIR.Brain.XX.O.MR_ADC.188985.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/35/SMIR.Brain.XX.O.MR_MTT.188986.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/9/VSD.Brain.XX.O.MR_ADC.128029.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/9/VSD.Brain.XX.O.MR_MTT.127086.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/3/VSD.Brain.XX.O.MR_ADC.128023.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/3/VSD.Brain.XX.O.MR_MTT.127038.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/25/SMIR.Brain.XX.O.MR_ADC.188872.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/25/SMIR.Brain.XX.O.MR_MTT.188873.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/38/VSD.Brain.XX.O.MR_ADC.128045.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/38/VSD.Brain.XX.O.MR_MTT.127214.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/42/VSD.Brain.XX.O.MR_ADC.128049.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/42/VSD.Brain.XX.O.MR_MTT.127246.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/40/VSD.Brain.XX.O.MR_ADC.128047.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/40/VSD.Brain.XX.O.MR_MTT.127230.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/8/VSD.Brain.XX.O.MR_ADC.128028.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/8/VSD.Brain.XX.O.MR_MTT.127078.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/15/VSD.Brain.XX.O.MR_ADC.128035.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/15/VSD.Brain.XX.O.MR_MTT.127134.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/6/VSD.Brain.XX.O.MR_ADC.128026.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/6/VSD.Brain.XX.O.MR_MTT.127062.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/31/SMIR.Brain.XX.O.MR_ADC.188912.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/31/SMIR.Brain.XX.O.MR_MTT.188913.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/36/SMIR.Brain.XX.O.MR_ADC.188993.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/36/SMIR.Brain.XX.O.MR_MTT.188994.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/16/VSD.Brain.XX.O.MR_ADC.128036.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/16/VSD.Brain.XX.O.MR_MTT.127142.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/13/VSD.Brain.XX.O.MR_ADC.128033.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/13/VSD.Brain.XX.O.MR_MTT.127118.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_ADC.128043.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_MTT.127198.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/2/VSD.Brain.XX.O.MR_ADC.128022.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/2/VSD.Brain.XX.O.MR_MTT.127030.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/22/VSD.Brain.XX.O.MR_ADC.128042.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/22/VSD.Brain.XX.O.MR_MTT.127190.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/17/VSD.Brain.XX.O.MR_ADC.128037.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/17/VSD.Brain.XX.O.MR_MTT.127150.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/37/SMIR.Brain.XX.O.MR_ADC.189001.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/37/SMIR.Brain.XX.O.MR_MTT.189002.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/0/VSD.Brain.XX.O.MR_ADC.128020.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/0/VSD.Brain.XX.O.MR_MTT.127014.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/28/VSD.Brain.XX.O.MR_ADC.128044.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/28/VSD.Brain.XX.O.MR_MTT.127206.nii.gz']]
+2018-06-04 17:34:55.114742 >> Filepaths to Ground-Truth labels of the Training Cases = ['/home/uziel/DISS/data_processed/ISLES2017/training/26/SMIR.Brain.XX.O.OT.188882.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.OT.128051.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.OT.128060.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/5/VSD.Brain.XX.O.OT.128055.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/41/VSD.Brain.XX.O.OT.128078.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/12/VSD.Brain.XX.O.OT.128062.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/32/SMIR.Brain.XX.O.OT.188922.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/20/VSD.Brain.XX.O.OT.128070.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/19/VSD.Brain.XX.O.OT.128069.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/24/SMIR.Brain.XX.O.OT.188866.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/29/SMIR.Brain.XX.O.OT.188898.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/7/VSD.Brain.XX.O.OT.128057.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/27/SMIR.Brain.XX.O.OT.188890.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/35/SMIR.Brain.XX.O.OT.188987.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/9/VSD.Brain.XX.O.OT.128059.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/3/VSD.Brain.XX.O.OT.128053.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/25/SMIR.Brain.XX.O.OT.188874.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/38/VSD.Brain.XX.O.OT.128075.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/42/VSD.Brain.XX.O.OT.128079.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/40/VSD.Brain.XX.O.OT.128077.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/8/VSD.Brain.XX.O.OT.128058.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/15/VSD.Brain.XX.O.OT.128065.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/6/VSD.Brain.XX.O.OT.128056.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/31/SMIR.Brain.XX.O.OT.188914.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/36/SMIR.Brain.XX.O.OT.188995.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/16/VSD.Brain.XX.O.OT.128066.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/13/VSD.Brain.XX.O.OT.128063.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.OT.128073.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/2/VSD.Brain.XX.O.OT.128052.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/22/VSD.Brain.XX.O.OT.128072.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/17/VSD.Brain.XX.O.OT.128067.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/37/SMIR.Brain.XX.O.OT.189003.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/0/VSD.Brain.XX.O.OT.128050.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/28/VSD.Brain.XX.O.OT.128074.nii.gz']
+2018-06-04 17:34:55.114761 >> ~~Sampling~~
+2018-06-04 17:34:55.114776 >> Region-Of-Interest Masks provided = True
+2018-06-04 17:34:55.114806 >> Filepaths to ROI Masks of the Training Cases = ['/home/uziel/DISS/data_processed/ISLES2017/training/26/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/1/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/10/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/5/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/41/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/12/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/32/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/20/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/19/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/24/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/29/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/7/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/27/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/35/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/9/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/3/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/25/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/38/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/42/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/40/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/8/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/15/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/6/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/31/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/36/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/16/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/13/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/23/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/2/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/22/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/17/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/37/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/0/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/28/mask.nii.gz']
+2018-06-04 17:34:55.114823 >> ~~Advanced Sampling~~
+2018-06-04 17:34:55.114839 >> Using default sampling = True. NOTE: Adv.Sampl.Params are auto-set to perform default sampling if True.
+2018-06-04 17:34:55.114857 >> Type of Sampling = Fore/Background (0)
+2018-06-04 17:34:55.114873 >> Sampling Categories = ['Foreground', 'Background']
+2018-06-04 17:34:55.115059 >> Percent of Samples to extract per Sampling Category = [0.5 0.5]
+2018-06-04 17:34:55.115081 >> Provided Weight-Maps, pointing where to focus sampling for each category (if False, samples will be extracted based on GT and ROI) = False
+2018-06-04 17:34:55.115097 >> Paths to weight-maps for sampling of each category = None
+2018-06-04 17:34:55.115111 >> ~~Training Cycle~~
+2018-06-04 17:34:55.115125 >> Number of Epochs = 35
+2018-06-04 17:34:55.115139 >> Number of Subepochs per epoch = 20
+2018-06-04 17:34:55.115153 >> Number of cases to load per Subepoch (for extracting the samples for this subepoch) = 50
+2018-06-04 17:34:55.115169 >> Number of Segments loaded on GPU per subepoch for Training = 1000. NOTE: This number of segments divided by the batch-size defines the number of optimization-iterations that will be performed every subepoch!
+2018-06-04 17:34:55.115182 >> ~~Learning Rate Schedule~~
+2018-06-04 17:34:55.115197 >> Schedule Type: Stable (0), Auto (1), Predefined (2), Exponential (3) = 2
+2018-06-04 17:34:55.115212 >> [Stable/Auto/Predefined] When decreasing Learning Rate, divide LR by = 2.0
+2018-06-04 17:34:55.115227 >> [Stable/Auto] Wait that many epochs before lowering LR = 3
+2018-06-04 17:34:55.115243 >> [Auto] Minimum increase in validation accuracy (0. to 1.) that resets the waiting counter = 0.0005
+2018-06-04 17:34:55.115260 >> [Predefined] Predefined Schedule of Epochs when the LR will be lowered = [12, 16, 19, 22, 25, 28, 31, 34, 37, 40, 43, 46]
+2018-06-04 17:34:55.115280 >> [Exponential] [Number of initial epochs to not change LR and Mom, final value of LR, final value of Momentum] = [12, 0.0078125, 0.9]
+2018-06-04 17:34:55.115294 >> ~~Data Augmentation During Training~~
+2018-06-04 17:34:55.115309 >> Reflect images per axis = [True, False, False]
+2018-06-04 17:34:55.115324 >> Perform intensity-augmentation [I'= (I+shift)*mult] = False
+2018-06-04 17:34:55.115338 >> [Int. Augm.] Sample Shift from N(mu,std) = []
+2018-06-04 17:34:55.115353 >> [Int. Augm.] Sample Multi from N(mu,std) = []
+2018-06-04 17:34:55.115370 >> [Int. Augm.] (DEBUGGING:) full parameters [no(0)/images(1)/segms(2), nonNorm(0)/norm(1), shift, mult] = [0, 'plcholder', [], []]
+2018-06-04 17:34:55.115384 >> ~~~~~~~~~~~~~~~~~~Validation parameters~~~~~~~~~~~~~~~~
+2018-06-04 17:34:55.115398 >> Perform Validation on Samples throughout training? = True
+2018-06-04 17:34:55.115412 >> Perform Full Inference on validation cases every few epochs? = True
+2018-06-04 17:34:55.115443 >> Filepaths to Channels of the Validation Cases (Req for either of the above) = [['/home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.MR_ADC.128031.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.MR_MTT.127102.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.MR_ADC.128024.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.MR_MTT.127046.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.MR_ADC.188904.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.MR_MTT.188905.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.MR_ADC.128046.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.MR_MTT.127222.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.MR_ADC.128038.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.MR_MTT.127158.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.MR_ADC.188928.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.MR_MTT.188929.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.MR_ADC.128034.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.MR_MTT.127126.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.MR_ADC.188957.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.MR_MTT.188971.nii.gz'], ['/home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.MR_ADC.128041.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.MR_MTT.127182.nii.gz']]
+2018-06-04 17:34:55.115464 >> Provided Ground-Truth for Validation = True. NOTE: Required for Val on samples. Not Req for Full-Inference, but DSC will be reported if provided.
+2018-06-04 17:34:55.115486 >> Filepaths to Ground-Truth labels of the Validation Cases = ['/home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.OT.128061.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.OT.128054.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.OT.188906.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.OT.128076.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.OT.128068.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.OT.188930.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.OT.128064.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.OT.188972.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.OT.128071.nii.gz']
+2018-06-04 17:34:55.115503 >> Provided ROI masks for Validation = True. NOTE: Validation-sampling and Full-Inference will be limited within this mask if provided. If not provided, Negative Validation samples will be extracted from whole volume, except if advanced-sampling is enabled, and the user provided separate weight-maps for sampling.
+2018-06-04 17:34:55.115523 >> Filepaths to ROI masks for Validation Cases = ['/home/uziel/DISS/data_processed/ISLES2017/training/11/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/4/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/30/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/39/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/18/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/33/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/14/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/34/mask.nii.gz', '/home/uziel/DISS/data_processed/ISLES2017/training/21/mask.nii.gz']
+2018-06-04 17:34:55.115537 >> ~~~~~~~Validation on Samples throughout Training~~~~~~~
+2018-06-04 17:34:55.115551 >> Number of Segments loaded on GPU per subepoch for Validation = 3000
+2018-06-04 17:34:55.115565 >> ~~Advanced Sampling~~
+2018-06-04 17:34:55.115579 >> Using default uniform sampling for validation = True. NOTE: Adv.Sampl.Params are auto-set to perform uniform-sampling if True.
+2018-06-04 17:34:55.115594 >> Type of Sampling = Uniform (1)
+2018-06-04 17:34:55.115609 >> Sampling Categories = ['Uniform']
+2018-06-04 17:34:55.115625 >> Percent of Samples to extract per Sampling Category = [1.0]
+2018-06-04 17:34:55.115639 >> Provided Weight-Maps, pointing where to focus sampling for each category (if False, samples will be extracted based on GT and ROI) = False
+2018-06-04 17:34:55.115654 >> Paths to weight-maps for sampling of each category = None
+2018-06-04 17:34:55.115667 >> ~~~~~Validation with Full Inference on Validation Cases~~~~~
+2018-06-04 17:34:55.115681 >> Perform Full-Inference on Val. cases every that many epochs = 5
+2018-06-04 17:34:55.115695 >> ~~Predictions (segmentations and prob maps on val. cases)~~
+2018-06-04 17:34:55.115708 >> Save Segmentations = True
+2018-06-04 17:34:55.115725 >> Save Probability Maps for each class = [True, True, True, True, True]
+2018-06-04 17:34:55.115753 >> Filepaths to save results per case = ['/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_26_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_1_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_10_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_5_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_41_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_12_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_32_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_20_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/predictions//pred_ISLES2017_19_nii.gz']
+2018-06-04 17:34:55.115771 >> ~~Feature Maps~~
+2018-06-04 17:34:55.115785 >> Save Feature Maps = False
+2018-06-04 17:34:55.115800 >> Save FMs in a 4D-image = False
+2018-06-04 17:34:55.115816 >> Min/Max Indices of FMs to visualise per pathway-type and per layer = [[], [], []]
+2018-06-04 17:34:55.115845 >> Filepaths to save FMs per case = ['/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_26_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_1_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_10_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_5_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_41_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_12_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_32_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_20_nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/experiments/baseline/output/predictions/trainSessionBaseline/features//pred_ISLES2017_19_nii.gz']
+2018-06-04 17:34:55.115860 >> ~~Optimization~~
+2018-06-04 17:34:55.115874 >> Initial Learning rate = 0.001
+2018-06-04 17:34:55.115889 >> Optimizer to use: SGD(0), Adam(1), RmsProp(2) = 2
+2018-06-04 17:34:55.115903 >> Parameters for Adam: b1= placeholder, b2=placeholder, e= placeholder
+2018-06-04 17:34:55.115918 >> Parameters for RmsProp: rho= 0.9, e= 0.0001
+2018-06-04 17:34:55.115932 >> Momentum Type: Classic (0) or Nesterov (1) = 1
+2018-06-04 17:34:55.115946 >> Momentum Non-Normalized (0) or Normalized (1) = 1
+2018-06-04 17:34:55.115960 >> Momentum Value = 0.6
+2018-06-04 17:34:55.115974 >> ~~L1/L2 Regularization~~
+2018-06-04 17:34:55.115989 >> L1 Regularization term = 1e-06
+2018-06-04 17:34:55.116003 >> L2 Regularization term = 0.0001
+2018-06-04 17:34:55.116017 >> ~~Freeze Weights of Certain Layers~~
+2018-06-04 17:34:55.116030 >> Indices of layers from each type of pathway that will be kept fixed (first layer is 0):
+2018-06-04 17:34:55.116044 >> Normal pathway's layers to freeze = []
+2018-06-04 17:34:55.116059 >> Subsampled pathway's layers to freeze = []
+2018-06-04 17:34:55.116073 >> FC pathway's layers to freeze = []
+2018-06-04 17:34:55.116087 >> ~~~~~~~~~~~~~~~~~~Other Generic Parameters~~~~~~~~~~~~~~~~
+2018-06-04 17:34:55.116100 >> ~~Pre Processing~~
+2018-06-04 17:34:55.116113 >> Pad Input Images = True
+2018-06-04 17:34:55.116127 >> ========== Done with printing session's parameters ==========
+2018-06-04 17:34:55.116144 >> =============================================================
+2018-06-04 17:34:55.116164 >> 
+=======================================================
+2018-06-04 17:34:55.116179 >> =========== Compiling the Training Function ===========
+2018-06-04 17:34:55.116193 >> =======================================================
+2018-06-04 17:34:55.116213 >> (Re)Initializing parameters for the optimization. Reason: Uninitialized: [True], Reset requested: [False]
+2018-06-04 17:34:55.116230 >> ...Initializing attributes for the optimization...
+2018-06-04 17:34:55.116254 >> UPDATE: (epoch-cnn-trained#0) Changing the Cnn's Learning Rate to: 0.001
+2018-06-04 17:34:55.116337 >> UPDATE: (epoch-cnn-trained#0) Changing the Cnn's Momentum to: 0.6
+2018-06-04 17:34:55.116378 >> UPDATE: (epoch-cnn-trained#0) Changing the Cnn's Rho parameter for RMSProp optimization to: Rho = 0.9
+2018-06-04 17:34:55.156948 >> ...Building the training function...
+2018-06-04 17:34:55.186908 >> Optimizer used: [RMSProp]. Momentum used: Classic0 or Nesterov1 : 1
+2018-06-04 17:34:56.450043 >> ...Compiling the function for training... (This may take a few minutes...)
+2018-06-04 17:35:28.393192 >> The training function was compiled.
+2018-06-04 17:35:28.393269 >> 
+=========== Compiling the Validation Function =========
+2018-06-04 17:35:28.393293 >> ...Building the validation function...
+2018-06-04 17:35:28.396355 >> ...Compiling the function for validation... (This may take a few minutes...)
+2018-06-04 17:35:32.578983 >> The validation function was compiled.
+2018-06-04 17:35:32.579084 >> 
+=========== Compiling the Testing Function ============
+2018-06-04 17:35:32.579146 >> ...Building the function for testing and visualisation of FMs...
+2018-06-04 17:35:32.586350 >> ...Compiling the function for testing and visualisation of FMs... (This may take a few minutes...)
+2018-06-04 17:35:36.855676 >> The function for testing and visualisation of FMs was compiled.
+2018-06-04 17:35:36.855746 >> 
+=======================================================
+2018-06-04 17:35:36.855792 >> ============== Training the CNN model =================
+2018-06-04 17:35:36.855832 >> =======================================================
+2018-06-04 17:35:36.898311 >> CONFIG: Theano is using the [GPU].
+2018-06-04 17:35:36.898407 >> CONFIG: Theano found and will use cuDNN [True]
+2018-06-04 17:35:36.941256 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2018-06-04 17:35:36.941355 >> ~~~~~~~~~~~~~~~~~~~~Starting new Epoch! Epoch #0/35 ~~~~~~~~~~~~~~~~~~~~~~~~~
+2018-06-04 17:35:36.941389 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2018-06-04 17:35:36.941447 >> **************************************************************************************************
+2018-06-04 17:35:36.941492 >> ************* Starting new Subepoch: #0/20 *************
+2018-06-04 17:35:36.941507 >> **************************************************************************************************
+2018-06-04 17:35:36.941532 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Validation... :=:=:=:=:=:=:=:=:
+2018-06-04 17:35:36.941633 >> Out of [9] subjects given for [Validation], it was specified to extract Segments from maximum [50] per subepoch.
+2018-06-04 17:35:36.941686 >> Shuffled indices of subjects that were randomly chosen: [4, 6, 2, 8, 1, 3, 7, 5, 0]
+2018-06-04 17:35:36.941968 >> SAMPLING: Starting iterations to extract Segments from each subject for next Validation...
+2018-06-04 17:35:36.942020 >> SAMPLING: Going to load the images and extract segments from the subject #1/9
+2018-06-04 17:35:36.942068 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.MR_ADC.128038.nii.gz
+2018-06-04 17:35:38.004222 >> DEBUG: Index of this case in the original user-defined list of subjects: 4
+2018-06-04 17:35:38.005716 >> Images for subject loaded.
+2018-06-04 17:35:38.035003 >> From subject #0, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:35:38.218444 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:35:38.262376 >> SAMPLING: Going to load the images and extract segments from the subject #2/9
+2018-06-04 17:35:38.262464 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.MR_ADC.128034.nii.gz
+2018-06-04 17:35:39.278591 >> DEBUG: Index of this case in the original user-defined list of subjects: 6
+2018-06-04 17:35:39.278704 >> Images for subject loaded.
+2018-06-04 17:35:39.292429 >> From subject #1, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:35:39.475863 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:35:39.516294 >> SAMPLING: Going to load the images and extract segments from the subject #3/9
+2018-06-04 17:35:39.516389 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.MR_ADC.188904.nii.gz
+2018-06-04 17:35:40.537196 >> DEBUG: Index of this case in the original user-defined list of subjects: 2
+2018-06-04 17:35:40.537320 >> Images for subject loaded.
+2018-06-04 17:35:40.551328 >> From subject #2, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:35:40.737413 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:35:40.777905 >> SAMPLING: Going to load the images and extract segments from the subject #4/9
+2018-06-04 17:35:40.777994 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.MR_ADC.128041.nii.gz
+2018-06-04 17:35:41.775001 >> DEBUG: Index of this case in the original user-defined list of subjects: 8
+2018-06-04 17:35:41.775115 >> Images for subject loaded.
+2018-06-04 17:35:41.790546 >> From subject #3, sampling that many segments of Category [Uniform] : 334
+2018-06-04 17:35:41.969373 >> Finished sampling segments of Category [Uniform]. Number sampled: 334
+2018-06-04 17:35:42.012360 >> SAMPLING: Going to load the images and extract segments from the subject #5/9
+2018-06-04 17:35:42.012451 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.MR_ADC.128024.nii.gz
+2018-06-04 17:35:43.005298 >> DEBUG: Index of this case in the original user-defined list of subjects: 1
+2018-06-04 17:35:43.007072 >> Images for subject loaded.
+2018-06-04 17:35:43.020972 >> From subject #4, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:35:43.200566 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:35:43.240858 >> SAMPLING: Going to load the images and extract segments from the subject #6/9
+2018-06-04 17:35:43.240950 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.MR_ADC.128046.nii.gz
+2018-06-04 17:35:44.219484 >> DEBUG: Index of this case in the original user-defined list of subjects: 3
+2018-06-04 17:35:44.219594 >> Images for subject loaded.
+2018-06-04 17:35:44.233396 >> From subject #5, sampling that many segments of Category [Uniform] : 334
+2018-06-04 17:35:44.413024 >> Finished sampling segments of Category [Uniform]. Number sampled: 334
+2018-06-04 17:35:44.453284 >> SAMPLING: Going to load the images and extract segments from the subject #7/9
+2018-06-04 17:35:44.453379 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.MR_ADC.188957.nii.gz
+2018-06-04 17:35:45.504173 >> DEBUG: Index of this case in the original user-defined list of subjects: 7
+2018-06-04 17:35:45.504289 >> Images for subject loaded.
+2018-06-04 17:35:45.521115 >> From subject #6, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:35:45.703645 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:35:45.743484 >> SAMPLING: Going to load the images and extract segments from the subject #8/9
+2018-06-04 17:35:45.743553 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.MR_ADC.188928.nii.gz
+2018-06-04 17:35:46.772899 >> DEBUG: Index of this case in the original user-defined list of subjects: 5
+2018-06-04 17:35:46.773012 >> Images for subject loaded.
+2018-06-04 17:35:46.787625 >> From subject #7, sampling that many segments of Category [Uniform] : 334
+2018-06-04 17:35:46.981027 >> Finished sampling segments of Category [Uniform]. Number sampled: 334
+2018-06-04 17:35:47.021147 >> SAMPLING: Going to load the images and extract segments from the subject #9/9
+2018-06-04 17:35:47.021237 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.MR_ADC.128031.nii.gz
+2018-06-04 17:35:48.043284 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2018-06-04 17:35:48.044962 >> Images for subject loaded.
+2018-06-04 17:35:48.059686 >> From subject #8, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:35:48.243899 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:35:48.287572 >> TIMING: Extracting all the Segments for next Validation took time: 40.27036(s)
+2018-06-04 17:35:48.287657 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Validation. :=:=:=:=:=:=:=:=:
+2018-06-04 17:35:48.470359 >> Loading Validation data for subepoch #0 on shared variable...
+2018-06-04 17:35:48.470457 >> DEBUG: For Validation, loading to shared variable that many Segments: 3000
+2018-06-04 17:35:48.501144 >> TIMING: Loading sharedVariables for Validation in epoch|subepoch=0|0 took time: 0.030594(s)
+2018-06-04 17:35:48.501191 >> PARALLEL: Before Validation in subepoch #0, the parallel job for extracting Segments for the next Training is submitted.
+2018-06-04 17:35:48.511540 >> -V-V-V-V-V- Now Validating for this subepoch before commencing the training iterations... -V-V-V-V-V-
+2018-06-04 17:35:48.511603 >> Validated on 0/62 of the batches for this subepoch...
+2018-06-04 17:35:48.720435 >> Validated on 12/62 of the batches for this subepoch...
+2018-06-04 17:35:48.760264 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Training... :=:=:=:=:=:=:=:=:
+2018-06-04 17:35:48.760338 >> Out of [34] subjects given for [Training], it was specified to extract Segments from maximum [50] per subepoch.
+2018-06-04 17:35:48.760361 >> Shuffled indices of subjects that were randomly chosen: [1, 0, 12, 18, 32, 13, 31, 14, 24, 21, 2, 7, 23, 20, 10, 28, 6, 30, 27, 11, 33, 22, 26, 15, 29, 19, 17, 4, 3, 25, 16, 9, 8, 5]
+2018-06-04 17:35:48.760808 >> SAMPLING: Starting iterations to extract Segments from each subject for next Training...
+2018-06-04 17:35:48.760844 >> SAMPLING: Going to load the images and extract segments from the subject #1/34
+2018-06-04 17:35:48.760862 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/1/VSD.Brain.XX.O.MR_ADC.128021.nii.gz
+2018-06-04 17:35:48.913352 >> Validated on 24/62 of the batches for this subepoch...
+2018-06-04 17:35:49.099968 >> Validated on 36/62 of the batches for this subepoch...
+2018-06-04 17:35:49.294112 >> Validated on 48/62 of the batches for this subepoch...
+2018-06-04 17:35:49.480170 >> Validated on 60/62 of the batches for this subepoch...
+2018-06-04 17:35:49.512800 >> +++++++++++++++++++++++ Reporting Accuracy over whole subepoch +++++++++++++++++++++++
+2018-06-04 17:35:49.512947 >> VALIDATION: Epoch #0, Subepoch #0, Overall:	 mean accuracy:   	0.7587	=> Correctly-Classified-Voxels/All-Predicted-Voxels = 2258/2976
+2018-06-04 17:35:49.512994 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-0 ++++++++ [Whole Foreground (Pos) Vs Background (Neg)] ++++++++++++++++
+2018-06-04 17:35:49.513086 >> VALIDATION: Epoch #0, Subepoch #0, Class-0:	 mean accuracy:   	0.7587	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 2258/2976
+2018-06-04 17:35:49.513173 >> VALIDATION: Epoch #0, Subepoch #0, Class-0:	 mean sensitivity:	0.2245	=> TruePos/RealPos = 11/49
+2018-06-04 17:35:49.513260 >> VALIDATION: Epoch #0, Subepoch #0, Class-0:	 mean specificity:	0.7677	=> TrueNeg/RealNeg = 2247/2927
+2018-06-04 17:35:49.513350 >> VALIDATION: Epoch #0, Subepoch #0, Class-0:	 mean Dice:       	0.0297
+2018-06-04 17:35:49.513392 >> +++++++++++++++ Reporting Accuracy over whole subepoch for Class-1 ++++++++ [This Class (Pos) Vs All Others (Neg)] ++++++++++++++++
+2018-06-04 17:35:49.513486 >> VALIDATION: Epoch #0, Subepoch #0, Class-1:	 mean accuracy:   	0.7587	=> (TruePos+TrueNeg)/All-Predicted-Voxels = 2258/2976
+2018-06-04 17:35:49.513572 >> VALIDATION: Epoch #0, Subepoch #0, Class-1:	 mean sensitivity:	0.2245	=> TruePos/RealPos = 11/49
+2018-06-04 17:35:49.513656 >> VALIDATION: Epoch #0, Subepoch #0, Class-1:	 mean specificity:	0.7677	=> TrueNeg/RealNeg = 2247/2927
+2018-06-04 17:35:49.513727 >> VALIDATION: Epoch #0, Subepoch #0, Class-1:	 mean Dice:       	0.0297
+2018-06-04 17:35:49.513926 >> TIMING: Validating on the batches of this subepoch #0 took time: 0.979976(s)
+2018-06-04 17:35:49.514026 >> UPDATE: In this last epoch (cnnTrained) #0 the CNN achieved a new highest mean validation accuracy of: 0.758736559139785
+2018-06-04 17:35:50.058502 >> DEBUG: Index of this case in the original user-defined list of subjects: 1
+2018-06-04 17:35:50.058550 >> Images for subject loaded.
+2018-06-04 17:35:50.087076 >> From subject #0, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:35:50.274497 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:35:50.289234 >> From subject #0, sampling that many segments of Category [Background] : 14
+2018-06-04 17:35:50.465462 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:35:50.467305 >> SAMPLING: Going to load the images and extract segments from the subject #2/34
+2018-06-04 17:35:50.467336 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/26/SMIR.Brain.XX.O.MR_ADC.188880.nii.gz
+2018-06-04 17:35:51.541022 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2018-06-04 17:35:51.541071 >> Images for subject loaded.
+2018-06-04 17:35:51.568045 >> From subject #1, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:35:51.768039 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:35:51.783160 >> From subject #1, sampling that many segments of Category [Background] : 14
+2018-06-04 17:35:51.954205 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:35:51.956052 >> SAMPLING: Going to load the images and extract segments from the subject #3/34
+2018-06-04 17:35:51.956084 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/27/SMIR.Brain.XX.O.MR_ADC.188888.nii.gz
+2018-06-04 17:35:53.006701 >> DEBUG: Index of this case in the original user-defined list of subjects: 12
+2018-06-04 17:35:53.006747 >> Images for subject loaded.
+2018-06-04 17:35:53.033033 >> From subject #2, sampling that many segments of Category [Foreground] : 16
+2018-06-04 17:35:53.219083 >> Finished sampling segments of Category [Foreground]. Number sampled: 16
+2018-06-04 17:35:53.235887 >> From subject #2, sampling that many segments of Category [Background] : 15
+2018-06-04 17:35:53.397811 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:35:53.399783 >> SAMPLING: Going to load the images and extract segments from the subject #4/34
+2018-06-04 17:35:53.399816 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/42/VSD.Brain.XX.O.MR_ADC.128049.nii.gz
+2018-06-04 17:35:54.370127 >> DEBUG: Index of this case in the original user-defined list of subjects: 18
+2018-06-04 17:35:54.370228 >> Images for subject loaded.
+2018-06-04 17:35:54.396670 >> From subject #3, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:35:54.579496 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:35:54.594299 >> From subject #3, sampling that many segments of Category [Background] : 15
+2018-06-04 17:35:54.756889 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:35:54.758942 >> SAMPLING: Going to load the images and extract segments from the subject #5/34
+2018-06-04 17:35:54.758996 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/0/VSD.Brain.XX.O.MR_ADC.128020.nii.gz
+2018-06-04 17:35:55.751799 >> DEBUG: Index of this case in the original user-defined list of subjects: 32
+2018-06-04 17:35:55.751845 >> Images for subject loaded.
+2018-06-04 17:35:55.778427 >> From subject #4, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:35:55.962351 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:35:55.977307 >> From subject #4, sampling that many segments of Category [Background] : 16
+2018-06-04 17:35:56.140104 >> Finished sampling segments of Category [Background]. Number sampled: 16
+2018-06-04 17:35:56.142223 >> SAMPLING: Going to load the images and extract segments from the subject #6/34
+2018-06-04 17:35:56.142256 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/35/SMIR.Brain.XX.O.MR_ADC.188985.nii.gz
+2018-06-04 17:35:57.158691 >> DEBUG: Index of this case in the original user-defined list of subjects: 13
+2018-06-04 17:35:57.158739 >> Images for subject loaded.
+2018-06-04 17:35:57.186238 >> From subject #5, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:35:57.375751 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:35:57.390709 >> From subject #5, sampling that many segments of Category [Background] : 14
+2018-06-04 17:35:57.562044 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:35:57.563982 >> SAMPLING: Going to load the images and extract segments from the subject #7/34
+2018-06-04 17:35:57.564015 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/37/SMIR.Brain.XX.O.MR_ADC.189001.nii.gz
+2018-06-04 17:35:58.643762 >> DEBUG: Index of this case in the original user-defined list of subjects: 31
+2018-06-04 17:35:58.643859 >> Images for subject loaded.
+2018-06-04 17:35:58.670567 >> From subject #6, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:35:58.856685 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:35:58.871539 >> From subject #6, sampling that many segments of Category [Background] : 15
+2018-06-04 17:35:59.035136 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:35:59.037162 >> SAMPLING: Going to load the images and extract segments from the subject #8/34
+2018-06-04 17:35:59.037213 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/9/VSD.Brain.XX.O.MR_ADC.128029.nii.gz
+2018-06-04 17:36:00.026660 >> DEBUG: Index of this case in the original user-defined list of subjects: 14
+2018-06-04 17:36:00.026705 >> Images for subject loaded.
+2018-06-04 17:36:00.052949 >> From subject #7, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:36:00.233926 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:36:00.248806 >> From subject #7, sampling that many segments of Category [Background] : 15
+2018-06-04 17:36:00.410474 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:36:00.412435 >> SAMPLING: Going to load the images and extract segments from the subject #9/34
+2018-06-04 17:36:00.412467 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/36/SMIR.Brain.XX.O.MR_ADC.188993.nii.gz
+2018-06-04 17:36:01.599316 >> DEBUG: Index of this case in the original user-defined list of subjects: 24
+2018-06-04 17:36:01.599362 >> Images for subject loaded.
+2018-06-04 17:36:01.636928 >> From subject #8, sampling that many segments of Category [Foreground] : 16
+2018-06-04 17:36:01.820775 >> Finished sampling segments of Category [Foreground]. Number sampled: 16
+2018-06-04 17:36:01.836263 >> From subject #8, sampling that many segments of Category [Background] : 14
+2018-06-04 17:36:02.002591 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:36:02.004492 >> SAMPLING: Going to load the images and extract segments from the subject #10/34
+2018-06-04 17:36:02.004544 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/15/VSD.Brain.XX.O.MR_ADC.128035.nii.gz
+2018-06-04 17:36:03.059248 >> DEBUG: Index of this case in the original user-defined list of subjects: 21
+2018-06-04 17:36:03.059294 >> Images for subject loaded.
+2018-06-04 17:36:03.085595 >> From subject #9, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:36:03.272076 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:36:03.286861 >> From subject #9, sampling that many segments of Category [Background] : 14
+2018-06-04 17:36:03.448550 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:36:03.450408 >> SAMPLING: Going to load the images and extract segments from the subject #11/34
+2018-06-04 17:36:03.450442 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_ADC.128030.nii.gz
+2018-06-04 17:36:04.468725 >> DEBUG: Index of this case in the original user-defined list of subjects: 2
+2018-06-04 17:36:04.468824 >> Images for subject loaded.
+2018-06-04 17:36:04.495241 >> From subject #10, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:36:04.676821 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:36:04.691859 >> From subject #10, sampling that many segments of Category [Background] : 15
+2018-06-04 17:36:04.853631 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:36:04.855663 >> SAMPLING: Going to load the images and extract segments from the subject #12/34
+2018-06-04 17:36:04.855710 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/20/VSD.Brain.XX.O.MR_ADC.128040.nii.gz
+2018-06-04 17:36:05.855666 >> DEBUG: Index of this case in the original user-defined list of subjects: 7
+2018-06-04 17:36:05.855716 >> Images for subject loaded.
+2018-06-04 17:36:05.882267 >> From subject #11, sampling that many segments of Category [Foreground] : 16
+2018-06-04 17:36:06.064225 >> Finished sampling segments of Category [Foreground]. Number sampled: 16
+2018-06-04 17:36:06.079364 >> From subject #11, sampling that many segments of Category [Background] : 14
+2018-06-04 17:36:06.241901 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:36:06.243900 >> SAMPLING: Going to load the images and extract segments from the subject #13/34
+2018-06-04 17:36:06.243933 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/31/SMIR.Brain.XX.O.MR_ADC.188912.nii.gz
+2018-06-04 17:36:07.257233 >> DEBUG: Index of this case in the original user-defined list of subjects: 23
+2018-06-04 17:36:07.257283 >> Images for subject loaded.
+2018-06-04 17:36:07.283623 >> From subject #12, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:36:07.464801 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:36:07.479648 >> From subject #12, sampling that many segments of Category [Background] : 14
+2018-06-04 17:36:07.641691 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:36:07.643535 >> SAMPLING: Going to load the images and extract segments from the subject #14/34
+2018-06-04 17:36:07.643566 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/8/VSD.Brain.XX.O.MR_ADC.128028.nii.gz
+2018-06-04 17:36:08.676727 >> DEBUG: Index of this case in the original user-defined list of subjects: 20
+2018-06-04 17:36:08.676774 >> Images for subject loaded.
+2018-06-04 17:36:08.716866 >> From subject #13, sampling that many segments of Category [Foreground] : 16
+2018-06-04 17:36:08.878990 >> Finished sampling segments of Category [Foreground]. Number sampled: 16
+2018-06-04 17:36:08.894057 >> From subject #13, sampling that many segments of Category [Background] : 15
+2018-06-04 17:36:09.052725 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:36:09.054773 >> SAMPLING: Going to load the images and extract segments from the subject #15/34
+2018-06-04 17:36:09.054825 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/29/SMIR.Brain.XX.O.MR_ADC.188896.nii.gz
+2018-06-04 17:36:10.135700 >> DEBUG: Index of this case in the original user-defined list of subjects: 10
+2018-06-04 17:36:10.137384 >> Images for subject loaded.
+2018-06-04 17:36:10.165728 >> From subject #14, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:36:10.362371 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:36:10.377132 >> From subject #14, sampling that many segments of Category [Background] : 15
+2018-06-04 17:36:10.547648 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:36:10.549643 >> SAMPLING: Going to load the images and extract segments from the subject #16/34
+2018-06-04 17:36:10.549681 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/2/VSD.Brain.XX.O.MR_ADC.128022.nii.gz
+2018-06-04 17:36:11.608735 >> DEBUG: Index of this case in the original user-defined list of subjects: 28
+2018-06-04 17:36:11.608837 >> Images for subject loaded.
+2018-06-04 17:36:11.649289 >> From subject #15, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:36:11.812926 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:36:11.827716 >> From subject #15, sampling that many segments of Category [Background] : 14
+2018-06-04 17:36:11.986325 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:36:11.988229 >> SAMPLING: Going to load the images and extract segments from the subject #17/34
+2018-06-04 17:36:11.988277 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/32/SMIR.Brain.XX.O.MR_ADC.188920.nii.gz
+2018-06-04 17:36:13.047854 >> DEBUG: Index of this case in the original user-defined list of subjects: 6
+2018-06-04 17:36:13.047900 >> Images for subject loaded.
+2018-06-04 17:36:13.076262 >> From subject #16, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:36:13.265773 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:36:13.280769 >> From subject #16, sampling that many segments of Category [Background] : 14
+2018-06-04 17:36:13.452064 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:36:13.453932 >> SAMPLING: Going to load the images and extract segments from the subject #18/34
+2018-06-04 17:36:13.453965 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/17/VSD.Brain.XX.O.MR_ADC.128037.nii.gz
+2018-06-04 17:36:14.514838 >> DEBUG: Index of this case in the original user-defined list of subjects: 30
+2018-06-04 17:36:14.514887 >> Images for subject loaded.
+2018-06-04 17:36:14.555418 >> From subject #17, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:36:14.727097 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:36:14.741948 >> From subject #17, sampling that many segments of Category [Background] : 15
+2018-06-04 17:36:14.902565 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:36:14.904541 >> SAMPLING: Going to load the images and extract segments from the subject #19/34
+2018-06-04 17:36:14.904574 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_ADC.128043.nii.gz
+2018-06-04 17:36:15.901824 >> DEBUG: Index of this case in the original user-defined list of subjects: 27
+2018-06-04 17:36:15.901933 >> Images for subject loaded.
+2018-06-04 17:36:15.944010 >> From subject #18, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:36:16.124961 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:36:16.139762 >> From subject #18, sampling that many segments of Category [Background] : 15
+2018-06-04 17:36:16.301739 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:36:16.303767 >> SAMPLING: Going to load the images and extract segments from the subject #20/34
+2018-06-04 17:36:16.303822 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/7/VSD.Brain.XX.O.MR_ADC.128027.nii.gz
+2018-06-04 17:36:17.312945 >> DEBUG: Index of this case in the original user-defined list of subjects: 11
+2018-06-04 17:36:17.312993 >> Images for subject loaded.
+2018-06-04 17:36:17.354983 >> From subject #19, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:36:17.539749 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:36:17.554515 >> From subject #19, sampling that many segments of Category [Background] : 15
+2018-06-04 17:36:17.716268 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:36:17.718249 >> SAMPLING: Going to load the images and extract segments from the subject #21/34
+2018-06-04 17:36:17.718282 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/28/VSD.Brain.XX.O.MR_ADC.128044.nii.gz
+2018-06-04 17:36:18.785073 >> DEBUG: Index of this case in the original user-defined list of subjects: 33
+2018-06-04 17:36:18.785174 >> Images for subject loaded.
+2018-06-04 17:36:18.827279 >> From subject #20, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:36:19.013348 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:36:19.028197 >> From subject #20, sampling that many segments of Category [Background] : 14
+2018-06-04 17:36:19.190416 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:36:19.192327 >> SAMPLING: Going to load the images and extract segments from the subject #22/34
+2018-06-04 17:36:19.192376 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/6/VSD.Brain.XX.O.MR_ADC.128026.nii.gz
+2018-06-04 17:36:20.195158 >> DEBUG: Index of this case in the original user-defined list of subjects: 22
+2018-06-04 17:36:20.195207 >> Images for subject loaded.
+2018-06-04 17:36:20.237103 >> From subject #21, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:36:20.418303 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:36:20.433079 >> From subject #21, sampling that many segments of Category [Background] : 14
+2018-06-04 17:36:20.594888 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:36:20.596784 >> SAMPLING: Going to load the images and extract segments from the subject #23/34
+2018-06-04 17:36:20.596836 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/13/VSD.Brain.XX.O.MR_ADC.128033.nii.gz
+2018-06-04 17:36:21.550968 >> DEBUG: Index of this case in the original user-defined list of subjects: 26
+2018-06-04 17:36:21.551018 >> Images for subject loaded.
+2018-06-04 17:36:21.593345 >> From subject #22, sampling that many segments of Category [Foreground] : 16
+2018-06-04 17:36:21.775679 >> Finished sampling segments of Category [Foreground]. Number sampled: 16
+2018-06-04 17:36:21.790838 >> From subject #22, sampling that many segments of Category [Background] : 16
+2018-06-04 17:36:21.953777 >> Finished sampling segments of Category [Background]. Number sampled: 16
+2018-06-04 17:36:21.955869 >> SAMPLING: Going to load the images and extract segments from the subject #24/34
+2018-06-04 17:36:21.955902 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/3/VSD.Brain.XX.O.MR_ADC.128023.nii.gz
+2018-06-04 17:36:23.018815 >> DEBUG: Index of this case in the original user-defined list of subjects: 15
+2018-06-04 17:36:23.018859 >> Images for subject loaded.
+2018-06-04 17:36:23.060764 >> From subject #23, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:36:23.250950 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:36:23.265739 >> From subject #23, sampling that many segments of Category [Background] : 15
+2018-06-04 17:36:23.428206 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:36:23.430241 >> SAMPLING: Going to load the images and extract segments from the subject #25/34
+2018-06-04 17:36:23.430282 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/22/VSD.Brain.XX.O.MR_ADC.128042.nii.gz
+2018-06-04 17:36:24.442718 >> DEBUG: Index of this case in the original user-defined list of subjects: 29
+2018-06-04 17:36:24.442764 >> Images for subject loaded.
+2018-06-04 17:36:24.485063 >> From subject #24, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:36:24.671336 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:36:24.686365 >> From subject #24, sampling that many segments of Category [Background] : 16
+2018-06-04 17:36:24.850226 >> Finished sampling segments of Category [Background]. Number sampled: 16
+2018-06-04 17:36:24.852297 >> SAMPLING: Going to load the images and extract segments from the subject #26/34
+2018-06-04 17:36:24.852331 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/40/VSD.Brain.XX.O.MR_ADC.128047.nii.gz
+2018-06-04 17:36:25.857338 >> DEBUG: Index of this case in the original user-defined list of subjects: 19
+2018-06-04 17:36:25.857388 >> Images for subject loaded.
+2018-06-04 17:36:25.899385 >> From subject #25, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:36:26.081125 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:36:26.096110 >> From subject #25, sampling that many segments of Category [Background] : 15
+2018-06-04 17:36:26.258685 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:36:26.260778 >> SAMPLING: Going to load the images and extract segments from the subject #27/34
+2018-06-04 17:36:26.260811 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/38/VSD.Brain.XX.O.MR_ADC.128045.nii.gz
+2018-06-04 17:36:27.323407 >> DEBUG: Index of this case in the original user-defined list of subjects: 17
+2018-06-04 17:36:27.325109 >> Images for subject loaded.
+2018-06-04 17:36:27.367105 >> From subject #26, sampling that many segments of Category [Foreground] : 16
+2018-06-04 17:36:27.559328 >> Finished sampling segments of Category [Foreground]. Number sampled: 16
+2018-06-04 17:36:27.574321 >> From subject #26, sampling that many segments of Category [Background] : 16
+2018-06-04 17:36:27.739736 >> Finished sampling segments of Category [Background]. Number sampled: 16
+2018-06-04 17:36:27.741828 >> SAMPLING: Going to load the images and extract segments from the subject #28/34
+2018-06-04 17:36:27.741862 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/41/VSD.Brain.XX.O.MR_ADC.128048.nii.gz
+2018-06-04 17:36:28.822672 >> DEBUG: Index of this case in the original user-defined list of subjects: 4
+2018-06-04 17:36:28.822774 >> Images for subject loaded.
+2018-06-04 17:36:28.864673 >> From subject #27, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:36:29.048971 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:36:29.063797 >> From subject #27, sampling that many segments of Category [Background] : 14
+2018-06-04 17:36:29.225914 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:36:29.227812 >> SAMPLING: Going to load the images and extract segments from the subject #29/34
+2018-06-04 17:36:29.227872 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/5/VSD.Brain.XX.O.MR_ADC.128025.nii.gz
+2018-06-04 17:36:30.225432 >> DEBUG: Index of this case in the original user-defined list of subjects: 3
+2018-06-04 17:36:30.225478 >> Images for subject loaded.
+2018-06-04 17:36:30.267187 >> From subject #28, sampling that many segments of Category [Foreground] : 14
+2018-06-04 17:36:30.447620 >> Finished sampling segments of Category [Foreground]. Number sampled: 14
+2018-06-04 17:36:30.462395 >> From subject #28, sampling that many segments of Category [Background] : 15
+2018-06-04 17:36:30.624679 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:36:30.626647 >> SAMPLING: Going to load the images and extract segments from the subject #30/34
+2018-06-04 17:36:30.626679 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/16/VSD.Brain.XX.O.MR_ADC.128036.nii.gz
+2018-06-04 17:36:31.584507 >> DEBUG: Index of this case in the original user-defined list of subjects: 25
+2018-06-04 17:36:31.584557 >> Images for subject loaded.
+2018-06-04 17:36:31.626848 >> From subject #29, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:36:31.808704 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:36:31.823757 >> From subject #29, sampling that many segments of Category [Background] : 16
+2018-06-04 17:36:31.986458 >> Finished sampling segments of Category [Background]. Number sampled: 16
+2018-06-04 17:36:31.988549 >> SAMPLING: Going to load the images and extract segments from the subject #31/34
+2018-06-04 17:36:31.988584 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/25/SMIR.Brain.XX.O.MR_ADC.188872.nii.gz
+2018-06-04 17:36:33.046398 >> DEBUG: Index of this case in the original user-defined list of subjects: 16
+2018-06-04 17:36:33.046446 >> Images for subject loaded.
+2018-06-04 17:36:33.088756 >> From subject #30, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:36:33.278463 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:36:33.293330 >> From subject #30, sampling that many segments of Category [Background] : 14
+2018-06-04 17:36:33.463096 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:36:33.464954 >> SAMPLING: Going to load the images and extract segments from the subject #32/34
+2018-06-04 17:36:33.464986 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/24/SMIR.Brain.XX.O.MR_ADC.188864.nii.gz
+2018-06-04 17:36:34.537750 >> DEBUG: Index of this case in the original user-defined list of subjects: 9
+2018-06-04 17:36:34.537850 >> Images for subject loaded.
+2018-06-04 17:36:34.580460 >> From subject #31, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:36:34.763633 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:36:34.779519 >> From subject #31, sampling that many segments of Category [Background] : 14
+2018-06-04 17:36:34.942339 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:36:34.944355 >> SAMPLING: Going to load the images and extract segments from the subject #33/34
+2018-06-04 17:36:34.944387 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/19/VSD.Brain.XX.O.MR_ADC.128039.nii.gz
+2018-06-04 17:36:35.980283 >> DEBUG: Index of this case in the original user-defined list of subjects: 8
+2018-06-04 17:36:35.980329 >> Images for subject loaded.
+2018-06-04 17:36:36.023097 >> From subject #32, sampling that many segments of Category [Foreground] : 15
+2018-06-04 17:36:36.203773 >> Finished sampling segments of Category [Foreground]. Number sampled: 15
+2018-06-04 17:36:36.218680 >> From subject #32, sampling that many segments of Category [Background] : 14
+2018-06-04 17:36:36.381189 >> Finished sampling segments of Category [Background]. Number sampled: 14
+2018-06-04 17:36:36.383058 >> SAMPLING: Going to load the images and extract segments from the subject #34/34
+2018-06-04 17:36:36.383091 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/12/VSD.Brain.XX.O.MR_ADC.128032.nii.gz
+2018-06-04 17:36:37.406784 >> DEBUG: Index of this case in the original user-defined list of subjects: 5
+2018-06-04 17:36:37.406836 >> Images for subject loaded.
+2018-06-04 17:36:37.448729 >> From subject #33, sampling that many segments of Category [Foreground] : 16
+2018-06-04 17:36:37.632581 >> Finished sampling segments of Category [Foreground]. Number sampled: 16
+2018-06-04 17:36:37.647568 >> From subject #33, sampling that many segments of Category [Background] : 15
+2018-06-04 17:36:37.809302 >> Finished sampling segments of Category [Background]. Number sampled: 15
+2018-06-04 17:36:37.811725 >> TIMING: Extracting all the Segments for next Training took time: 172.832629(s)
+2018-06-04 17:36:37.811755 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Training. :=:=:=:=:=:=:=:=:
+2018-06-04 17:36:38.368869 >> Loading Training data for subepoch #0 on shared variable...
+2018-06-04 17:36:38.389696 >> TIMING: Loading sharedVariables for Training in epoch|subepoch=0|0 took time: 0.030075(s)
+2018-06-04 17:36:38.389742 >> PARALLEL: Before Training in subepoch #0, submitting the parallel job for extracting Segments for the next Validation.
+2018-06-04 17:36:38.390059 >> -T-T-T-T-T- Now Training for this subepoch... This may take a few minutes... -T-T-T-T-T-
+2018-06-04 17:36:38.390134 >> Trained on 0/100 of the batches for this subepoch...
+2018-06-04 17:36:38.390288 >> :=:=:=:=:=:=:=:=: Starting to extract Segments from the images for next Validation... :=:=:=:=:=:=:=:=:
+2018-06-04 17:36:38.390335 >> Out of [9] subjects given for [Validation], it was specified to extract Segments from maximum [50] per subepoch.
+2018-06-04 17:36:38.390359 >> Shuffled indices of subjects that were randomly chosen: [7, 4, 2, 8, 1, 3, 0, 5, 6]
+2018-06-04 17:36:38.390512 >> SAMPLING: Starting iterations to extract Segments from each subject for next Validation...
+2018-06-04 17:36:38.390537 >> SAMPLING: Going to load the images and extract segments from the subject #1/9
+2018-06-04 17:36:38.390557 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/34/SMIR.Brain.XX.O.MR_ADC.188957.nii.gz
+2018-06-04 17:36:39.418560 >> DEBUG: Index of this case in the original user-defined list of subjects: 7
+2018-06-04 17:36:39.418619 >> Images for subject loaded.
+2018-06-04 17:36:39.431573 >> From subject #0, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:36:39.584445 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:36:39.623338 >> SAMPLING: Going to load the images and extract segments from the subject #2/9
+2018-06-04 17:36:39.623389 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/18/VSD.Brain.XX.O.MR_ADC.128038.nii.gz
+2018-06-04 17:36:40.602199 >> DEBUG: Index of this case in the original user-defined list of subjects: 4
+2018-06-04 17:36:40.602244 >> Images for subject loaded.
+2018-06-04 17:36:40.613259 >> From subject #1, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:36:40.753314 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:36:40.791852 >> SAMPLING: Going to load the images and extract segments from the subject #3/9
+2018-06-04 17:36:40.791929 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/30/SMIR.Brain.XX.O.MR_ADC.188904.nii.gz
+2018-06-04 17:36:41.533042 >> DEBUG: Index of this case in the original user-defined list of subjects: 2
+2018-06-04 17:36:41.533089 >> Images for subject loaded.
+2018-06-04 17:36:41.546429 >> From subject #2, sampling that many segments of Category [Uniform] : 334
+2018-06-04 17:36:41.686416 >> Finished sampling segments of Category [Uniform]. Number sampled: 334
+2018-06-04 17:36:41.724281 >> SAMPLING: Going to load the images and extract segments from the subject #4/9
+2018-06-04 17:36:41.724330 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/21/VSD.Brain.XX.O.MR_ADC.128041.nii.gz
+2018-06-04 17:36:42.542777 >> DEBUG: Index of this case in the original user-defined list of subjects: 8
+2018-06-04 17:36:42.542877 >> Images for subject loaded.
+2018-06-04 17:36:42.556382 >> From subject #3, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:36:42.714473 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:36:42.752673 >> SAMPLING: Going to load the images and extract segments from the subject #5/9
+2018-06-04 17:36:42.752751 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/4/VSD.Brain.XX.O.MR_ADC.128024.nii.gz
+2018-06-04 17:36:43.614477 >> DEBUG: Index of this case in the original user-defined list of subjects: 1
+2018-06-04 17:36:43.614589 >> Images for subject loaded.
+2018-06-04 17:36:43.627805 >> From subject #4, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:36:43.804802 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:36:43.843378 >> SAMPLING: Going to load the images and extract segments from the subject #6/9
+2018-06-04 17:36:43.843456 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/39/VSD.Brain.XX.O.MR_ADC.128046.nii.gz
+2018-06-04 17:36:44.706080 >> DEBUG: Index of this case in the original user-defined list of subjects: 3
+2018-06-04 17:36:44.706182 >> Images for subject loaded.
+2018-06-04 17:36:44.719360 >> From subject #5, sampling that many segments of Category [Uniform] : 334
+2018-06-04 17:36:44.895568 >> Finished sampling segments of Category [Uniform]. Number sampled: 334
+2018-06-04 17:36:44.933762 >> SAMPLING: Going to load the images and extract segments from the subject #7/9
+2018-06-04 17:36:44.933832 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/11/VSD.Brain.XX.O.MR_ADC.128031.nii.gz
+2018-06-04 17:36:45.879550 >> DEBUG: Index of this case in the original user-defined list of subjects: 0
+2018-06-04 17:36:45.879596 >> Images for subject loaded.
+2018-06-04 17:36:45.892774 >> From subject #6, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:36:46.074568 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:36:46.112608 >> SAMPLING: Going to load the images and extract segments from the subject #8/9
+2018-06-04 17:36:46.112654 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/33/SMIR.Brain.XX.O.MR_ADC.188928.nii.gz
+2018-06-04 17:36:47.051843 >> DEBUG: Index of this case in the original user-defined list of subjects: 5
+2018-06-04 17:36:47.051947 >> Images for subject loaded.
+2018-06-04 17:36:47.065001 >> From subject #7, sampling that many segments of Category [Uniform] : 334
+2018-06-04 17:36:47.246822 >> Finished sampling segments of Category [Uniform]. Number sampled: 334
+2018-06-04 17:36:47.284803 >> SAMPLING: Going to load the images and extract segments from the subject #9/9
+2018-06-04 17:36:47.284881 >> Loading subject with 1st channel at: /home/uziel/DISS/data_processed/ISLES2017/training/14/VSD.Brain.XX.O.MR_ADC.128034.nii.gz
+2018-06-04 17:36:48.194771 >> DEBUG: Index of this case in the original user-defined list of subjects: 6
+2018-06-04 17:36:48.194869 >> Images for subject loaded.
+2018-06-04 17:36:48.207878 >> From subject #8, sampling that many segments of Category [Uniform] : 333
+2018-06-04 17:36:48.389538 >> Finished sampling segments of Category [Uniform]. Number sampled: 333
+2018-06-04 17:36:48.428908 >> TIMING: Extracting all the Segments for next Validation took time: 36.178267(s)
+2018-06-04 17:36:48.428979 >> :=:=:=:=:=:=:=:=: Finished extracting Segments from the images for next Validation. :=:=:=:=:=:=:=:=:
