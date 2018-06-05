@@ -21,7 +21,6 @@ from nilearn.plotting import plot_roi
 
 #%% Set current directory
 os.chdir('/home/uziel/DISS') # linux
-#os.chdir('C:\Users\Carlos Uziel\Documents\DISS\ischleseg') # windows
 test_flag = 1
 
 
@@ -34,8 +33,6 @@ if test_flag:
     root = './data/ISLES2017/testing'
 else:
     root = './data/ISLES2017/training'
-
-#root = 'C:\Users\Carlos Uziel\Documents\DISS\data\Training' # windows
 
 subjects_paths = sorted(os.listdir(root))
 channels_per_subject = dict() # groups relevant sequences per subject
@@ -63,10 +60,6 @@ else:
 
 template_path = './data/MNI152_T1_1mm_brain.nii.gz'
 
-# windows
-#root = '..\\data_processed\\ISLES2017'
-#template_path = '.\\data\\MNI152_T1_1mm_brain.nii.gz'
-
 # remove and create dir for processed data
 if os.path.exists(root): shutil.rmtree(root)
 os.makedirs(root)
@@ -90,7 +83,7 @@ for subject in channels_per_subject.keys():
     mask = compute_epi_mask([x for x,y in subject_imgs if not "OT" in y])
     # dilate mask to "fill holes"
     dilated_mask_data = ndimage.binary_dilation(mask.dataobj)
-    mask = nib.nifti1.Nifti1Image(dilated_mask_data.astype(float), mask.affine)
+    mask = nib.nifti1.Nifti1Image(dilated_mask_data.astype(np.float32), mask.affine)
     # save mask
     nib.save(mask, os.path.join(subject_root, 'mask.nii.gz'))
     
@@ -103,10 +96,12 @@ for subject in channels_per_subject.keys():
             # compute mean and variance of non-zero values
             mean = np.mean(temp_data[np.nonzero(temp_data)])
             var = np.var(temp_data[np.nonzero(temp_data)])
-            # substract mean and divide by variance all non-zero values
+            # substract mean and divide by variance all non-zero valuess
             temp_data[np.nonzero(temp_data)] = (temp_data[np.nonzero(temp_data)] - mean) / var
             # build normalised image with normalised data and unmodified affine
-            img = nib.nifti1.Nifti1Image(temp_data, img.affine)
+            img = nib.nifti1.Nifti1Image(temp_data.astype(np.float32), img.affine)
+        else:
+            img = nib.nifti1.Nifti1Image(img.dataobj.astype(np.float32), img.affine)
         
         # save image
         file_name = os.path.basename(channel_file)
@@ -187,7 +182,7 @@ else:
     data_to_file(names, os.path.join(validation_path, 'validationNamesOfPredictions.cfg'))
 
 
-# In[8]:
+# In[7]:
 
 
 # load image
@@ -196,4 +191,60 @@ img = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.
 label = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.OT.128073.nii.gz')
 # plot
 plot_roi(label, img)
+
+# load mask 
+mask = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/mask.nii.gz')
+plot_roi(mask, img)
+
+
+# In[8]:
+
+
+# load image
+my_img = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_ADC.128043.nii.gz')
+# load image
+his_img = nib.load('/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/train/brats_2013_pat0005_1/Flair_subtrMeanDivStd.nii.gz')
+
+
+# In[9]:
+
+
+# test 1
+his_img = nib.load('/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/train/brats_2013_pat0005_1/Flair_subtrMeanDivStd.nii.gz')
+
+img1 = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_ADC.128043.nii.gz')
+img2 = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_rCBF.127200.nii.gz')
+label = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.OT.128073.nii.gz')
+mask = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/mask.nii.gz')
+
+
+# In[10]:
+
+
+# test 2
+his_img = nib.load('/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/train/brats_2013_pat0006_1/Flair_subtrMeanDivStd.nii.gz')
+
+img1 = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_ADC.128030.nii.gz')
+img2 = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_MTT.127094.nii.gz')
+label = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.OT.128060.nii.gz')
+mask = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/10/mask.nii.gz')
+
+
+# In[11]:
+
+
+his_label = nib.load('/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/train/brats_2013_pat0006_1/OTMultiClass.nii.gz')
+his_mask = nib.load('/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/train/brats_2013_pat0006_1/brainmask.nii.gz')
+
+label = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.OT.128060.nii.gz')
+mask = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/10/mask.nii.gz')
+
+
+# In[22]:
+
+
+for files in channels.values():
+    for file in files:
+        img = nib.load(file[18:])
+        print(img.shape, img.get_data_dtype())
 
