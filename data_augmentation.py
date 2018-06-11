@@ -21,7 +21,7 @@ from nilearn.plotting import plot_roi
 
 
 # Set current directory
-os.chdir('/home/uziel/DISS/ischleseg/deepmedic/versions/DM_V1/configFiles/train')
+os.chdir('/home/he/carlos/DISS/ischleseg/deepmedic/versions/DM_V1/configFiles/train')
 
 
 # In[3]:
@@ -111,7 +111,7 @@ def data_to_file(data, path):
 subject_list = [os.path.split(os.path.dirname(x[0]))[1] for x in subjects_entries.values()]
 subject_list.append('clone_V2_0') #add clone subdir name
 #%% Generate files listing all images per channel
-os.chdir('/home/uziel/DISS')
+os.chdir('/home/he/carlos/DISS')
 root = './data_processed/ISLES2017/training'
 
 # copy configFiles from DM_V1 (baseline)
