@@ -20,7 +20,7 @@ from nilearn.plotting import plot_roi
 
 
 #%% Set current directory
-os.chdir('/home/uziel/DISS') # linux
+os.chdir('/home/he/carlos/DISS')
 test_flag = 0
 
 
@@ -75,22 +75,28 @@ for subject in channels_per_subject.keys():
     subject_imgs = []
     for channel_file in channels_per_subject[subject]:
         img = nib.load(channel_file)
+
         # Resample img to match template
-        resampled_img = resample_to_img(img, template)
+        if 'OT' in channel_file:
+            # label must be resampled using nearest neighbour
+            resampled_img = resample_to_img(img, template, interpolation='nearest')
+        else:
+            resampled_img = resample_to_img(img, template, interpolation='continuous')
+
         subject_imgs.append([resampled_img, channel_file])
         
     # compute subject brain mask given all channels (ignore label channel)
-    mask = compute_epi_mask([x for x,y in subject_imgs if not "OT" in y])
+    mask = compute_epi_mask([x for x,y in subject_imgs if not 'OT' in y])
     # dilate mask to "fill holes"
     dilated_mask_data = ndimage.binary_dilation(mask.dataobj)
-    mask = nib.nifti1.Nifti1Image(dilated_mask_data.astype(np.float32), mask.affine)
+    mask = nib.nifti1.Nifti1Image(dilated_mask_data.astype(np.int32), mask.affine)
     # save mask
     nib.save(mask, os.path.join(subject_root, 'mask.nii.gz'))
     
     # normalize each image within mask and save
     for img, channel_file in subject_imgs:
         # don't try to normalize label channel
-        if "OT" not in channel_file:
+        if 'OT' not in channel_file:
             # get data within mask
             temp_data = img.dataobj * mask.dataobj
             # compute mean and variance of non-zero values
@@ -101,11 +107,13 @@ for subject in channels_per_subject.keys():
             # build normalised image with normalised data and unmodified affine
             img = nib.nifti1.Nifti1Image(temp_data.astype(np.float32), img.affine)
         else:
-            img = nib.nifti1.Nifti1Image(img.dataobj.astype(np.float32), img.affine)
+            img = nib.nifti1.Nifti1Image(img.get_data().astype(np.int32), img.affine)
         
         # save image
         file_name = os.path.basename(channel_file)
         nib.save(img, os.path.join(subject_root, file_name) + '.gz')
+        
+    print("Subject " + str(subject) + " finished.")
 
 
 # In[5]:
@@ -121,8 +129,11 @@ def data_to_file(data, path):
 # In[6]:
 
 
-##### FILES FOR BASELINE EXPERIMENT
-#%% Generate files listing all images per channel
+######################################
+##### FILES FOR DM_V1 (BASELINE) #####
+######################################
+
+# Generate files listing all images per channel
 # linux
 if test_flag:
     root = './data_processed/ISLES2017/testing'
@@ -144,13 +155,15 @@ channels['Channels_Tmax'] = [os.path.join('../../../../../../', y) for x in os.w
 channels['Channels_TTP'] = [os.path.join('../../../../../../', y) for x in os.walk(root)
                             for y in glob(os.path.join(x[0], '*TTP*.nii.gz'))]
 # labels
-channels['GtLabels'] = [os.path.join('../../../../../../', y) for x in os.walk(root) for y in glob(os.path.join(x[0], '*OT*.nii.gz'))]
+channels['GtLabels'] = [os.path.join('../../../../../../', y) for x in os.walk(root)
+                        for y in glob(os.path.join(x[0], '*OT*.nii.gz'))]
 # masks
-channels['RoiMasks'] = [os.path.join('../../../../../../', y) for x in os.walk(root) for y in glob(os.path.join(x[0], 'mask.nii.gz'))]
+channels['RoiMasks'] = [os.path.join('../../../../../../', y) for x in os.walk(root)
+                        for y in glob(os.path.join(x[0], 'mask.nii.gz'))]
 
 if test_flag:
     # set paths for storing channel config files
-    test_path = './ischleseg/deepmedic/experiments/baseline/configFiles/test'
+    test_path = './ischleseg/deepmedic/versions/DM_V1/configFiles/test'
     if not os.path.exists(test_path): os.makedirs(test_path)
     for name, files in channels.iteritems():
         # save test channel files
@@ -161,8 +174,8 @@ if test_flag:
     data_to_file(names, os.path.join(test_path, 'testNamesOfPredictions.cfg'))
 else:
     # set paths for storing channel config files
-    train_path = './ischleseg/deepmedic/experiments/baseline/configFiles/train'
-    validation_path = './ischleseg/deepmedic/experiments/baseline/configFiles/validation'
+    train_path = './ischleseg/deepmedic/versions/DM_V1/configFiles/train'
+    validation_path = './ischleseg/deepmedic/versions/DM_V1/configFiles/validation'
 
     if not os.path.exists(train_path): os.makedirs(train_path)
     if not os.path.exists(validation_path): os.makedirs(validation_path)
@@ -178,73 +191,6 @@ else:
 
 
     # save names of predictions
-    names = ['pred_ISLES2017_' + os.path.split(os.path.dirname(x))[1] + '_nii.gz' for x in channels['Channels_ADC']]
+    names = ['pred_ISLES2017_' + os.path.split(os.path.dirname(x))[1] for x in files[train_val_divison:]]
     data_to_file(names, os.path.join(validation_path, 'validationNamesOfPredictions.cfg'))
-
-
-# In[7]:
-
-
-# load image
-img = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_ADC.128043.nii.gz')
-# load label
-label = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.OT.128073.nii.gz')
-# plot
-plot_roi(label, img)
-
-# load mask 
-mask = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/mask.nii.gz')
-plot_roi(mask, img)
-
-
-# In[8]:
-
-
-# load image
-my_img = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_ADC.128043.nii.gz')
-# load image
-his_img = nib.load('/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/train/brats_2013_pat0005_1/Flair_subtrMeanDivStd.nii.gz')
-
-
-# In[9]:
-
-
-# test 1
-his_img = nib.load('/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/train/brats_2013_pat0005_1/Flair_subtrMeanDivStd.nii.gz')
-
-img1 = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_ADC.128043.nii.gz')
-img2 = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.MR_rCBF.127200.nii.gz')
-label = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/VSD.Brain.XX.O.OT.128073.nii.gz')
-mask = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/23/mask.nii.gz')
-
-
-# In[10]:
-
-
-# test 2
-his_img = nib.load('/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/train/brats_2013_pat0006_1/Flair_subtrMeanDivStd.nii.gz')
-
-img1 = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_ADC.128030.nii.gz')
-img2 = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.MR_MTT.127094.nii.gz')
-label = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.OT.128060.nii.gz')
-mask = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/10/mask.nii.gz')
-
-
-# In[11]:
-
-
-his_label = nib.load('/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/train/brats_2013_pat0006_1/OTMultiClass.nii.gz')
-his_mask = nib.load('/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/train/brats_2013_pat0006_1/brainmask.nii.gz')
-
-label = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/10/VSD.Brain.XX.O.OT.128060.nii.gz')
-mask = nib.load('/home/uziel/DISS/data_processed/ISLES2017/training/10/mask.nii.gz')
-
-
-# In[22]:
-
-
-for files in channels.values():
-    for file in files:
-        img = nib.load(file[18:])
-        print(img.shape, img.get_data_dtype())
 
