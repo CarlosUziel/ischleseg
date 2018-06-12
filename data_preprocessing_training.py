@@ -11,7 +11,7 @@ import nibabel as nib
 import numpy as np
 from glob import glob
 from scipy import ndimage
-from nilearn.image import resample_to_img
+from nilearn.image import resample_to_img, resample_img
 from nilearn.masking import compute_background_mask, compute_epi_mask
 from nilearn.plotting import plot_roi
 
@@ -80,8 +80,16 @@ for subject in channels_per_subject.keys():
         if 'OT' in channel_file:
             # label must be resampled using nearest neighbour
             resampled_img = resample_to_img(img, template, interpolation='nearest')
+            # resample image to two thirds of its size (allows for faster and less memory need)
+            resampled_img = resample_img(resampled_img,
+                                         3*resampled_img.affine/2, [2*x/3 for x in resampled_img.shape],
+                                         interpolation='nearest')
         else:
             resampled_img = resample_to_img(img, template, interpolation='continuous')
+            # resample image to two thirds of its size (allows for faster and less memory need)
+            resampled_img = resample_img(resampled_img,
+                             3*resampled_img.affine/2, [2*x/3 for x in resampled_img.shape],
+                             interpolation='continuous')
 
         subject_imgs.append([resampled_img, channel_file])
         
