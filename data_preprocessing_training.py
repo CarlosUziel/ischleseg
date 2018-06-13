@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[8]:
 
 
 #%% Imports
@@ -16,7 +16,7 @@ from nilearn.masking import compute_background_mask, compute_epi_mask
 from nilearn.plotting import plot_roi
 
 
-# In[2]:
+# In[9]:
 
 
 #%% Set current directory
@@ -24,7 +24,7 @@ os.chdir('/home/he/carlos/DISS')
 test_flag = 0
 
 
-# In[3]:
+# In[10]:
 
 
 #%% List all sequences per subject
@@ -124,7 +124,7 @@ for subject in channels_per_subject.keys():
     print("Subject " + str(subject) + " finished.")
 
 
-# In[5]:
+# In[11]:
 
 
 def data_to_file(data, path):
@@ -134,7 +134,7 @@ def data_to_file(data, path):
     out.close()
 
 
-# In[6]:
+# In[13]:
 
 
 ######################################
@@ -178,7 +178,7 @@ if test_flag:
         data_to_file(files, os.path.join(test_path, 'test' + name + '.cfg'))
         
     # save names of predictions
-    names = ['pred_ISLES2017_' + os.path.split(os.path.dirname(x))[1] + '_nii.gz' for x in channels['Channels_ADC']]
+    names = ['pred_ISLES2017_' + os.path.basename(x).split('.')[-3] for x in channels['Channels_ADC']]
     data_to_file(names, os.path.join(test_path, 'testNamesOfPredictions.cfg'))
 else:
     # set paths for storing channel config files
@@ -199,6 +199,6 @@ else:
 
 
     # save names of predictions
-    names = ['pred_ISLES2017_' + os.path.split(os.path.dirname(x))[1] for x in files[train_val_divison:]]
+    names = ['pred_ISLES2017_' + os.path.basename(x).split('.')[-3] for x in files[train_val_divison:]]
     data_to_file(names, os.path.join(validation_path, 'validationNamesOfPredictions.cfg'))
 

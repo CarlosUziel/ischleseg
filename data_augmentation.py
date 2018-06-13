@@ -149,4 +149,3 @@ train_path = './ischleseg/deepmedic/versions/DM_V2/configFiles/train'
 for name, files in channels.iteritems():
     # save train channel files
     data_to_file(files, os.path.join(train_path, 'train' + name + '.cfg'))
-
