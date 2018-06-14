@@ -21,7 +21,7 @@ from nilearn.plotting import plot_roi, plot_epi
 
 
 #%% Set current directory
-os.chdir('/home/he/uziel/DISS')
+os.chdir('/home/he/carlos/DISS')
 test_flag = 0
 
 
