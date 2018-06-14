@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[6]:
 
 
 #%% Imports
@@ -9,14 +9,15 @@ import os
 import shutil
 import nibabel as nib
 import numpy as np
+from random import shuffle
 from glob import glob
 from scipy import ndimage
 from nilearn.image import resample_to_img, resample_img
 from nilearn.masking import compute_background_mask, compute_epi_mask
-from nilearn.plotting import plot_roi
+from nilearn.plotting import plot_roi, plot_epi
 
 
-# In[2]:
+# In[7]:
 
 
 #%% Set current directory
@@ -24,7 +25,7 @@ os.chdir('/home/he/carlos/DISS')
 test_flag = 1
 
 
-# In[3]:
+# In[8]:
 
 
 #%% List all sequences per subject
@@ -124,7 +125,7 @@ for subject in channels_per_subject.keys():
     print("Subject " + str(subject) + " finished.")
 
 
-# In[5]:
+# In[9]:
 
 
 def data_to_file(data, path):
@@ -134,12 +135,8 @@ def data_to_file(data, path):
     out.close()
 
 
-# In[6]:
+# In[10]:
 
-
-######################################
-##### FILES FOR DM_V1 (BASELINE) #####
-######################################
 
 # Generate files listing all images per channel
 # linux
@@ -169,6 +166,14 @@ channels['GtLabels'] = [os.path.join('../../../../../../', y) for x in os.walk(r
 channels['RoiMasks'] = [os.path.join('../../../../../../', y) for x in os.walk(root)
                         for y in glob(os.path.join(x[0], 'mask.nii.gz'))]
 
+
+# In[13]:
+
+
+######################################
+##### FILES FOR DM_V1 (BASELINE) #####
+######################################
+
 if test_flag:
     # set paths for storing channel config files
     test_path = './ischleseg/deepmedic/versions/DM_V1/configFiles/test'
@@ -178,7 +183,7 @@ if test_flag:
         data_to_file(files, os.path.join(test_path, 'test' + name + '.cfg'))
         
     # save names of predictions
-    names = ['pred_ISLES2017_' + os.path.split(os.path.dirname(x))[1] + '_nii.gz' for x in channels['Channels_ADC']]
+    names = ['pred_ISLES2017_' + os.path.basename(x).split('.')[-3] for x in channels['Channels_ADC']]
     data_to_file(names, os.path.join(test_path, 'testNamesOfPredictions.cfg'))
 else:
     # set paths for storing channel config files
@@ -199,6 +204,55 @@ else:
 
 
     # save names of predictions
-    names = ['pred_ISLES2017_' + os.path.split(os.path.dirname(x))[1] for x in files[train_val_divison:]]
+    names = ['pred_ISLES2017_' + os.path.basename(x).split('.')[-3] for x in files[train_val_divison:]]
     data_to_file(names, os.path.join(validation_path, 'validationNamesOfPredictions.cfg'))
+
+
+# In[31]:
+
+
+################################
+##### TEST RESULTING FILES #####
+################################
+
+if test_flag:
+    root = './data_processed/ISLES2017/testing'
+else:
+    root = './data_processed/ISLES2017/training'
+
+channels = {}
+# channels - sequences os.path.join('../../../../../../', x) needed for deepmedic
+channels['Channels_ADC'] = [y for x in os.walk(root)
+                            for y in glob(os.path.join(x[0], '*ADC*.nii.gz'))]
+channels['Channels_MTT'] = [y for x in os.walk(root)
+                            for y in glob(os.path.join(x[0], '*MTT*.nii.gz'))]
+channels['Channels_rCBF'] = [y for x in os.walk(root)
+                             for y in glob(os.path.join(x[0], '*rCBF*.nii.gz'))]
+channels['Channels_rCBV'] = [y for x in os.walk(root)
+                             for y in glob(os.path.join(x[0], '*rCBV*.nii.gz'))]
+channels['Channels_Tmax'] = [y for x in os.walk(root)
+                             for y in glob(os.path.join(x[0], '*Tmax*.nii.gz'))]
+channels['Channels_TTP'] = [y for x in os.walk(root)
+                            for y in glob(os.path.join(x[0], '*TTP*.nii.gz'))]
+# labels
+channels['GtLabels'] = [y for x in os.walk(root)
+                        for y in glob(os.path.join(x[0], '*OT*.nii.gz'))]
+# masks
+channels['RoiMasks'] = [y for x in os.walk(root)
+                        for y in glob(os.path.join(x[0], 'mask.nii.gz'))]
+
+# take 5 random subjects and check their images
+indices = range(len(channels['Channels_ADC']))
+shuffle(indices)
+indices = indices[:5]
+
+for i in indices:
+    # load a random channel of subject i
+    channel = random.choice([x for x in channels.keys() if 'Mask' not in x and "Label" not in x])
+    #img = nib.load(channels[channel][i])
+    img = nib.load(channels[channel][i])
+    mask = nib.load(channels['RoiMasks'][i])
+    print('Subject: ' + str(i) + '. Channel: ' + str(channel) + '. Shape: ' + str(img.shape))
+    plot_epi(img) # plot_epi(img, cut_coords=(0,0,0)) -> use to see co-registered channels per subject
+    plot_roi(mask, img)
 
