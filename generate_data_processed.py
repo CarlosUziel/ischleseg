@@ -55,14 +55,16 @@ for i in range(len(subjects_paths)):
 # In[4]:
 
 
-#%% Resample images to same shape and voxel size
-# linux
+# Resample images to same voxel size
 if test_flag:
     root = './data_processed/ISLES2017/testing'
 else:
     root = './data_processed/ISLES2017/training'
 
+# define template path
 template_path = './data/MNI152_T1_1mm_brain.nii.gz'
+# define downsample factor
+dF = 0.5
 
 # remove and create dir for processed data
 if os.path.exists(root): shutil.rmtree(root)
@@ -77,23 +79,17 @@ for subject in channels_per_subject.keys():
     os.mkdir(subject_root)
     
     subject_imgs = []
+    # Resample img to match template (1mm voxel size / dF)
     for channel_file in channels_per_subject[subject]:
-        img = nib.load(channel_file)
-
-        # Resample img to match template
-        if 'OT' in channel_file:
+        if 'OT' in channel_file:            
             # label must be resampled using nearest neighbour
-            resampled_img = resample_to_img(img, template, interpolation='nearest')
-            # resample image to two thirds of its size (allows for faster and less memory need)
-            resampled_img = resample_img(resampled_img,
-                                         3*resampled_img.affine/2, [2*x/3 for x in resampled_img.shape],
+            resampled_img = resample_img(channel_file,
+                                         template.affine[:3,:3]/dF,
                                          interpolation='nearest')
         else:
-            resampled_img = resample_to_img(img, template, interpolation='continuous')
-            # resample image to two thirds of its size (allows for faster and less memory need)
-            resampled_img = resample_img(resampled_img,
-                             3*resampled_img.affine/2, [2*x/3 for x in resampled_img.shape],
-                             interpolation='continuous')
+            resampled_img = resample_img(channel_file,
+                                         template.affine[:3,:3]/dF,
+                                         interpolation='continuous')
 
         subject_imgs.append([resampled_img, channel_file])
         
