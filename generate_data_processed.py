@@ -64,7 +64,7 @@ else:
 # define template path
 template_path = './data/MNI152_T1_1mm_brain.nii.gz'
 # define downsample factor
-dF = 0.5
+dF = 0.7
 
 # remove and create dir for processed data
 if os.path.exists(root): shutil.rmtree(root)
@@ -93,14 +93,21 @@ for subject in channels_per_subject.keys():
 
         subject_imgs.append([resampled_img, channel_file])
         
-    # compute subject brain mask given all channels (ignore label channel)
-    mask = compute_epi_mask([x for x,y in subject_imgs if not 'OT' in y])
-    # dilate mask to "fill holes"
+    # compute subject brain mask given all original channels (ignore label channel)
+    mask = compute_background_mask([y for x,y in subject_imgs if not 'OT' in y])
+    # dilate mask to adjust better to boundaries
+    dilated_mask_data = ndimage.binary_dilation(mask.dataobj, iterations=2)
+    mask = nib.nifti1.Nifti1Image(mask.dataobj.astype(np.int32), mask.affine)
+    # resample mask to match template
+    mask = resample_img(mask,
+                        template.affine[:3,:3]/dF,
+                        interpolation='nearest')
+    # dilate mask to adjust better to boundaries
     dilated_mask_data = ndimage.binary_dilation(mask.dataobj)
-    mask = nib.nifti1.Nifti1Image(dilated_mask_data.astype(np.int32), mask.affine)
+    mask = nib.nifti1.Nifti1Image(mask.dataobj.astype(np.int32), mask.affine)
     # save mask
     nib.save(mask, os.path.join(subject_root, 'mask.nii.gz'))
-    
+   
     # normalize each image within mask and save
     for img, channel_file in subject_imgs:
         # don't try to normalize label channel
@@ -116,12 +123,13 @@ for subject in channels_per_subject.keys():
             img = nib.nifti1.Nifti1Image(temp_data.astype(np.float32), img.affine)
         else:
             img = nib.nifti1.Nifti1Image(img.get_data().astype(np.int32), img.affine)
-        
+
         # save image
         file_name = os.path.basename(channel_file)
         nib.save(img, os.path.join(subject_root, file_name) + '.gz')
-        
+      
     print("Subject " + str(subject) + " finished.")
+
 
 
 # In[4]:
