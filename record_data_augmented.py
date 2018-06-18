@@ -35,24 +35,31 @@ def data_to_file(data, path):
 
 
 ###############################################################
-##### FILES FOR DM_V2 (BASELINE + RANDOM LESION SAMPLING) #####
+##### FILES FOR DM_V1 (BASELINE + RANDOM LESION SAMPLING) #####
+##### + TRANSFER LEARNING                                 #####
 ###############################################################
+root = './ischleseg/deepmedic/versions'
+# Copy directories from DM_V0
+dirs = sorted(glob(os.path.join(root, 'DM_V0_[0-9]')))
+dirs_transfer = sorted(glob(os.path.join(root, 'DM_V0_transfer_[0-9]')))
 
-# copy configFiles from DM_V1 (baseline)
-config_path = './ischleseg/deepmedic/versions/DM_V1/configFiles'
-new_config_path = './ischleseg/deepmedic/versions/DM_V2/configFiles'
-if os.path.exists(new_config_path): shutil.rmtree(new_config_path)
-shutil.copytree(config_path, new_config_path)
+for i in range(len(dirs)):
+    s_path = os.path.join(os.path.dirname(dirs[i]), 'DM_V1_' + str(i))
+    s_path_transfer = os.path.join(os.path.dirname(dirs_transfer[i]), 'DM_V1_transfer_' + str(i))
 
-# get train directories
-train_dirs = [x for x in os.listdir(new_config_path)
-             if 'train_' in x]
+    if os.path.exists(s_path): shutil.rmtree(s_path)
+    shutil.copytree(dirs[i], s_path)
 
-# process each train set
-for train_dir in train_dirs:
-    train_path = os.path.join(new_config_path, train_dir)
+    if os.path.exists(s_path_transfer): shutil.rmtree(s_path_transfer)
+    shutil.copytree(dirs_transfer[i], s_path_transfer)
+
+    train_path = os.path.join(s_path, 'configFiles/train')
+    train_path_transfer = os.path.join(s_path_transfer, 'configFiles/train')
+    
     # read subject codes
     subject_list = [os.path.dirname(line.strip()).split('/')[-1] for line in open(os.path.join(train_path, 'trainChannels_ADC.cfg') , 'r')]
+    
+    root = './data_processed/ISLES2017/training'
     channels = {}
     # channels - sequences os.path.join('../../../../../../', x) needed for deepmedic
     channels['Channels_ADC'] = [os.path.join('../../../../../../', y)
@@ -101,5 +108,6 @@ for train_dir in train_dirs:
     for name, files in channels.iteritems():
         # save train channel files
         data_to_file(files, os.path.join(train_path, 'train' + name + '.cfg'))
+        data_to_file(files, os.path.join(train_path_transfer, 'train' + name + '.cfg'))
 
 # modelConfig,cfg, trainConfig.cfg and testConfig.cfg must be added and modified manually.
