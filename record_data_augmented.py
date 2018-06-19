@@ -5,13 +5,17 @@
 
 
 # Imports
+# Imports
 import os
 import shutil
 import nibabel as nib
 import numpy as np
 import random
+import distutils
+from distutils import dir_util
 from random import shuffle
 from glob import glob
+from nilearn.plotting import plot_roi, plot_epi
 
 # In[25]:
 
@@ -39,13 +43,16 @@ def data_to_file(data, path):
 ##### + TRANSFER LEARNING                                 #####
 ###############################################################
 root = './ischleseg/deepmedic/versions'
+root_base = './ischleseg/deepmedic/versions/DM_V1_base'
+root_base_transfer = './ischleseg/deepmedic/versions/DM_V1_transfer_base'
 # Copy directories from DM_V0
 dirs = sorted(glob(os.path.join(root, 'DM_V0_[0-9]')))
 dirs_transfer = sorted(glob(os.path.join(root, 'DM_V0_transfer_[0-9]')))
 
 for i in range(len(dirs)):
     s_path = os.path.join(os.path.dirname(dirs[i]), 'DM_V1_' + str(i))
-    s_path_transfer = os.path.join(os.path.dirname(dirs_transfer[i]), 'DM_V1_transfer_' + str(i))
+    s_path_transfer = os.path.join(os.path.dirname(dirs_transfer[i]),
+                                   'DM_V1_transfer_' + str(i))
 
     if os.path.exists(s_path): shutil.rmtree(s_path)
     shutil.copytree(dirs[i], s_path)
@@ -53,11 +60,15 @@ for i in range(len(dirs)):
     if os.path.exists(s_path_transfer): shutil.rmtree(s_path_transfer)
     shutil.copytree(dirs_transfer[i], s_path_transfer)
 
+    distutils.dir_util.copy_tree(root_base, s_path)
+    distutils.dir_util.copy_tree(root_base_transfer, s_path_transfer)
+    
     train_path = os.path.join(s_path, 'configFiles/train')
     train_path_transfer = os.path.join(s_path_transfer, 'configFiles/train')
     
     # read subject codes
-    subject_list = [os.path.dirname(line.strip()).split('/')[-1] for line in open(os.path.join(train_path, 'trainChannels_ADC.cfg') , 'r')]
+    subject_list = [os.path.dirname(line.strip()).split('/')[-1]
+                    for line in open(os.path.join(train_path, 'trainChannels_ADC.cfg') , 'r')]
     
     root = './data_processed/ISLES2017/training'
     channels = {}
