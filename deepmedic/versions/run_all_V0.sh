@@ -29,5 +29,3 @@
 
 ../deepMedicRun -dev cuda -newModel ./DM_V0_9/configFiles/model/modelConfig.cfg -train ./DM_V0_9/configFiles/train/trainConfig.cfg
 ../deepMedicRun -dev cuda -train ./DM_V0_transfer_9/configFiles/train/trainConfig.cfg -resetOptimizer -model ./DM_V0_9/output/cnnModels/trainSession/*final*.save
-
-
