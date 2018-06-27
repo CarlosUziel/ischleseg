@@ -17,8 +17,8 @@ from glob import glob
 
 
 # Set working directory
-os.chdir('/home/he/carlos/DISS')
-test_flag = 0
+os.chdir('/home/uziel/DISS')
+test_flag = 1
 
 
 # In[3]:
@@ -118,7 +118,7 @@ if test_flag:
         data_to_file(files, os.path.join(test_path_transfer, 'test' + name + '.cfg'))
 
     # save names of predictions
-    names = ['SMIR.ishcleseg.' + os.path.basename(x).split('.')[-3] for x in channels['Channels_MTT']]
+    names = ['SMIR.ischleseg.' + os.path.basename(x).split('.')[-3] for x in channels['Channels_MTT']]
     data_to_file(names, os.path.join(test_path, 'testNamesOfPredictions.cfg'))
     data_to_file(names, os.path.join(test_path_transfer, 'testNamesOfPredictions.cfg'))
 
@@ -144,7 +144,7 @@ else:
         data_to_file(files, os.path.join(validation_path_transfer, 'validation' + name + '.cfg'))
 
     # save names of predictions
-    names = ['SMIR.ishcleseg.' + os.path.basename(x).split('.')[-3] for x in channels['Channels_MTT']]
+    names = ['SMIR.ischleseg.' + os.path.basename(x).split('.')[-3] for x in channels['Channels_MTT']]
     data_to_file(names, os.path.join(validation_path, 'validationNamesOfPredictions.cfg'))
     data_to_file(names, os.path.join(validation_path_transfer, 'validationNamesOfPredictions.cfg'))
 
@@ -190,7 +190,7 @@ channels['GtLabels'] = sorted([os.path.join('../../../../../../', y)
 # masks
 channels['RoiMasks'] = sorted([os.path.join('../../../../../../', y)
                                for x in os.walk(root)
-                               for y in glob(os.path.join(x[0], 'mask.nii.gz'))
+                               for y in glob(os.path.join(x[0], '*mask.nii.gz'))
                               ])
 
 
@@ -228,4 +228,6 @@ for name, files in channels.iteritems():
     data_to_file(files, os.path.join(validation_path_transfer, 'validation' + name + '.cfg'))
 
 # modelConfig,cfg, trainConfig.cfg and testConfig.cfg must be added and modified manually.
+# testing for DM_V3 has to use files from DM_V2
+# (we are not interested in augmented subject's predictions)
 

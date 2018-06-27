@@ -153,11 +153,11 @@ for i in range(n_set):
 
 
         # save names of predictions
-        names = ['pred_ISLES2017_' + os.path.basename(x).split('.')[-3] for x in [files[i] for i in indices[train_val_divison:]]]
+        names = ['SMIR.ischleseg.' + os.path.basename(x).split('.')[-3]
+                 for x in [channels['Channels_MTT'][i] for i in indices[train_val_divison:]]]
         data_to_file(names, os.path.join(validation_path, 'validationNamesOfPredictions.cfg'))
         data_to_file(names, os.path.join(validation_path_transfer, 'validationNamesOfPredictions.cfg'))
 
 # modelConfig,cfg, trainConfig.cfg and testConfig.cfg must be added and modified manually.
-
 
 
