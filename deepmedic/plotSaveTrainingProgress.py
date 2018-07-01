@@ -571,7 +571,7 @@ if __name__ == '__main__':
             
         measuredMetricsFromAllExperiments = optimizedParseMetricsFromLogs(logFiles, detailedPlotBool, None, movingAverSubeps)
 
-	with open('trainingProgress.txt', 'wb') as output:
+	with open('trainingProgress.pkl', 'wb') as output:
     		pickle.dump(measuredMetricsFromAllExperiments, output, pickle.HIGHEST_PROTOCOL)
 
         plotProgressBasic(measuredMetricsFromAllExperiments, listOfExperimentsNames, movingAverSubeps, subepochsPerEpFromEachLog, saveFigBool)
@@ -600,7 +600,7 @@ if __name__ == '__main__':
         """
         measuredMetricsFromAllExperiments = optimizedParseMetricsFromLogs( logFiles, detailedPlotBool, classesFromEachLogFile, movingAverSubeps )
 
-	with open('trainingProgress.txt', 'wb') as output:
+	with open('trainingProgress.pkl', 'wb') as output:
     		pickle.dump(measuredMetricsFromAllExperiments, output, pickle.HIGHEST_PROTOCOL)
 
 
