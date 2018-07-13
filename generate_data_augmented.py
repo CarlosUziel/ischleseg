@@ -21,7 +21,7 @@ from nilearn.plotting import plot_roi, plot_epi
 
 
 #%% Set current directory
-os.chdir('/home/he/carlos/DISS')
+os.chdir('/home/masters/DISS')
 root = './data_processed/ISLES2017/training'
 
 
