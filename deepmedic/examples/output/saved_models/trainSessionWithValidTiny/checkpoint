@@ -1,0 +1,5 @@
+model_checkpoint_path: "/home/uziel/DISS/ischleseg/deepmedic/examples/output/saved_models//trainSessionWithValidTiny//tinyCnn.trainSessionWithValidTiny.final.2018-07-18.12.18.30.900632.model.ckpt"
+all_model_checkpoint_paths: "/home/uziel/DISS/ischleseg/deepmedic/examples/output/saved_models//trainSessionWithValidTiny//tinyCnn.trainSessionWithValidTiny.initial.2018-07-18.12.04.19.688087.model.ckpt"
+all_model_checkpoint_paths: "/home/uziel/DISS/ischleseg/deepmedic/examples/output/saved_models//trainSessionWithValidTiny//tinyCnn.trainSessionWithValidTiny.2018-07-18.12.10.10.606851.model.ckpt"
+all_model_checkpoint_paths: "/home/uziel/DISS/ischleseg/deepmedic/examples/output/saved_models//trainSessionWithValidTiny//tinyCnn.trainSessionWithValidTiny.2018-07-18.12.17.18.115915.model.ckpt"
+all_model_checkpoint_paths: "/home/uziel/DISS/ischleseg/deepmedic/examples/output/saved_models//trainSessionWithValidTiny//tinyCnn.trainSessionWithValidTiny.final.2018-07-18.12.18.30.900632.model.ckpt"

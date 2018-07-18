@@ -1,0 +1,435 @@
+2018-07-18 12:19:36.505528 >> =============================== logger created =======================================
+2018-07-18 12:19:36.505570 >> 
+2018-07-18 12:19:36.505592 >> ======================== Starting new session ============================
+2018-07-18 12:19:36.505633 >> Command line arguments given: 
+Namespace(device='cpu', model_cfg='./examples/configFiles/tinyCnn/model/modelConfig.cfg', reset_trainer=False, saved_model='./examples/output/saved_models/trainSessionWithValidTiny/tinyCnn.trainSessionWithValidTiny.final.2018-07-18.12.18.30.900632.model.ckpt.', test_cfg='./examples/configFiles/tinyCnn/test/testConfig.cfg', train_cfg=None)
+2018-07-18 12:19:36.506065 >> Available devices to Tensorflow:
+[name: "/device:CPU:0"
+device_type: "CPU"
+memory_limit: 268435456
+locality {
+}
+incarnation: 7136043336217927880
+]
+2018-07-18 12:19:36.506097 >> CONFIG: The configuration file for the [model] given is: ./examples/configFiles/tinyCnn/model/modelConfig.cfg
+2018-07-18 12:19:36.506174 >> =============================================================
+2018-07-18 12:19:36.506194 >> ========== PARAMETERS FOR MAKING THE ARCHITECTURE ===========
+2018-07-18 12:19:36.506212 >> =============================================================
+2018-07-18 12:19:36.506231 >> CNN model's name = tinyCnn
+2018-07-18 12:19:36.506249 >> ~~~~~~~~~~~~~~~~~~Model parameters~~~~~~~~~~~~~~~~
+2018-07-18 12:19:36.506267 >> Number of Classes (including background) = 5
+2018-07-18 12:19:36.506284 >> ~~Normal Pathway~~
+2018-07-18 12:19:36.506302 >> Number of Input Channels = 2
+2018-07-18 12:19:36.506320 >> Number of Layers = 3
+2018-07-18 12:19:36.506340 >> Number of Feature Maps per layer = [4, 5, 6]
+2018-07-18 12:19:36.506362 >> Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2018-07-18 12:19:36.506381 >> Receptive Field = [7, 7, 7]
+2018-07-18 12:19:36.506400 >> Residual connections added at the output of layers (indices from 0) = []
+2018-07-18 12:19:36.506419 >> Layers that will be made of Lower Rank (indices from 0) = []
+2018-07-18 12:19:36.506437 >> Lower Rank layers will be made of rank = []
+2018-07-18 12:19:36.506454 >> ~~Subsampled Pathway~~
+2018-07-18 12:19:36.506472 >> Use subsampled Pathway = False
+2018-07-18 12:19:36.506492 >> Number of subsampled pathways that will be built = 0
+2018-07-18 12:19:36.506511 >> Number of Layers (per sub-pathway) = []
+2018-07-18 12:19:36.506529 >> Number of Feature Maps per layer (per sub-pathway) = []
+2018-07-18 12:19:36.506547 >> Kernel Dimensions per layer = []
+2018-07-18 12:19:36.506565 >> Receptive Field = []
+2018-07-18 12:19:36.506583 >> Subsampling Factor per dimension (per sub-pathway) = []
+2018-07-18 12:19:36.506601 >> Residual connections added at the output of layers (indices from 0) = []
+2018-07-18 12:19:36.506619 >> Layers that will be made of Lower Rank (indices from 0) = []
+2018-07-18 12:19:36.506637 >> Lower Rank layers will be made of rank = []
+2018-07-18 12:19:36.506655 >> ~~Fully Connected Pathway~~
+2018-07-18 12:19:36.506673 >> Number of additional FC layers (Excluding the Classif. Layer) = 0
+2018-07-18 12:19:36.506691 >> Number of Feature Maps in the additional FC layers = []
+2018-07-18 12:19:36.506709 >> Residual connections added at the output of layers (indices from 0) = []
+2018-07-18 12:19:36.506727 >> Layers that will be made of Lower Rank (indices from 0) = []
+2018-07-18 12:19:36.506746 >> Dimensions of Kernels in the 1st FC layer (Classif. layer if no hidden FCs used) = [1, 1, 1]
+2018-07-18 12:19:36.506763 >> ~~Size Of Image Segments~~
+2018-07-18 12:19:36.506782 >> Size of Segments for Training = [25, 25, 25]
+2018-07-18 12:19:36.506801 >> Size of Segments for Validation = [7, 7, 7]
+2018-07-18 12:19:36.506820 >> Size of Segments for Testing = [45, 45, 45]
+2018-07-18 12:19:36.506837 >> ~~Batch Sizes~~
+2018-07-18 12:19:36.506855 >> Batch Size for Training = 10
+2018-07-18 12:19:36.506873 >> Batch Size for Validation = 50
+2018-07-18 12:19:36.506891 >> Batch Size for Testing = 10
+2018-07-18 12:19:36.506908 >> ~~Dropout Rates~~
+2018-07-18 12:19:36.506926 >> Drop.R. for each layer in Normal Pathway = []
+2018-07-18 12:19:36.506950 >> Drop.R. for each layer in Subsampled Pathway = []
+2018-07-18 12:19:36.506973 >> Drop.R. for each layer in FC Pathway (additional FC layers + Classific.Layer at end) = [0.5]
+2018-07-18 12:19:36.506991 >> ~~Weight Initialization~~
+2018-07-18 12:19:36.507010 >> Initialization method and params for the conv kernel weights = ['fanIn', 2]
+2018-07-18 12:19:36.507027 >> ~~Activation Function~~
+2018-07-18 12:19:36.507045 >> Activation function to use = prelu
+2018-07-18 12:19:36.507062 >> ~~Batch Normalization~~
+2018-07-18 12:19:36.507080 >> Apply BN straight on pathways' inputs (eg straight on segments) = [False, False, True]
+2018-07-18 12:19:36.507099 >> Batch Normalization uses a rolling average for inference, over this many batches = 60
+2018-07-18 12:19:36.507116 >> ========== Done with printing session's parameters ==========
+2018-07-18 12:19:36.507133 >> =============================================================
+2018-07-18 12:19:36.507153 >> CONFIG: The configuration file for the [session] was loaded from: /home/uziel/DISS/ischleseg/deepmedic/examples/configFiles/tinyCnn/test/testConfig.cfg
+2018-07-18 12:19:53.055250 >> Changed path to load parameters from: /home/uziel/DISS/ischleseg/deepmedic/examples/output/saved_models/trainSessionWithValidTiny/tinyCnn.trainSessionWithValidTiny.final.2018-07-18.12.18.30.900632.model.ckpt
+2018-07-18 12:19:53.056735 >> 
+2018-07-18 12:19:53.056865 >> ============     NEW TESTING SESSION    ===============
+2018-07-18 12:19:53.056956 >> 
+2018-07-18 12:19:53.057035 >> =============================================================
+2018-07-18 12:19:53.057110 >> =========== PARAMETERS OF THIS TESTING SESSION ==============
+2018-07-18 12:19:53.057185 >> =============================================================
+2018-07-18 12:19:53.057262 >> sessionName = testSessionTiny
+2018-07-18 12:19:53.057343 >> Model will be loaded from save = /home/uziel/DISS/ischleseg/deepmedic/examples/output/saved_models/trainSessionWithValidTiny/tinyCnn.trainSessionWithValidTiny.final.2018-07-18.12.18.30.900632.model.ckpt
+2018-07-18 12:19:53.057421 >> ~~~~~~~~~~~~~~~~~~~~INPUT~~~~~~~~~~~~~~~~
+2018-07-18 12:19:53.057497 >> Number of cases to perform inference on = 2
+2018-07-18 12:19:53.057617 >> Paths to the channels of each case = [['/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0001_1/Flair_subtrMeanDivStd.nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0001_1/T1c_subtrMeanDivStd.nii.gz'], ['/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0002_1/Flair_subtrMeanDivStd.nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0002_1/T1c_subtrMeanDivStd.nii.gz']]
+2018-07-18 12:19:53.057700 >> User provided Ground Truth labels for DSC calculation = False
+2018-07-18 12:19:53.057853 >> >>> WARN: The DSC accuracy will NOT be evaluated and reported!
+2018-07-18 12:19:53.057930 >> Paths to the provided GT labels per case = None
+2018-07-18 12:19:53.057996 >> User provided Region-Of-Interest Masks for faster inference = True
+2018-07-18 12:19:53.058077 >> Filepaths of the ROI Masks provided per case = ['/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0001_1/brainmask.nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0002_1/brainmask.nii.gz']
+2018-07-18 12:19:53.058144 >> ~~~~~~~~~~~~~~~~~~~OUTPUT~~~~~~~~~~~~~~~
+2018-07-18 12:19:53.058211 >> Path to the main output-folder = /home/uziel/DISS/ischleseg/deepmedic/examples/output
+2018-07-18 12:19:53.058284 >> Provided names to use to save results for each case = ['pred_brats_2013_pat0001_1.nii.gz', 'pred_brats_2013_pat0002_1.nii.gz']
+2018-07-18 12:19:53.058349 >> ~~~~~~~Ouput-parameters for Predictions (segmentation and probability maps)~~~~
+2018-07-18 12:19:53.058415 >> Save the predicted segmentation = True
+2018-07-18 12:19:53.058515 >> Save the probability maps = [True, True, True, True, True]
+2018-07-18 12:19:53.058620 >> Paths where to save predictions per case = ['/home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions//pred_brats_2013_pat0001_1.nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions//pred_brats_2013_pat0002_1.nii.gz']
+2018-07-18 12:19:53.058688 >> ~~~~~~~Ouput-parameters for Feature Maps (FMs)~~~~~~
+2018-07-18 12:19:53.058754 >> Save FMs in individual images = True
+2018-07-18 12:19:53.058819 >> Save all requested FMs in one 4D image = False
+2018-07-18 12:19:53.058905 >> Indices of min/max FMs to save, per type of pathway (normal/subsampled/FC) and per layer = [[[], [1, 3], []], [], [[]]]
+2018-07-18 12:19:53.058988 >> Save Feature Maps at = ['/home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/features//pred_brats_2013_pat0001_1.nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/features//pred_brats_2013_pat0002_1.nii.gz']
+2018-07-18 12:19:53.059056 >> ~~~~~~~ Parameters for Preprocessing ~~~~~~
+2018-07-18 12:19:53.059122 >> Pad Input Images = True
+2018-07-18 12:19:53.059188 >> ========== Done with printing session's parameters ==========
+2018-07-18 12:19:53.059255 >> =============================================================
+
+2018-07-18 12:19:53.059325 >> =======================================================
+
+2018-07-18 12:19:53.068793 >> =========== Making the CNN graph... ===============
+2018-07-18 12:19:53.069024 >> ...Building the CNN model...
+2018-07-18 12:19:53.071209 >> [Pathway_NORMAL] is being built...
+2018-07-18 12:19:53.071294 >> 	[Pathway_NORMAL]: Input's Shape: (Train) [10, 2, 25, 25, 25], (Val) [50, 2, 7, 7, 7], (Test) [10, 2, 45, 45, 45]
+2018-07-18 12:19:53.071348 >> 	[Conv.Layer_0], Filter Shape: [4, 2, 3, 3, 3]
+2018-07-18 12:19:53.071385 >> 	[Conv.Layer_0], Input's Shape: (Train) [10, 2, 25, 25, 25], (Val) [50, 2, 7, 7, 7], (Test) [10, 2, 45, 45, 45]
+2018-07-18 12:19:53.091073 >> 	[Conv.Layer_1], Filter Shape: [5, 4, 3, 3, 3]
+2018-07-18 12:19:53.091144 >> 	[Conv.Layer_1], Input's Shape: (Train) [10, 4, 23, 23, 23], (Val) [50, 4, 5, 5, 5], (Test) [10, 4, 43, 43, 43]
+2018-07-18 12:19:53.160453 >> 	[Conv.Layer_2], Filter Shape: [6, 5, 3, 3, 3]
+2018-07-18 12:19:53.160510 >> 	[Conv.Layer_2], Input's Shape: (Train) [10, 5, 21, 21, 21], (Val) [50, 5, 3, 3, 3], (Test) [10, 5, 41, 41, 41]
+2018-07-18 12:19:53.231606 >> 	[Pathway_NORMAL]: Output's Shape: (Train) [10, 6, 19, 19, 19], (Val) [50, 6, 1, 1, 1], (Test) [10, 6, 39, 39, 39]
+2018-07-18 12:19:53.231653 >> [Pathway_NORMAL] done.
+2018-07-18 12:19:53.231702 >> DEBUG: Shape of the kernel of the first FC layer is : [1, 1, 1]
+2018-07-18 12:19:53.231726 >> DEBUG: Input to the FC Pathway will be padded by that many voxels per dimension: [0, 0, 0]
+2018-07-18 12:19:53.231829 >> [Pathway_FC] is being built...
+2018-07-18 12:19:53.231865 >> 	[Pathway_FC]: Input's Shape: (Train) [10, 6, 19, 19, 19], (Val) [50, 6, 1, 1, 1], (Test) [10, 6, 39, 39, 39]
+2018-07-18 12:19:53.231890 >> 	[Conv.Layer_0], Filter Shape: [5, 6, 1, 1, 1]
+2018-07-18 12:19:53.231913 >> 	[Conv.Layer_0], Input's Shape: (Train) [10, 6, 19, 19, 19], (Val) [50, 6, 1, 1, 1], (Test) [10, 6, 39, 39, 39]
+2018-07-18 12:19:53.309672 >> 	[Pathway_FC]: Output's Shape: (Train) [10, 5, 19, 19, 19], (Val) [50, 5, 1, 1, 1], (Test) [10, 5, 39, 39, 39]
+2018-07-18 12:19:53.309717 >> [Pathway_FC] done.
+2018-07-18 12:19:53.309753 >> Adding the final Softmax Target layer...
+2018-07-18 12:19:53.373167 >> Finished building the CNN's model.
+2018-07-18 12:19:53.373255 >> =========== Compiling the Testing Function ============
+2018-07-18 12:19:53.373280 >> =======================================================
+
+2018-07-18 12:19:53.373302 >> ...Building the function for testing and visualisation of FMs...
+2018-07-18 12:19:53.374983 >> ...Collecting ops and feeds for testing...
+2018-07-18 12:19:53.375029 >> Done.
+2018-07-18 12:19:53.400243 >> =========== Loading parameters from specified saved model ===============
+2018-07-18 12:19:53.400336 >> Loading parameters from:/home/uziel/DISS/ischleseg/deepmedic/examples/output/saved_models/trainSessionWithValidTiny/tinyCnn.trainSessionWithValidTiny.final.2018-07-18.12.18.30.900632.model.ckpt
+2018-07-18 12:19:53.443227 >> Parameters were loaded.
+2018-07-18 12:19:53.443279 >> 
+2018-07-18 12:19:53.443305 >> ======================================================
+2018-07-18 12:19:53.443329 >> =========== Testing with the CNN model ===============
+2018-07-18 12:19:53.443353 >> ======================================================
+
+2018-07-18 12:19:53.443391 >> ###########################################################################################################
+2018-07-18 12:19:53.443423 >> ############################# Starting full Segmentation of Testing subjects ##########################
+2018-07-18 12:19:53.443442 >> ###########################################################################################################
+2018-07-18 12:19:53.443482 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2018-07-18 12:19:53.443499 >> ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #0 ~~~~~~~~~~~~~~~~~~~~
+2018-07-18 12:19:53.443520 >> Loading subject with 1st channel at: /home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0001_1/Flair_subtrMeanDivStd.nii.gz
+2018-07-18 12:19:54.299123 >> Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2018-07-18 12:19:54.346057 >> Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2018-07-18 12:19:54.346115 >> Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2018-07-18 12:19:54.346150 >> Total number of Segments to process:90
+2018-07-18 12:19:54.346180 >> Processed 0/90 Segments.
+2018-07-18 12:19:57.945859 >> Processed 10/90 Segments.
+2018-07-18 12:20:01.549454 >> Processed 20/90 Segments.
+2018-07-18 12:20:05.172913 >> Processed 30/90 Segments.
+2018-07-18 12:20:08.693525 >> Processed 40/90 Segments.
+2018-07-18 12:20:12.202900 >> Processed 50/90 Segments.
+2018-07-18 12:20:15.713540 >> Processed 60/90 Segments.
+2018-07-18 12:20:19.459134 >> Processed 70/90 Segments.
+2018-07-18 12:20:23.046849 >> Processed 80/90 Segments.
+2018-07-18 12:20:26.574136 >> TIMING: Segmentation of this subject: [Extracting:] 0.000401496887207 [Loading:] 0.0380477905273 [ForwardPass:] 32.101755619 [Total:] 32.1402049065(s)
+2018-07-18 12:20:26.819893 >> Saving the new label (segmentation) image for the subject #0
+2018-07-18 12:20:27.064040 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0001_1_Segm.nii.gz
+2018-07-18 12:20:27.098446 >> Saving the new label (segmentation) image for the subject #0
+2018-07-18 12:20:27.512344 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0001_1_ProbMapClass0.nii.gz
+2018-07-18 12:20:27.549033 >> Saving the new label (segmentation) image for the subject #0
+2018-07-18 12:20:27.964079 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0001_1_ProbMapClass1.nii.gz
+2018-07-18 12:20:28.000804 >> Saving the new label (segmentation) image for the subject #0
+2018-07-18 12:20:28.418380 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0001_1_ProbMapClass2.nii.gz
+2018-07-18 12:20:28.456995 >> Saving the new label (segmentation) image for the subject #0
+2018-07-18 12:20:28.885575 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0001_1_ProbMapClass3.nii.gz
+2018-07-18 12:20:28.923551 >> Saving the new label (segmentation) image for the subject #0
+2018-07-18 12:20:29.339104 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0001_1_ProbMapClass4.nii.gz
+2018-07-18 12:20:29.339202 >> Saving the new Fm-activation image for the subject #0, pathway:0, layer: 1 FM: 1
+2018-07-18 12:20:29.790465 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/features/pred_brats_2013_pat0001_1_pathway0_layer1_fm1.nii.gz
+2018-07-18 12:20:29.790573 >> Saving the new Fm-activation image for the subject #0, pathway:0, layer: 1 FM: 2
+2018-07-18 12:20:30.252708 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/features/pred_brats_2013_pat0001_1_pathway0_layer1_fm2.nii.gz
+2018-07-18 12:20:30.252773 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2018-07-18 12:20:30.252798 >> ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #1 ~~~~~~~~~~~~~~~~~~~~
+2018-07-18 12:20:30.252825 >> Loading subject with 1st channel at: /home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0002_1/Flair_subtrMeanDivStd.nii.gz
+2018-07-18 12:20:31.080228 >> Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2018-07-18 12:20:31.126382 >> Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2018-07-18 12:20:31.126449 >> Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2018-07-18 12:20:31.126479 >> Total number of Segments to process:90
+2018-07-18 12:20:31.126504 >> Processed 0/90 Segments.
+2018-07-18 12:20:34.733468 >> Processed 10/90 Segments.
+2018-07-18 12:20:38.447637 >> Processed 20/90 Segments.
+2018-07-18 12:20:41.970813 >> Processed 30/90 Segments.
+2018-07-18 12:20:45.482310 >> Processed 40/90 Segments.
+2018-07-18 12:20:49.022469 >> Processed 50/90 Segments.
+2018-07-18 12:20:52.561576 >> Processed 60/90 Segments.
+2018-07-18 12:20:56.130200 >> Processed 70/90 Segments.
+2018-07-18 12:20:59.784094 >> Processed 80/90 Segments.
+2018-07-18 12:21:03.326034 >> TIMING: Segmentation of this subject: [Extracting:] 0.00650763511658 [Loading:] 0.0346920490265 [ForwardPass:] 32.0747990608 [Total:] 32.115998745(s)
+2018-07-18 12:21:03.577411 >> Saving the new label (segmentation) image for the subject #1
+2018-07-18 12:21:03.831678 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0002_1_Segm.nii.gz
+2018-07-18 12:21:03.873568 >> Saving the new label (segmentation) image for the subject #1
+2018-07-18 12:21:04.306792 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0002_1_ProbMapClass0.nii.gz
+2018-07-18 12:21:04.344392 >> Saving the new label (segmentation) image for the subject #1
+2018-07-18 12:21:04.771037 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0002_1_ProbMapClass1.nii.gz
+2018-07-18 12:21:04.808584 >> Saving the new label (segmentation) image for the subject #1
+2018-07-18 12:21:05.238904 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0002_1_ProbMapClass2.nii.gz
+2018-07-18 12:21:05.275974 >> Saving the new label (segmentation) image for the subject #1
+2018-07-18 12:21:05.713320 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0002_1_ProbMapClass3.nii.gz
+2018-07-18 12:21:05.752393 >> Saving the new label (segmentation) image for the subject #1
+2018-07-18 12:21:06.208679 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0002_1_ProbMapClass4.nii.gz
+2018-07-18 12:21:06.210620 >> Saving the new Fm-activation image for the subject #1, pathway:0, layer: 1 FM: 1
+2018-07-18 12:21:06.679162 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/features/pred_brats_2013_pat0002_1_pathway0_layer1_fm1.nii.gz
+2018-07-18 12:21:06.679259 >> Saving the new Fm-activation image for the subject #1, pathway:0, layer: 1 FM: 2
+2018-07-18 12:21:07.176429 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/features/pred_brats_2013_pat0002_1_pathway0_layer1_fm2.nii.gz
+2018-07-18 12:21:07.176509 >> TIMING: Testing process took time: 73.7330360413(s)
+2018-07-18 12:21:07.176533 >> ###########################################################################################################
+2018-07-18 12:21:07.176558 >> ############################# Finished full Segmentation of Testing subjects ##########################
+2018-07-18 12:21:07.176574 >> ###########################################################################################################
+2018-07-18 12:21:07.204186 >> 
+2018-07-18 12:21:07.204293 >> ======================================================
+2018-07-18 12:21:07.204322 >> =========== Testing session finished =================
+2018-07-18 12:21:07.204350 >> ======================================================
+2018-07-18 12:21:07.208017 >> Finished.
+2018-07-18 14:51:18.565170 >> =============================== logger created =======================================
+2018-07-18 14:51:18.565214 >> 
+2018-07-18 14:51:18.565232 >> ======================== Starting new session ============================
+2018-07-18 14:51:18.565267 >> Command line arguments given: 
+Namespace(device='cpu', model_cfg='./examples/configFiles/tinyCnn/model/modelConfig.cfg', reset_trainer=False, saved_model='./examples/output/saved_models/trainSessionWithValidTiny/tinyCnn.trainSessionWithValidTiny.final.2018-07-18.12.18.30.900632.model.ckpt', test_cfg='./examples/configFiles/tinyCnn/test/testConfig.cfg', train_cfg=None)
+2018-07-18 14:51:18.568261 >> Available devices to Tensorflow:
+[name: "/device:CPU:0"
+device_type: "CPU"
+memory_limit: 268435456
+locality {
+}
+incarnation: 9851644358527973745
+]
+2018-07-18 14:51:18.568322 >> CONFIG: The configuration file for the [model] given is: ./examples/configFiles/tinyCnn/model/modelConfig.cfg
+2018-07-18 14:51:18.568423 >> =============================================================
+2018-07-18 14:51:18.568443 >> ========== PARAMETERS FOR MAKING THE ARCHITECTURE ===========
+2018-07-18 14:51:18.568462 >> =============================================================
+2018-07-18 14:51:18.568487 >> CNN model's name = tinyCnn
+2018-07-18 14:51:18.568511 >> ~~~~~~~~~~~~~~~~~~Model parameters~~~~~~~~~~~~~~~~
+2018-07-18 14:51:18.568536 >> Number of Classes (including background) = 5
+2018-07-18 14:51:18.568560 >> ~~Normal Pathway~~
+2018-07-18 14:51:18.568585 >> Number of Input Channels = 2
+2018-07-18 14:51:18.568610 >> Number of Layers = 3
+2018-07-18 14:51:18.568638 >> Number of Feature Maps per layer = [4, 5, 6]
+2018-07-18 14:51:18.568667 >> Kernel Dimensions per layer = [[3, 3, 3], [3, 3, 3], [3, 3, 3]]
+2018-07-18 14:51:18.568693 >> Receptive Field = [7, 7, 7]
+2018-07-18 14:51:18.568718 >> Residual connections added at the output of layers (indices from 0) = []
+2018-07-18 14:51:18.568744 >> Layers that will be made of Lower Rank (indices from 0) = []
+2018-07-18 14:51:18.568769 >> Lower Rank layers will be made of rank = []
+2018-07-18 14:51:18.568792 >> ~~Subsampled Pathway~~
+2018-07-18 14:51:18.568817 >> Use subsampled Pathway = False
+2018-07-18 14:51:18.568841 >> Number of subsampled pathways that will be built = 0
+2018-07-18 14:51:18.568867 >> Number of Layers (per sub-pathway) = []
+2018-07-18 14:51:18.568891 >> Number of Feature Maps per layer (per sub-pathway) = []
+2018-07-18 14:51:18.568917 >> Kernel Dimensions per layer = []
+2018-07-18 14:51:18.568942 >> Receptive Field = []
+2018-07-18 14:51:18.568967 >> Subsampling Factor per dimension (per sub-pathway) = []
+2018-07-18 14:51:18.568992 >> Residual connections added at the output of layers (indices from 0) = []
+2018-07-18 14:51:18.569017 >> Layers that will be made of Lower Rank (indices from 0) = []
+2018-07-18 14:51:18.569048 >> Lower Rank layers will be made of rank = []
+2018-07-18 14:51:18.569071 >> ~~Fully Connected Pathway~~
+2018-07-18 14:51:18.569096 >> Number of additional FC layers (Excluding the Classif. Layer) = 0
+2018-07-18 14:51:18.569120 >> Number of Feature Maps in the additional FC layers = []
+2018-07-18 14:51:18.569145 >> Residual connections added at the output of layers (indices from 0) = []
+2018-07-18 14:51:18.569169 >> Layers that will be made of Lower Rank (indices from 0) = []
+2018-07-18 14:51:18.569195 >> Dimensions of Kernels in the 1st FC layer (Classif. layer if no hidden FCs used) = [1, 1, 1]
+2018-07-18 14:51:18.569218 >> ~~Size Of Image Segments~~
+2018-07-18 14:51:18.569244 >> Size of Segments for Training = [25, 25, 25]
+2018-07-18 14:51:18.569269 >> Size of Segments for Validation = [7, 7, 7]
+2018-07-18 14:51:18.569294 >> Size of Segments for Testing = [45, 45, 45]
+2018-07-18 14:51:18.569317 >> ~~Batch Sizes~~
+2018-07-18 14:51:18.569341 >> Batch Size for Training = 10
+2018-07-18 14:51:18.569365 >> Batch Size for Validation = 50
+2018-07-18 14:51:18.569389 >> Batch Size for Testing = 10
+2018-07-18 14:51:18.569412 >> ~~Dropout Rates~~
+2018-07-18 14:51:18.569436 >> Drop.R. for each layer in Normal Pathway = []
+2018-07-18 14:51:18.569460 >> Drop.R. for each layer in Subsampled Pathway = []
+2018-07-18 14:51:18.569489 >> Drop.R. for each layer in FC Pathway (additional FC layers + Classific.Layer at end) = [0.5]
+2018-07-18 14:51:18.569513 >> ~~Weight Initialization~~
+2018-07-18 14:51:18.569538 >> Initialization method and params for the conv kernel weights = ['fanIn', 2]
+2018-07-18 14:51:18.569561 >> ~~Activation Function~~
+2018-07-18 14:51:18.569585 >> Activation function to use = prelu
+2018-07-18 14:51:18.569608 >> ~~Batch Normalization~~
+2018-07-18 14:51:18.569633 >> Apply BN straight on pathways' inputs (eg straight on segments) = [False, False, True]
+2018-07-18 14:51:18.569657 >> Batch Normalization uses a rolling average for inference, over this many batches = 60
+2018-07-18 14:51:18.569681 >> ========== Done with printing session's parameters ==========
+2018-07-18 14:51:18.569704 >> =============================================================
+2018-07-18 14:51:18.569731 >> CONFIG: The configuration file for the [session] was loaded from: /home/uziel/DISS/ischleseg/deepmedic/examples/configFiles/tinyCnn/test/testConfig.cfg
+2018-07-18 14:51:18.569986 >> 
+2018-07-18 14:51:18.570016 >> ============     NEW TESTING SESSION    ===============
+2018-07-18 14:51:18.570042 >> 
+2018-07-18 14:51:18.570065 >> =============================================================
+2018-07-18 14:51:18.570089 >> =========== PARAMETERS OF THIS TESTING SESSION ==============
+2018-07-18 14:51:18.570114 >> =============================================================
+2018-07-18 14:51:18.570138 >> sessionName = testSessionTiny
+2018-07-18 14:51:18.570163 >> Model will be loaded from save = /home/uziel/DISS/ischleseg/deepmedic/examples/output/saved_models/trainSessionWithValidTiny/tinyCnn.trainSessionWithValidTiny.final.2018-07-18.12.18.30.900632.model.ckpt
+2018-07-18 14:51:18.570187 >> ~~~~~~~~~~~~~~~~~~~~INPUT~~~~~~~~~~~~~~~~
+2018-07-18 14:51:18.570211 >> Number of cases to perform inference on = 2
+2018-07-18 14:51:18.570244 >> Paths to the channels of each case = [['/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0001_1/Flair_subtrMeanDivStd.nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0001_1/T1c_subtrMeanDivStd.nii.gz'], ['/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0002_1/Flair_subtrMeanDivStd.nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0002_1/T1c_subtrMeanDivStd.nii.gz']]
+2018-07-18 14:51:18.570269 >> User provided Ground Truth labels for DSC calculation = False
+2018-07-18 14:51:18.570293 >> >>> WARN: The DSC accuracy will NOT be evaluated and reported!
+2018-07-18 14:51:18.570322 >> Paths to the provided GT labels per case = None
+2018-07-18 14:51:18.570347 >> User provided Region-Of-Interest Masks for faster inference = True
+2018-07-18 14:51:18.570374 >> Filepaths of the ROI Masks provided per case = ['/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0001_1/brainmask.nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0002_1/brainmask.nii.gz']
+2018-07-18 14:51:18.570398 >> ~~~~~~~~~~~~~~~~~~~OUTPUT~~~~~~~~~~~~~~~
+2018-07-18 14:51:18.570422 >> Path to the main output-folder = /home/uziel/DISS/ischleseg/deepmedic/examples/output
+2018-07-18 14:51:18.570449 >> Provided names to use to save results for each case = ['pred_brats_2013_pat0001_1.nii.gz', 'pred_brats_2013_pat0002_1.nii.gz']
+2018-07-18 14:51:18.570472 >> ~~~~~~~Ouput-parameters for Predictions (segmentation and probability maps)~~~~
+2018-07-18 14:51:18.570496 >> Save the predicted segmentation = True
+2018-07-18 14:51:18.570522 >> Save the probability maps = [True, True, True, True, True]
+2018-07-18 14:51:18.570550 >> Paths where to save predictions per case = ['/home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions//pred_brats_2013_pat0001_1.nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions//pred_brats_2013_pat0002_1.nii.gz']
+2018-07-18 14:51:18.570574 >> ~~~~~~~Ouput-parameters for Feature Maps (FMs)~~~~~~
+2018-07-18 14:51:18.570598 >> Save FMs in individual images = True
+2018-07-18 14:51:18.570623 >> Save all requested FMs in one 4D image = False
+2018-07-18 14:51:18.570651 >> Indices of min/max FMs to save, per type of pathway (normal/subsampled/FC) and per layer = [[[], [1, 3], []], [], [[]]]
+2018-07-18 14:51:18.570679 >> Save Feature Maps at = ['/home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/features//pred_brats_2013_pat0001_1.nii.gz', '/home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/features//pred_brats_2013_pat0002_1.nii.gz']
+2018-07-18 14:51:18.570702 >> ~~~~~~~ Parameters for Preprocessing ~~~~~~
+2018-07-18 14:51:18.570725 >> Pad Input Images = True
+2018-07-18 14:51:18.570749 >> ========== Done with printing session's parameters ==========
+2018-07-18 14:51:18.570776 >> =============================================================
+
+2018-07-18 14:51:18.570801 >> =======================================================
+
+2018-07-18 14:51:18.583694 >> =========== Making the CNN graph... ===============
+2018-07-18 14:51:18.583958 >> ...Building the CNN model...
+2018-07-18 14:51:18.586109 >> [Pathway_NORMAL] is being built...
+2018-07-18 14:51:18.586169 >> 	[Pathway_NORMAL]: Input's Shape: (Train) [10, 2, 25, 25, 25], (Val) [50, 2, 7, 7, 7], (Test) [10, 2, 45, 45, 45]
+2018-07-18 14:51:18.586200 >> 	[Conv.Layer_0], Filter Shape: [4, 2, 3, 3, 3]
+2018-07-18 14:51:18.586230 >> 	[Conv.Layer_0], Input's Shape: (Train) [10, 2, 25, 25, 25], (Val) [50, 2, 7, 7, 7], (Test) [10, 2, 45, 45, 45]
+2018-07-18 14:51:18.607308 >> 	[Conv.Layer_1], Filter Shape: [5, 4, 3, 3, 3]
+2018-07-18 14:51:18.607376 >> 	[Conv.Layer_1], Input's Shape: (Train) [10, 4, 23, 23, 23], (Val) [50, 4, 5, 5, 5], (Test) [10, 4, 43, 43, 43]
+2018-07-18 14:51:18.682152 >> 	[Conv.Layer_2], Filter Shape: [6, 5, 3, 3, 3]
+2018-07-18 14:51:18.682207 >> 	[Conv.Layer_2], Input's Shape: (Train) [10, 5, 21, 21, 21], (Val) [50, 5, 3, 3, 3], (Test) [10, 5, 41, 41, 41]
+2018-07-18 14:51:18.760685 >> 	[Pathway_NORMAL]: Output's Shape: (Train) [10, 6, 19, 19, 19], (Val) [50, 6, 1, 1, 1], (Test) [10, 6, 39, 39, 39]
+2018-07-18 14:51:18.760733 >> [Pathway_NORMAL] done.
+2018-07-18 14:51:18.760777 >> DEBUG: Shape of the kernel of the first FC layer is : [1, 1, 1]
+2018-07-18 14:51:18.760795 >> DEBUG: Input to the FC Pathway will be padded by that many voxels per dimension: [0, 0, 0]
+2018-07-18 14:51:18.760902 >> [Pathway_FC] is being built...
+2018-07-18 14:51:18.760933 >> 	[Pathway_FC]: Input's Shape: (Train) [10, 6, 19, 19, 19], (Val) [50, 6, 1, 1, 1], (Test) [10, 6, 39, 39, 39]
+2018-07-18 14:51:18.760965 >> 	[Conv.Layer_0], Filter Shape: [5, 6, 1, 1, 1]
+2018-07-18 14:51:18.760985 >> 	[Conv.Layer_0], Input's Shape: (Train) [10, 6, 19, 19, 19], (Val) [50, 6, 1, 1, 1], (Test) [10, 6, 39, 39, 39]
+2018-07-18 14:51:18.849665 >> 	[Pathway_FC]: Output's Shape: (Train) [10, 5, 19, 19, 19], (Val) [50, 5, 1, 1, 1], (Test) [10, 5, 39, 39, 39]
+2018-07-18 14:51:18.849708 >> [Pathway_FC] done.
+2018-07-18 14:51:18.849729 >> Adding the final Softmax Target layer...
+2018-07-18 14:51:18.917061 >> Finished building the CNN's model.
+2018-07-18 14:51:18.917155 >> =========== Compiling the Testing Function ============
+2018-07-18 14:51:18.917176 >> =======================================================
+
+2018-07-18 14:51:18.917197 >> ...Building the function for testing and visualisation of FMs...
+2018-07-18 14:51:18.918880 >> ...Collecting ops and feeds for testing...
+2018-07-18 14:51:18.918931 >> Done.
+2018-07-18 14:51:18.950742 >> =========== Loading parameters from specified saved model ===============
+2018-07-18 14:51:18.950834 >> Loading parameters from:/home/uziel/DISS/ischleseg/deepmedic/examples/output/saved_models/trainSessionWithValidTiny/tinyCnn.trainSessionWithValidTiny.final.2018-07-18.12.18.30.900632.model.ckpt
+2018-07-18 14:51:19.004739 >> Parameters were loaded.
+2018-07-18 14:51:19.004838 >> 
+2018-07-18 14:51:19.004900 >> ======================================================
+2018-07-18 14:51:19.004951 >> =========== Testing with the CNN model ===============
+2018-07-18 14:51:19.005000 >> ======================================================
+
+2018-07-18 14:51:19.005075 >> ###########################################################################################################
+2018-07-18 14:51:19.005132 >> ############################# Starting full Segmentation of Testing subjects ##########################
+2018-07-18 14:51:19.005175 >> ###########################################################################################################
+2018-07-18 14:51:19.005276 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2018-07-18 14:51:19.005323 >> ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #0 ~~~~~~~~~~~~~~~~~~~~
+2018-07-18 14:51:19.005389 >> Loading subject with 1st channel at: /home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0001_1/Flair_subtrMeanDivStd.nii.gz
+2018-07-18 14:51:19.856845 >> Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2018-07-18 14:51:19.909066 >> Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2018-07-18 14:51:19.909126 >> Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2018-07-18 14:51:19.909165 >> Total number of Segments to process:90
+2018-07-18 14:51:19.909196 >> Processed 0/90 Segments.
+2018-07-18 14:51:23.701722 >> Processed 10/90 Segments.
+2018-07-18 14:51:27.347614 >> Processed 20/90 Segments.
+2018-07-18 14:51:30.895137 >> Processed 30/90 Segments.
+2018-07-18 14:51:34.450640 >> Processed 40/90 Segments.
+2018-07-18 14:51:38.205563 >> Processed 50/90 Segments.
+2018-07-18 14:51:41.736267 >> Processed 60/90 Segments.
+2018-07-18 14:51:45.293201 >> Processed 70/90 Segments.
+2018-07-18 14:51:48.921107 >> Processed 80/90 Segments.
+2018-07-18 14:51:52.457424 >> TIMING: Segmentation of this subject: [Extracting:] 0.000401735305786 [Loading:] 0.0309655666351 [ForwardPass:] 32.4340159893 [Total:] 32.4653832912(s)
+2018-07-18 14:51:52.709388 >> Saving the new label (segmentation) image for the subject #0
+2018-07-18 14:51:52.962689 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0001_1_Segm.nii.gz
+2018-07-18 14:51:53.005665 >> Saving the new label (segmentation) image for the subject #0
+2018-07-18 14:51:53.445524 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0001_1_ProbMapClass0.nii.gz
+2018-07-18 14:51:53.492640 >> Saving the new label (segmentation) image for the subject #0
+2018-07-18 14:51:53.930090 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0001_1_ProbMapClass1.nii.gz
+2018-07-18 14:51:53.982350 >> Saving the new label (segmentation) image for the subject #0
+2018-07-18 14:51:54.414677 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0001_1_ProbMapClass2.nii.gz
+2018-07-18 14:51:54.456686 >> Saving the new label (segmentation) image for the subject #0
+2018-07-18 14:51:54.905142 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0001_1_ProbMapClass3.nii.gz
+2018-07-18 14:51:54.950603 >> Saving the new label (segmentation) image for the subject #0
+2018-07-18 14:51:55.364983 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0001_1_ProbMapClass4.nii.gz
+2018-07-18 14:51:55.365091 >> Saving the new Fm-activation image for the subject #0, pathway:0, layer: 1 FM: 1
+2018-07-18 14:51:55.878688 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/features/pred_brats_2013_pat0001_1_pathway0_layer1_fm1.nii.gz
+2018-07-18 14:51:55.878822 >> Saving the new Fm-activation image for the subject #0, pathway:0, layer: 1 FM: 2
+2018-07-18 14:51:56.378449 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/features/pred_brats_2013_pat0001_1_pathway0_layer1_fm2.nii.gz
+2018-07-18 14:51:56.378537 >> ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2018-07-18 14:51:56.378562 >> ~~~~~~~~~~~~~~~~~~~~ Segmenting subject with index #1 ~~~~~~~~~~~~~~~~~~~~
+2018-07-18 14:51:56.378595 >> Loading subject with 1st channel at: /home/uziel/DISS/ischleseg/deepmedic/examples/dataForExamples/brats2015TrainingData/test/brats_2013_pat0002_1/Flair_subtrMeanDivStd.nii.gz
+2018-07-18 14:51:57.268000 >> Starting to (tile) extract Segments from the images of the subject for Segmentation...
+2018-07-18 14:51:57.323171 >> Finished (tiling) extracting Segments from the images of the subject for Segmentation.
+2018-07-18 14:51:57.323258 >> Starting to segment each image-part by calling the cnn.cnnTestModel(i). This part takes a few mins per volume...
+2018-07-18 14:51:57.323301 >> Total number of Segments to process:90
+2018-07-18 14:51:57.323342 >> Processed 0/90 Segments.
+2018-07-18 14:52:00.905261 >> Processed 10/90 Segments.
+2018-07-18 14:52:04.429058 >> Processed 20/90 Segments.
+2018-07-18 14:52:07.940510 >> Processed 30/90 Segments.
+2018-07-18 14:52:11.466988 >> Processed 40/90 Segments.
+2018-07-18 14:52:15.218097 >> Processed 50/90 Segments.
+2018-07-18 14:52:18.759125 >> Processed 60/90 Segments.
+2018-07-18 14:52:22.320145 >> Processed 70/90 Segments.
+2018-07-18 14:52:26.009620 >> Processed 80/90 Segments.
+2018-07-18 14:52:29.548097 >> TIMING: Segmentation of this subject: [Extracting:] 0.00932359695435 [Loading:] 0.0315527915955 [ForwardPass:] 32.1005439758 [Total:] 32.1414203644(s)
+2018-07-18 14:52:29.805815 >> Saving the new label (segmentation) image for the subject #1
+2018-07-18 14:52:30.054472 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0002_1_Segm.nii.gz
+2018-07-18 14:52:30.104674 >> Saving the new label (segmentation) image for the subject #1
+2018-07-18 14:52:30.535533 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0002_1_ProbMapClass0.nii.gz
+2018-07-18 14:52:30.579963 >> Saving the new label (segmentation) image for the subject #1
+2018-07-18 14:52:31.011331 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0002_1_ProbMapClass1.nii.gz
+2018-07-18 14:52:31.058285 >> Saving the new label (segmentation) image for the subject #1
+2018-07-18 14:52:31.489489 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0002_1_ProbMapClass2.nii.gz
+2018-07-18 14:52:31.530629 >> Saving the new label (segmentation) image for the subject #1
+2018-07-18 14:52:31.978826 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0002_1_ProbMapClass3.nii.gz
+2018-07-18 14:52:32.025585 >> Saving the new label (segmentation) image for the subject #1
+2018-07-18 14:52:32.466655 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/predictions/pred_brats_2013_pat0002_1_ProbMapClass4.nii.gz
+2018-07-18 14:52:32.468648 >> Saving the new Fm-activation image for the subject #1, pathway:0, layer: 1 FM: 1
+2018-07-18 14:52:32.941208 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/features/pred_brats_2013_pat0002_1_pathway0_layer1_fm1.nii.gz
+2018-07-18 14:52:32.941320 >> Saving the new Fm-activation image for the subject #1, pathway:0, layer: 1 FM: 2
+2018-07-18 14:52:33.428006 >> Image saved at: /home/uziel/DISS/ischleseg/deepmedic/examples/output/predictions/testSessionTiny/features/pred_brats_2013_pat0002_1_pathway0_layer1_fm2.nii.gz
+2018-07-18 14:52:33.428082 >> TIMING: Testing process took time: 74.4228601456(s)
+2018-07-18 14:52:33.428107 >> ###########################################################################################################
+2018-07-18 14:52:33.428127 >> ############################# Finished full Segmentation of Testing subjects ##########################
+2018-07-18 14:52:33.428145 >> ###########################################################################################################
+2018-07-18 14:52:33.450880 >> 
+2018-07-18 14:52:33.451074 >> ======================================================
+2018-07-18 14:52:33.451156 >> =========== Testing session finished =================
+2018-07-18 14:52:33.451217 >> ======================================================
+2018-07-18 14:52:33.454991 >> Finished.

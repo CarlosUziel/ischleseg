@@ -1,4 +1,3 @@
 #!/bin/bash
-
 rm -rf output
-../../deepMedicRun -dev cuda -newModel ./configFiles/model/modelConfig.cfg -train ./configFiles/train/trainConfig.cfg
+../../deepMedicRun -dev cuda0 -model ./configFiles/model/modelConfig.cfg -train ./configFiles/train/trainConfig.cfg
