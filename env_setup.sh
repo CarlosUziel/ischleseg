@@ -1,8 +1,8 @@
 #!/bin/bash
 
-conda create -n diss_tf python=2.7 anaconda -y
+conda create -n diss python=2.7 anaconda -y
 echo ". /home/uziel/anaconda2/etc/profile.d/conda.sh" >> ~/.bashrc
-source activate diss_tf #conda activate diss_tf
+source activate diss
 conda install matplotlib -y
 conda install jupyterlab -y
 conda install git -y
