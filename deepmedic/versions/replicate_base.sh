@@ -18,4 +18,4 @@ echo DM_V3_{0..4} | xargs -n 1 cp -r DM_V3_base/*
 
 echo DM_V4_{0..4} | xargs -n 1 cp -r DM_V4_base/*
 
-echo DM_V4_{0..4} | xargs -n 1 cp -r DM_V5_base/*
+echo DM_V5_{0..4} | xargs -n 1 cp -r DM_V5_base/*
