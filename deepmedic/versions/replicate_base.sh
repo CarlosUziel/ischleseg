@@ -22,3 +22,5 @@ echo DM_V4_R_{0..4} | xargs -n 1 cp -r DM_V2_R_base/*
 
 echo DM_V5_{0..4} | xargs -n 1 cp -r DM_V5_base/*
 echo DM_V5_R_{0..4} | xargs -n 1 cp -r DM_V5_R_base/*
+
+cp -r DM_VF_base/* DM_VF
