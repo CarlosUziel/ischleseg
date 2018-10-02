@@ -10,9 +10,9 @@ Ischemic Stroke, Semantic Segmentation, CNN, data pre-processing, data augmentat
 To run the contents of this repository, it is recommended to set-up a python virtual environment (preferably with Anaconda), following the script `env_setup.sh`, in the root folder:
 
 ```
-conda create -n diss python=2.7 anaconda -y
+conda create -n "env_name" python=2.7 anaconda -y
 echo ". /home/"user"/anaconda2/etc/profile.d/conda.sh" >> ~/.bashrc
-source activate diss
+source activate "env_name"
 conda install matplotlib -y
 conda install jupyterlab -y
 conda install git -y
@@ -29,7 +29,7 @@ pip install scikit-image
 pip install scipy
 ```
 
-Beware of replacing `"user"` with the corresponding user name.
+Beware of replacing `"user"` with the corresponding user name and `"env_name"` witha  suitable environment name.
 
 ## Content of this repository
 This repository contains all the code used in the master dissertation project. On one hand, it contains the source code of [DeepMedic](https://github.com/Kamnitsask/deepmedic) v0.6.1. The directory tree has been slightly changed to accomodate to the different experiments carried out and their corresponding configuration files (plese referer to the original documentation of [DeepMedic](https://github.com/Kamnitsask/deepmedic) to understand how DeepMedic processes these files). Concretly, each model that was trained can be found under the directory `deepmedic/versions`. The structure of each model is as follows:
