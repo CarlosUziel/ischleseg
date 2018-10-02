@@ -44,3 +44,5 @@ On the other hand, the main contribution of this project is concerned with data 
 - `gen_preproceesed_data.ipynb`: Pre-processes data and creates the baseline models' configuration files.
 - `gen_augmented_data.ipynb`: Augments data and creates the corresponding models' configuration files. 
 - `postprocessing.ipyb`: Performs multiple post-processing steps on the network output to improve results. Also produces all plots for results analysis.
+
+Finally, the directory `example_results` shows some of the results that can be obtained by running the different models.
